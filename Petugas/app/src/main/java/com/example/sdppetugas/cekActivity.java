@@ -11,6 +11,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -23,7 +24,8 @@ public class cekActivity extends AppCompatActivity {
     ArrayList<String> arrOnGoing,arrPlat;
     ArrayAdapter<String> platAdapter;
     ListView lvPlat;
-    TextView tvPlat,tvNama;
+    TextView tvPlat,tvNama,tvDurasi,tvHarga;
+    Button btnCekOut;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,6 +33,13 @@ public class cekActivity extends AppCompatActivity {
         lvPlat = findViewById(R.id.lvPlat);
         tvNama = findViewById(R.id.tvNamaPlat);
         tvPlat = findViewById(R.id.tvPlatNo);
+        tvDurasi = findViewById(R.id.tvDurasi);
+        tvHarga = findViewById(R.id.tvHarga);
+        btnCekOut = findViewById(R.id.btnCekOut);
+        tvDurasi.setText("");
+        tvHarga.setText("");
+        arrOnGoing = new ArrayList<String>();
+        arrPlat = new ArrayList<String>();
        if(getIntent()!=null){
             arrOnGoing = getIntent().getStringArrayListExtra("ongoing");
             arrPlat = getIntent().getStringArrayListExtra("platno");
@@ -42,6 +51,24 @@ public class cekActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 tvNama.setText(arrOnGoing.get(i));
                 tvPlat.setText(arrPlat.get(i));
+                tvDurasi.setText("100 menit");
+                tvHarga.setText("100.000");
+            }
+        });
+        btnCekOut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                for (int a = 0; a < arrOnGoing.size(); a++) {
+                    if(arrOnGoing.get(a).equals(tvNama.getText().toString())){
+                        arrOnGoing.remove(a);
+                        arrPlat.remove(a);
+                    }
+                }
+                platAdapter.notifyDataSetChanged();
+                tvNama.setText("");
+                tvPlat.setText("");
+                tvDurasi.setText("");
+                tvHarga.setText("");
             }
         });
     }

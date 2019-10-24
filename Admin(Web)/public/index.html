@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>PSI 2019</title>
+    <!-- update the version number as needed -->
+    <script defer src="/__/firebase/6.0.2/firebase-app.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/6.0.2/firebase-auth.js"></script>
+    <script defer src="/__/firebase/6.0.2/firebase-firestore.js"></script>
+    <script defer src="/__/firebase/6.0.2/firebase-messaging.js"></script>
+    <script defer src="/__/firebase/6.0.2/firebase-storage.js"></script>
+    <!-- initialize the SDK after all desired features are loaded -->
+    <script defer src="/__/firebase/init.js"></script>
+
+    <!-- ini deklarasi jQuery
+        kalau butuh lib lain, masukin dibawah comment ini
+        jangan lupa pake defer (script d load setelah DOM selesai di load)
+    -->
+    <script defer src="scripts/jquery.min.js"></script>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="materialize/css/materialize.min.css">
+    <script src="materialize/js/materialize.min.js"></script>
+    <script defer src="scripts/changePage.js"></script>
+
+    <script defer src="scripts/newLogin.js"></script>
+
+    <!-- ini css jadi jadian yaa -->
+    <style media="screen">
+        body { background: #000000; color: rgba(0,0,0,0.87); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
+        #message { background: white; max-width: 360px; margin: 100px auto 16px; padding: 32px 24px 16px; border-radius: 3px; }
+        #message h3 { color: #888; font-weight: normal; font-size: 16px; margin: 16px 0 12px; }
+        #message h2 { color: rgba(0,0,0,0.6); font-weight: bold; font-size: 16px; margin: 0 0 8px; }
+        #message h1 { font-size: 22px; font-weight: 300; color: #ffa100; margin: 0 0 16px;}
+        #message p { line-height: 140%; margin: 16px 0 24px; font-size: 14px; }
+        #message a { display: block; text-align: center; background: #039be5; text-transform: uppercase; text-decoration: none; color: white; padding: 16px; border-radius: 4px; }
+        #message, #message a { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); }
+        #load { color: rgba(0,0,0,0.4); text-align: center; font-size: 13px; }
+        .col.s12 > .btn 
+        {
+          width: 100%;
+        }
+        .col.s6 > .btn 
+        {
+          width: 100%;
+        }
+      </style>
+  </head>
+  <body bgcolor="black">
+    <div id="message">
+      <div id="load"></div>
+      <h1>Pengenalan Studi Informatika</h1>
+      <div class="row">
+        <div class="col s6">
+            <button class="waves-effect waves-light btn" id="sign-in" onclick="signIn()">Login</button>
+        </div>
+        <div class="col s6">
+            <button class="waves-effect waves-light btn" id="sign-out" onclick="signOut()">Logout</button>
+        </div>
+      </div>
+      <hr>
+      <div class="row" id="row_navs" hidden>
+        <div class="col s12">
+            <button class="btn waves-effect waves-light gotoMasterMainPage" id="btn_master" style="display: none;">Goto Master Mainpage</button>
+        </div>
+        <div class="col s12">
+            <button class="btn waves-effect waves-light gotoPenjagaPosMainPage" id="btn_pos" style="display: none;">Goto Penjaga Pos Mainpage</button>
+        </div>
+        <div class="col s12">
+            <button class="btn waves-effect waves-light gotoPenjagaAuditMainPage" id="btn_audit" style="display: none;">Goto Penjaga Audit Mainpage</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

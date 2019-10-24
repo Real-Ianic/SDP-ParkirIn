@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>PSI 2019</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- update the version number as needed -->
+    <script defer src="/__/firebase/6.0.2/firebase-app.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/6.0.2/firebase-auth.js"></script>
+    <script defer src="/__/firebase/6.0.2/firebase-firestore.js"></script>
+    <script defer src="/__/firebase/6.0.2/firebase-messaging.js"></script>
+    <script defer src="/__/firebase/6.0.2/firebase-storage.js"></script>
+    <!-- initialize the SDK after all desired features are loaded -->
+    <script defer src="/__/firebase/init.js"></script>
+
+    <!-- ini deklarasi jQuery
+        kalau butuh lib lain, masukin dibawah comment ini
+        jangan lupa pake defer (script d load setelah DOM selesai di load)
+    -->
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script defer src="scripts/jquery.min.js"></script>
+
+    <script defer src="scripts/changePage.js"></script>
+    <script defer src="scripts/check_login.js"></script>
+    
+    <script defer src="scripts/master-regu.js"></script>
+
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+</head>
+<body>
+    <!-- NAVBAR -->
+    <nav class="grey lighten-1">
+        <div class="nav-wrapper">
+            <a href="#" class="brand-logo black-text gotoMasterMainPage">PSI 2019</a>
+            <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+            <ul class="right hide-on-med-and-down">
+            <li><a href="#" class="black-text gotoMasterUser">Master User</a></li>
+            <li><a href="#" class="black-text gotoMasterRegu">Master Regu</a></li>
+            <li><a href="#" class="black-text gotoMasterResources">Master Resource</a></li>
+            <!-- <li><a href="#">Mobile</a></li> -->
+            </ul>
+        </div>
+    
+        <ul class="sidenav" id="mobile-demo">
+            <li><a href="#" class="black-text gotoMasterUser">Master User</a></li>
+            <li><a href="#" class="black-text gotoMasterRegu">Master Regu</a></li>
+            <li><a href="#" class="black-text gotoMasterResources">Master Resource</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <div class="card hoverable">
+            <div class="card-content">
+                <span class="card-title">Teams Table</span>
+                <div id="content">
+
+                    <!-- PRELOADER UNTUK MEMPERINDAH -->
+                    <div class="progress" id="loaderTableTeams">
+                        <div class="indeterminate"></div>
+                    </div>
+
+                    <!-- TABEL TEAMS -->
+                    <table class="table striped responsive-table highlight" id="tableTeams" hidden>
+                        <thead>
+                            <tr>
+                                <th>Nama Team</th>
+                                <th>Poin</th>
+                                <th>Uang</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="bodyTableTeams">
+
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="row" id="row_buttons">
+            <div class="card">
+                <div class="card-content center-align">
+                    <button class='btn' onclick="ResetStanding()">Reset</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id='display-data'></div>
+    <div class='modal' id='modalUpdate'>
+        <div class='modal-content'>
+            <div>Update <span id="namaRegu"></span></div>
+            <input type="number" id='updateUang' value=0>
+        </div>
+        <div class="modal-footer">
+            <a href="#!" class="modal-close waves-effect waves-green btn btnOK" onclick='confirm(this)' id='btnOK'>OK</a>
+            <a href="#!" class="modal-close waves-effect waves-green btn">Cancel</a>
+        </div>
+    </div>
+</body>
+</html>

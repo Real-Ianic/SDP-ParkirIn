@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="/__/firebase/6.0.2/firebase-app.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script src="/__/firebase/6.0.2/firebase-auth.js"></script>
+    <script src="/__/firebase/6.0.2/firebase-firestore.js"></script>
+    <script src="/__/firebase/6.0.2/firebase-messaging.js"></script>
+    <script src="/__/firebase/6.0.2/firebase-storage.js"></script>
+    <!-- initialize the SDK after all desired features are loaded -->
+    <script src="/__/firebase/init.js"></script>
+    <script src="scripts/jquery.min.js"></script>
+
+</head>
+<body>
+    <input type="text" id='tulis'>
+    <input type="submit" id='karep'>
+
+
+</body>
+
+<script>
+    var db;
+    $(document).ready(
+        function () {
+            db = firebase.firestore();
+        }
+        );
+    $("#karep").click(
+        function(){
+            let teks = $("#tulis").val();
+            console.log(teks);
+            db.collection("RESOURCE").add(
+                {
+                    nama : teks      
+                }
+            ).then(
+                function (e) {
+                    console.log('sukses', e.id);
+                }
+            ).catch(
+                function (err) {
+                    console.error(err);
+                }
+            );
+
+        }
+        );
+
+</script>
+</html>

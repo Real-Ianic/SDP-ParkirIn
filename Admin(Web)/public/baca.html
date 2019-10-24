@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="/__/firebase/6.0.2/firebase-app.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script src="/__/firebase/6.0.2/firebase-auth.js"></script>
+    <script src="/__/firebase/6.0.2/firebase-firestore.js"></script>
+    <script src="/__/firebase/6.0.2/firebase-messaging.js"></script>
+    <script src="/__/firebase/6.0.2/firebase-storage.js"></script>
+    <!-- initialize the SDK after all desired features are loaded -->
+    <script src="/__/firebase/init.js"></script>
+    <script src="scripts/jquery.min.js"></script>
+
+</head>
+<body>
+    <input type="submit" id='karep'>
+    <br>
+    <textarea name="" id="coba" cols="30" rows="10"></textarea>
+
+</body>
+
+<script>
+    var db;
+    $(document).ready(
+        function () {
+            db = firebase.firestore();
+        }
+        );
+    
+    $("#karep").click(
+        function () {
+            let ref = db.collection("product").get()
+            .then(
+                function (snapshot) {
+                    $("#coba").val("");
+                    snapshot.forEach(
+                        function (doc) {
+                            $("#coba").val($("#coba").val()+"\n"+doc.data());
+                            console.log(doc.data());
+                        }
+                    )
+                }
+            )
+            .catch(
+                function (err) {
+                    console.error(err);
+                }
+            );
+            
+
+            
+        }
+        );
+
+</script>
+</html>

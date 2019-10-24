@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>PSI 2019</title>
+    <!-- update the version number as needed -->
+    <script defer src="/__/firebase/6.0.2/firebase-app.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/6.0.2/firebase-auth.js"></script>
+    <script defer src="/__/firebase/6.0.2/firebase-firestore.js"></script>
+    <script defer src="/__/firebase/6.0.2/firebase-messaging.js"></script>
+    <script defer src="/__/firebase/6.0.2/firebase-storage.js"></script>
+    <!-- initialize the SDK after all desired features are loaded -->
+    <script defer src="/__/firebase/init.js"></script>
+
+    <!-- ini deklarasi jQuery
+        kalau butuh lib lain, masukin dibawah comment ini
+        jangan lupa pake defer (script d load setelah DOM selesai di load)
+    -->
+    <script defer src="scripts/jquery.min.js"></script>
+
+    <!-- link file JS disini
+        <script defer src="scripts/namascriptmudisini.js"></script> 
+    -->
+    <!-- ini css jadi jadian yaa -->
+    <style media="screen">
+        *{
+            padding: 5px;
+            box-sizing: border-box;
+        }
+        body { background: #ECEFF1; color: rgba(0,0,0,0.87); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
+        #solo{
+            background-color: cyan;
+        }
+        #duel{
+            background-color: red;
+        }
+      </style>
+</head>
+<body>
+    <div id='display-data'>
+        <br>
+        Nama Pos Goes Here<br>
+        <br>
+    </div>
+
+    <select name="" id="chooseMode">
+        <option value="single">Single Player</option>
+        <option value="versus">Duel</option>
+    </select>
+    <br>
+    <br>
+    <div id='solo'>
+        <div> 
+            Nama Regu : <select name="" id="selectedRegu">
+                <option value="Regu A1">Regu A1</option>
+                <option value="Regu A2">Regu A2</option>
+                <option value="Regu A3">Regu A3</option>
+                <option value="Regu A4">Regu A4</option>
+                <option value="Regu B1">Regu B1</option>
+                <option value="Regu B2">Regu B2</option>
+                <option value="Regu B3">Regu B3</option>
+                <option value="Regu B4">Regu B4</option>
+                <option value="Regu C1">Regu C1</option>
+                <option value="Regu C2">Regu C2</option>
+                <option value="Regu C3">Regu C3</option>
+                <option value="Regu C4">Regu C4</option>
+                <option value="Regu D1">Regu D1</option>
+                <option value="Regu D2">Regu D2</option>
+                <option value="Regu D3">Regu D3</option>
+                <option value="Regu D4">Regu D4</option>
+            </select>
+        </div>
+        <div>
+            Hasil : <select name="" id="hasilMain">
+                <option value="Hadiah 1">Hadiah Utama</option>
+                <option value="Hadiah 2">Hadiah 2</option>
+                <option value="Hadiah 3">Hadiah 3</option>
+            </select>
+        </div>
+        <div>
+            <button id="submitPos<namaPos>">Submit</button>
+        </div>
+    </div>
+
+    <br>
+    <br>
+
+    <div id='duel'>
+        <div style="display: flex; justify-content: space-around">
+            <div> 
+                Nama Regu : <select name="" id="selectedRegu">
+                    <option value="Regu A1">Regu A1</option>
+                    <option value="Regu A2">Regu A2</option>
+                    <option value="Regu A3">Regu A3</option>
+                    <option value="Regu A4">Regu A4</option>
+                    <option value="Regu B1">Regu B1</option>
+                    <option value="Regu B2">Regu B2</option>
+                    <option value="Regu B3">Regu B3</option>
+                    <option value="Regu B4">Regu B4</option>
+                    <option value="Regu C1">Regu C1</option>
+                    <option value="Regu C2">Regu C2</option>
+                    <option value="Regu C3">Regu C3</option>
+                    <option value="Regu C4">Regu C4</option>
+                    <option value="Regu D1">Regu D1</option>
+                    <option value="Regu D2">Regu D2</option>
+                    <option value="Regu D3">Regu D3</option>
+                    <option value="Regu D4">Regu D4</option>
+                </select>
+            </div>
+            <div> 
+                Nama Regu : <select name="" id="selectedRegu">
+                    <option value="Regu A1">Regu A1</option>
+                    <option value="Regu A2">Regu A2</option>
+                    <option value="Regu A3">Regu A3</option>
+                    <option value="Regu A4">Regu A4</option>
+                    <option value="Regu B1">Regu B1</option>
+                    <option value="Regu B2">Regu B2</option>
+                    <option value="Regu B3">Regu B3</option>
+                    <option value="Regu B4">Regu B4</option>
+                    <option value="Regu C1">Regu C1</option>
+                    <option value="Regu C2">Regu C2</option>
+                    <option value="Regu C3">Regu C3</option>
+                    <option value="Regu C4">Regu C4</option>
+                    <option value="Regu D1">Regu D1</option>
+                    <option value="Regu D2">Regu D2</option>
+                    <option value="Regu D3">Regu D3</option>
+                    <option value="Regu D4">Regu D4</option>
+                </select>
+            </div>
+        </div>
+        <div style="text-align: center;">
+            <div>
+                Pemenang : <select name="" id="hasilMain">
+                    <option value="regu pilihan kiri">nama regu pilihan kiri</option>
+                    <option value="regu pilihan kanan">nama regu pilihan kanan</option>
+                </select>
+            </div>
+            <div>
+                <button id="submitPos<namaPos>">Submit</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>PSI 2019</title>
+    <!-- update the version number as needed -->
+    <script defer src="/__/firebase/6.0.2/firebase-app.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/6.0.2/firebase-auth.js"></script>
+    <script defer src="/__/firebase/6.0.2/firebase-firestore.js"></script>
+    <script defer src="/__/firebase/6.0.2/firebase-messaging.js"></script>
+    <script defer src="/__/firebase/6.0.2/firebase-storage.js"></script>
+    <!-- initialize the SDK after all desired features are loaded -->
+    <script defer src="/__/firebase/init.js"></script>
+
+    <!-- ini deklarasi jQuery
+        kalau butuh lib lain, masukin dibawah comment ini
+        jangan lupa pake defer (script d load setelah DOM selesai di load)
+    -->
+    <script defer src="scripts/jquery.min.js"></script>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="materialize/css/materialize.min.css">
+    <script src="materialize/js/materialize.min.js"></script>
+    <script defer src="scripts/changePage.js"></script>
+    <script defer src="scripts/check_login.js"></script>
+    <script defer src="scripts/crafting.js"></script>
+
+    <!-- ini css jadi jadian yaa -->
+    <style media="screen">
+        /* CUSTOM CSS OVERRIDE MATERIALIZE */
+        .dropdown-content li>span {
+            color: #212121;
+        }
+        ul{
+          margin: 0px;  
+        }
+        ul>li{
+
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+
+        <div class="card hoverable" id="cardSelectTeam">
+            <div class="card-content">
+                <span class="card-title">Select Teams</span>
+                
+                <div class="progress" id="loadingTeams">
+                    <div class="indeterminate"></div>
+                </div>
+      
+                <select name="selectTeam" id="comboBoxTeams">
+                    <optgroup label="Teams" id="groupTeams">
+                    </optgroup>
+                    <optgroup label="Admin" id="groupAdmin">
+                    </optgroup>
+                </select>
+                <button class="btn waves-effect" onclick="ShowCraftCard(); loadTeamResource();"><i class="material-icons right">arrow_forward</i>Next</button>
+            </div>
+        </div>
+
+        <div class="card hoverable" id="cardCraftItem" hidden>
+            <div class="card-content">
+                <span class="card-title">Craft Item</span>
+                <table class="table highlight responsive-table centered">
+                    <thead>
+                        <tr>
+                            <th colspan="2">Item</th>
+                            <th colspan="3">Recipe</th>
+                            <th>Amount</th>
+                        </tr>
+                        
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <th>Resource</th>
+                            <th>You need:</th>
+                            <th>You have:</th>
+                            <td></td>
+                        </tr>
+                           
+                    </thead>
+                    <tbody id="tabBodyItems">
+                        
+                    </tbody>
+                </table>
+                <Button class="btn" id="btnCraft">Craft</Button>
+                <Button class="btn waves-effect red" onclick="ShowSelectTeams()"><i class="material-icons left">arrow_back</i>Back</Button>
+            </div>
+        </div>
+
+        <div class="card hoverable" id="cardSmeltOre" hidden>
+            <div class="card-content">
+                <span class="card-title">Smelt Ores</span>
+
+
+                <table class="table striped responsive-table centered highlight">
+                    <thead>
+                        <tr>
+                            <th style="width: 1%"></th>
+                            <th>Item</th>
+                            <th>Qty</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><img src="images/ore.png" style="width:50px;"alt="noimg" class="circle"></td>
+                            <td>Ores</td>
+                            <td class='resource_Ore'></td>
+                        </tr>
+                        <tr>
+                            <td><img src="images/gold.png" style="width:50px;"alt="noimg" class="circle"></td>
+                            <td>Gold</td>
+                            <td class='resource_Gold'></td>
+                        </tr>
+                        <tr>
+                            <td><img src="images/iron.png" style="width:50px;"alt="noimg" class="circle"></td>
+                            <td>Iron</td>
+                            <td class="resource_Iron"></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <br>
+                <p>Note : Ores must be smelt in total of 10s (Kelipatan 10)</p>
+                <P>Every 10 Ores smelt, will result in 6 Iron Bars and 4 Gold Bars</P>
+
+                <br>
+                <span class="card-title">Smelt Ores</span>
+                <div class="row">
+                    <div class="col s4">
+                        <input type="number" min="0" placeholder="0" step="10" id="smeltValue" onchange="update_estimation()">
+                    </div>
+                    <div class="col s8">
+                        <p id="p_estimation"></p>
+                    </div>
+                </div>
+                <button class="btn" id='btnSmelt'>Smelt</button>
+
+                <Button class="btn waves-effect red" onclick="ShowSelectTeams()"><i class="material-icons left">arrow_back</i>Back</Button>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODALS COLLECTION -->
+    <div id="modal_collections">
+
+    </div>
+
+    
+</body>
+<script>
+    function ShowCraftCard()
+    {
+        $("#cardCraftItem").show();
+        $("#cardSmeltOre").show();
+        $("#cardSelectTeam").hide();
+        update_estimation();
+    }
+
+    function ShowSelectTeams()
+    {
+        $("#cardSelectTeam").show();
+        $("#cardCraftItem").hide();
+        $("#cardSmeltOre").hide();
+        $(":input[type='number']").val(0);
+        M.updateTextFields();
+        update_estimation();
+    }
+</script>
+</html>

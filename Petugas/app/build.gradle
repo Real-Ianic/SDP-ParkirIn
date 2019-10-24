@@ -26,5 +26,9 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
+<<<<<<< HEAD
     implementation 'androidx.recyclerview:recyclerview:1.0.0'
+=======
+    implementation 'com.google.firebase:firebase-core:17.2.0'
+>>>>>>> c0088cb6154566612afab13f38ef75198825b631
 }
