@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>PSI 2019</title>
+    <!-- update the version number as needed -->
+    <script defer src="/__/firebase/6.0.2/firebase-app.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/6.0.2/firebase-auth.js"></script>
+    <script defer src="/__/firebase/6.0.2/firebase-firestore.js"></script>
+    <script defer src="/__/firebase/6.0.2/firebase-messaging.js"></script>
+    <script defer src="/__/firebase/6.0.2/firebase-storage.js"></script>
+    <!-- initialize the SDK after all desired features are loaded -->
+    <script defer src="/__/firebase/init.js"></script>
+
+    <!-- ini deklarasi jQuery     -->
+    <script src="scripts/jquery.min.js"></script>
+
+    <!-- // MATERIALIZE JS DAN CSS \\ -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="materialize/css/materialize.min.css">
+    <script src="materialize/js/materialize.min.js"></script>
+
+    <script defer src="scripts/check_login.js"></script>
+    <script defer src="scripts/beli.js"></script>
+
+    <!-- ini css jadi jadian yaa -->
+    <style media="screen">
+        /* CUSTOM CSS OVERRIDE MATERIALIZE */
+        .dropdown-content li>span {
+            color: #212121;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- CARD BUY RESOURCE (MAIN CONTAINER) -->
+        <div class="card" id="cardSelectTeam">
+            <div class="card-content">
+                <span class="card-title">Buy Resources</span>
+                <div class="input-field">
+                    <select name="comboTeams" id="comboBoxTeams">
+                        <!-- tak tambahi ID supaya aksesnya mudah (?) -->
+                        <optgroup label='Team' id='isiDisini' class='groupTeams'>
+                        </optgroup>
+                        <optgroup label="Admin" class='groupAdmin'>
+                        </optgroup>
+                    </select>
+                    <label>Select Team</label>
+                    <button id="buttonNext" onclick="ShowDetails()" class="btn waves-effect"><i class="material-icons right">arrow_forward</i>Next</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="card" id="cardResourceShop" hidden>
+            <div class="card-content">
+                <h4 class='center-align'>Resources Shop</h4>
+                <hr>
+                <br>
+                <span class='card-title' id='namaRegu'></span>
+                <span class="card-title">Money : <span id='uangRegu'></span></span>    
+                <!-- ITEMS -->
+                <div id="isiShop" class='row'>
+                    
+                </div>
+
+                <!-- Buy Button -->
+                <Button class="btn waves-effect red" onclick="ShowMain()"><i class="material-icons left">arrow_back</i>Back</Button>
+                <Button class="btn waves-effect" id="buttonBuy" onclick="buy()"><i class="material-icons left">attach_money</i>Buy</Button>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    // Function Show Main
+    function ShowMain()
+    {
+        $("#cardSelectTeam").show();
+        $("#cardResourceShop").hide();
+    }
+
+    // Function Show Details
+    function ShowDetails()
+    {
+        $("#cardSelectTeam").hide();
+        let db = firebase.firestore();
+        $("#cardResourceShop").show();
+        var labelUang = document.querySelector('#uangRegu');
+        var labelRegu = document.querySelector('#namaRegu');
+        let e = document.querySelector('#comboBoxTeams');
+        labelRegu.textContent = e.options[e.selectedIndex].value;
+        var listenToChanges = db.collection('teams').doc(labelRegu.textContent).onSnapshot((doc)=>{
+            //dosomething;
+            labelUang.textContent = doc.data().money;
+        });
+        
+    }
+
+</script>
+</html>

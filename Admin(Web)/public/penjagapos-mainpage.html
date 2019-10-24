@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <title>PSI 2019</title>
+      <!-- update the version number as needed -->
+      <script defer src="/__/firebase/6.0.2/firebase-app.js"></script>
+      <!-- include only the Firebase features as you need -->
+      <script defer src="/__/firebase/6.0.2/firebase-auth.js"></script>
+      <script defer src="/__/firebase/6.0.2/firebase-firestore.js"></script>
+      <script defer src="/__/firebase/6.0.2/firebase-messaging.js"></script>
+      <script defer src="/__/firebase/6.0.2/firebase-storage.js"></script>
+      <!-- initialize the SDK after all desired features are loaded -->
+      <script defer src="/__/firebase/init.js"></script>
+
+      <!-- ini deklarasi jQuery
+          kalau butuh lib lain, masukin dibawah comment ini
+          jangan lupa pake defer (script d load setelah DOM selesai di load)
+      -->
+      <script defer src="scripts/jquery.min.js"></script>
+
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <link rel="stylesheet" href="materialize/css/materialize.min.css">
+      <script src="materialize/js/materialize.min.js"></script>
+      <script defer src="scripts/changePage.js"></script>
+      <script defer src="scripts/check_login.js"></script>
+      <script defer src="scripts/penjagapos.js"></script>
+
+      <!-- ini css jadi jadian yaa -->
+      <style media="screen">
+          /* CUSTOM CSS OVERRIDE MATERIALIZE */
+          .dropdown-content li>span {
+              color: #212121;
+          }
+      </style>
+  </head>
+  <body>
+    <div class="container">
+
+      <!-- CARD SELECT MODE -->
+      <div class="card hoverable" id="cardSelectMode">
+        <div class="card-content">
+          <span class="card-title">Select Mode</span>
+          <div class="input-field col s6">
+              <select name="selectMode" id="selectMode">
+                <option value="#" disabled selected>Select Mode</option>
+                <option value="Solo">Solo</option>
+                <option value="Versus">Versus</option>
+              </select>
+            <button class="btn waves-effect" onclick='show_card()'>OK</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD SOLO -->
+      <div class="card hoverable" id='card_solo' hidden>
+        <div class="card-content">
+          <span class="card-title">Solo</span>
+
+          <div class="input-fields row">
+            
+            <div class="col s5">
+              <!-- SELECT TEAM -->
+              <select name="selectTeam" class="comboBoxTeams" id="comboBoxTeamsSolo">
+                  <optgroup label="Teams" class="groupTeams">
+                  </optgroup>
+                  <optgroup label="Admin" class="groupAdmin">
+                  </optgroup>
+              </select>
+            </div>
+            
+            <div class="col s5">
+              <!-- SELECT PRIZE -->
+              <select name="selectPrizeSolo" id="comboBoxPrizeSolo">
+                <option value="Gold">Gold</option>
+                <option value="Silver">Silver</option>
+                <option value="Bronze">Bronze</option>
+              </select>
+            </div>
+
+            <!-- Button OK -->
+            <button class="btn waves-effect modal-trigger" onclick="show_confirm_solo()" data-target="modal_confirm_solo">OK</button>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD VERSUS -->
+      <div class="card hoverable" id='card_versus' hidden>
+        <div class="card-content">
+          <span class="card-title">Versus</span>
+
+          <!-- ATAS -->
+          <div class="input-fields row">
+
+            <div class="col s5">
+              <!-- SELECT TEAM KIRI -->
+              <select name="selectTeam" class="comboBoxTeams" id="comboBoxTeamsVersusKiri">
+                  <optgroup label="Teams" class="groupTeams">
+                  </optgroup>
+                  <optgroup label="Admin" class="groupAdmin">
+                  </optgroup>
+              </select>
+            </div>
+
+            <div class="col s2"><span class="card-title center-align">VS</span></div>
+
+            <div class="col s5">
+              <!-- SELECT TEAM KANAN -->
+              <select name="selectTeam" class="comboBoxTeams" id="comboBoxTeamsVersusKanan">
+                  <optgroup label="Teams" class="groupTeams">
+                  </optgroup>
+                  <optgroup label="Admin" class="groupAdmin">
+                  </optgroup>
+              </select>
+            </div>
+          </div>
+
+          <!-- BAWAH -->
+          <div class="input-fields row">
+            
+            <div class="col s4 offset-s3">
+              <select name="selectWin" id="selectWin">
+                <option value="team1">Team Kiri Menang</option>
+                <option value="draw">Draw</option>
+                <option value="team2">Team Kanan Menang</option>
+              </select>
+            </div>
+
+            <!-- Button OK -->
+            <button class="btn waves-effect" onclick="show_confirm_versus()">OK</button>
+          
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+    <div class="container-modal hidden">
+
+      <!-- MODAL CONFIRM SOLO -->
+      <div class="modal modal-fixed-footer" id="modal_confirm_solo">
+          <div class="modal-content">
+              <h4>Konfirmasi</h4>
+              <p id="text_solo"></p>
+          </div>
+          <!-- FOOTER MODAL -->
+          <div class="modal-footer">
+              <button class="modal-close btn-flat" onclick="M.toast({html: `Pemberian Reward Dicancel`, classes: 'rounded'})">Cancel</button>
+              <button class="modal-close btn-flat" onclick="confirm_solo()">OK</button>
+          </div>
+      </div>
+
+      <!-- MODAL CONFIRM VERSUS -->
+      <div class="modal modal-fixed-footer" id="modal_confirm_versus">
+          <div class="modal-content">
+              <h4>Konfirmasi</h4>
+              <p id="text_versus"></p>
+          </div>
+          <!-- FOOTER MODAL -->
+          <div class="modal-footer">
+              <button class="modal-close btn-flat" onclick="M.toast({html: `Pemberian Reward Dicancel`, classes: 'rounded'})">Cancel</button>
+              <button class="modal-close btn-flat" onclick="confirm_versus()">OK</button>
+          </div>
+      </div>
+
+    </div>
+
+  </body>
+</html>

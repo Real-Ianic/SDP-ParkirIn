@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leaderboard</title>
+
+    <!-- update the version number as needed -->
+    <script defer src="/__/firebase/6.0.2/firebase-app.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/6.0.2/firebase-auth.js"></script>
+    <script defer src="/__/firebase/6.0.2/firebase-firestore.js"></script>
+    <script defer src="/__/firebase/6.0.2/firebase-messaging.js"></script>
+    <script defer src="/__/firebase/6.0.2/firebase-storage.js"></script>
+    <!-- initialize the SDK after all desired features are loaded -->
+    <script defer src="/__/firebase/init.js"></script>
+    
+    <!-- ini deklarasi jQuery     -->
+    <script defer src="scripts/jquery.min.js"></script>
+
+    <script defer src="scripts/check_login.js"></script>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="materialize/css/materialize.min.css">
+    <script src="materialize/js/materialize.min.js"></script>
+    <style>
+        table{
+            font-size: 4.2rem;
+            /* font-weight: 400; */
+        }
+    </style>
+</head>
+<body class="grey darken-3">
+    <div class="container grey darken-3">
+        <div class="card">
+            <div class="card-content">
+                <table class="striped">
+                    <thead>
+                        <th>No.</th>
+                        <th>Team</th>
+                        <th>Poin</th>
+                        <th>Money</th>
+                    </thead>
+                    <tbody id='isiLeaderboard'>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    var db;
+    document.addEventListener('DOMContentLoaded', function(){
+        db = firebase.firestore();
+
+        const teamRef = db.collection('teams');
+
+        teamRef.orderBy('poin', 'desc').orderBy('money', 'desc').onSnapshot(
+            (querySnapshot)=>{
+                var tabel = document.querySelector('#isiLeaderboard');
+                tabel.innerHTML = ``;
+                let no = 1;
+                querySnapshot.forEach(
+                    (doc)=>{
+                        //console.log(doc.data());
+                        tabel.innerHTML += `<tr><td>${no}</td>
+                        <td>${doc.id.toUpperCase()}</td>
+                        <td>${doc.data().poin}</td><td>${doc.data().money}</td></tr>`;
+                        ++no;
+                    }
+                );
+            }
+        );
+    });
+
+
+
+</script>
+</html>

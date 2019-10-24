@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>PSI 2019</title>
+    <!-- update the version number as needed -->
+    <script defer src="/__/firebase/6.0.2/firebase-app.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/6.0.2/firebase-auth.js"></script>
+    <script defer src="/__/firebase/6.0.2/firebase-firestore.js"></script>
+    <script defer src="/__/firebase/6.0.2/firebase-messaging.js"></script>
+    <script defer src="/__/firebase/6.0.2/firebase-storage.js"></script>
+    <!-- initialize the SDK after all desired features are loaded -->
+    <script defer src="/__/firebase/init.js"></script>
+
+    <script src="scripts/jquery.min.js"></script>
+
+    <!-- // MATERIALIZE JS DAN CSS \\ -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="materialize/css/materialize.min.css">
+    <script src="materialize/js/materialize.min.js"></script>
+
+    <script defer src="scripts/check_login.js"></script>
+
+    <!-- ini css jadi jadian yaa -->
+    <style media="screen">
+        /* CUSTOM CSS OVERRIDE MATERIALIZE */
+        .dropdown-content li>span {
+            color: #212121;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- SELECT TEAM -->
+        <div class="card" id="cardSelectTeam">
+            <div class="card-content">
+                <span class="card-title">Teams</span>
+                <div class="input-field">
+                    <select name="" id="comboBoxTeams">
+                        <option value="" disabled selected>Select Team</option>
+                    </select>
+                    <button class="btn waves-effect" onclick="ShowStatistics()"><i class="material-icons right">arrow_forward</i>View Statistics</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- STATISTICS -->
+        <div class="card" id="cardStatistics" hidden>
+            <div class="card-content">
+                <h4 class='center-align'>Team <span id='namaRegu'></span> Statistics</h4>
+
+                <!-- MONEY -->
+                <span class="card-title">Money: <span id='uangRegu'></span></span>
+
+                <!-- RESOURCES -->
+                <div class="row">
+                    <div class="col s6">
+                        <span class="card-title">Resources</span>
+                        <ul class="collection" id='isiResource'>
+                            <li class="collection-item avatar valign-wrapper">
+                                <img src="images/logo-istts.png" alt="noimg" class="circle">
+                                <span>
+                                    Nama Resource 2
+                                    <p>Harga Resource 2</p>
+                                </span>
+                            </li>
+                            <li class="collection-item avatar valign-wrapper">
+                                <img src="images/logo-istts.png" alt="noimg" class="circle">
+                                <span>
+                                    Nama Resource 3
+                                    <p>Harga Resource 3</p>
+                                </span>
+                            </li>
+                            <li class="collection-item avatar valign-wrapper">
+                                <img src="images/logo-istts.png" alt="noimg" class="circle">
+                                <span>
+                                    Nama Resource 4
+                                    <p>Harga Resource 4</p>
+                                </span>
+                            </li>
+                            <li class="collection-item avatar valign-wrapper">
+                                <img src="images/logo-istts.png" alt="noimg" class="circle">
+                                <span>
+                                    Nama Resource 5
+                                    <p>Harga Resource 5</p>
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col s6">
+                        <span class="card-title">Items</span>
+                        <ul class="collection" id='isiProduct'>
+                            <li class="collection-item avatar valign-wrapper">
+                                <img src="images/logo-istts.png" alt="noimg" class="circle">
+                                <span>
+                                    Nama Item 1
+                                    <p>Harga Item 1</p>
+                                </span>
+                            </li>
+                            <li class="collection-item avatar valign-wrapper">
+                                <img src="images/logo-istts.png" alt="noimg" class="circle">
+                                <span>
+                                    Nama Item 2
+                                    <p>Harga Item 2</p>
+                                </span>
+                            </li>
+                            <li class="collection-item avatar valign-wrapper">
+                                <img src="images/logo-istts.png" alt="noimg" class="circle">
+                                <span>
+                                    Nama Item 3
+                                    <p>Harga Item 3</p>
+                                </span>
+                            </li>
+                            <li class="collection-item avatar valign-wrapper">
+                                <img src="images/logo-istts.png" alt="noimg" class="circle">
+                                <span>
+                                    Nama Item 4
+                                    <p>Harga Item 4</p>
+                                </span>
+                            </li>
+                            <li class="collection-item avatar valign-wrapper">
+                                <img src="images/logo-istts.png" alt="noimg" class="circle">
+                                <span>
+                                    Nama Item 5
+                                    <p>Harga Item 5</p>
+                                </span>
+                            </li>
+                        </ul>  
+                    </div>
+                </div>
+                
+                <!-- ITEM -->
+                
+            </div>
+            <div class="card-action">
+                <Button class="btn waves-effect" onclick="ShowSelectTeams()"><i class="material-icons left">arrow_back</i>Back</Button>
+            </div>
+        </div>
+    </div>
+    <!-- <footer class='container'>
+        <div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/"     title="Flaticon">www.flaticon.com</a> messages.attribution.is_licensed_by <a href="http://creativecommons.org/licenses/by/3.0/"     title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
+<div>Icons made by <a href="https://www.flaticon.com/authors/srip" title="srip">srip</a> from <a href="https://www.flaticon.com/"     title="Flaticon">www.flaticon.com</a> messages.attribution.is_licensed_by <a href="http://creativecommons.org/licenses/by/3.0/"     title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
+<div>Icons made by <a href="https://www.flaticon.com/authors/prettycons" title="prettycons">prettycons</a> from <a href="https://www.flaticon.com/"     title="Flaticon">www.flaticon.com</a> messages.attribution.is_licensed_by <a href="http://creativecommons.org/licenses/by/3.0/"     title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
+<div>Icons made by <a href="https://www.flaticon.com/authors/smashicons" title="Smashicons">Smashicons</a> from <a href="https://www.flaticon.com/"     title="Flaticon">www.flaticon.com</a> messages.attribution.is_licensed_by <a href="http://creativecommons.org/licenses/by/3.0/"     title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
+<div>Icons made by <a href="https://www.flaticon.com/authors/flat-icons" title="Flat Icons">Flat Icons</a> from <a href="https://www.flaticon.com/"     title="Flaticon">www.flaticon.com</a> messages.attribution.is_licensed_by <a href="http://creativecommons.org/licenses/by/3.0/"     title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
+<div>Icons made by <a href="https://www.flaticon.com/authors/nikita-golubev" title="Nikita Golubev">Nikita Golubev</a> from <a href="https://www.flaticon.com/"     title="Flaticon">www.flaticon.com</a> messages.attribution.is_licensed_by <a href="http://creativecommons.org/licenses/by/3.0/"     title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
+<div>Icons made by <a href="https://www.flaticon.com/authors/photo3idea-studio" title="photo3idea_studio">photo3idea_studio</a> from <a href="https://www.flaticon.com/"     title="Flaticon">www.flaticon.com</a> messages.attribution.is_licensed_by <a href="http://creativecommons.org/licenses/by/3.0/"     title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
+    </footer> -->
+</body>
+<script>
+
+    // Function Show Select Teams
+    function ShowSelectTeams()
+    {
+        $("#cardSelectTeam").show();
+        $("#cardStatistics").hide();
+    }
+
+    // Function Show Statistics
+    function ShowStatistics()
+    {
+        $("#cardSelectTeam").hide();
+        var labelRegu = document.querySelector('#namaRegu');
+        var labelUang = document.querySelector('#uangRegu');
+        var comboBoxTeams = document.querySelector('#comboBoxTeams');
+        var elem = comboBoxTeams.options[comboBoxTeams.selectedIndex];
+        labelRegu.textContent = elem.textContent;
+        labelUang.textContent = elem.getAttribute('money');
+        var resourceTim = firebase.firestore().collection('teams').doc(labelRegu.textContent.toLocaleLowerCase());
+        var dataTim = {};
+        resourceTim.onSnapshot(
+            function (doc){
+                dataTim = doc.data();
+                res = dataTim.resource;
+
+                for (const key in res) {
+                    if (res.hasOwnProperty(key)) {
+                        document.querySelector(`#jumlah${key}`).innerHTML = res[key];
+                    }
+                }
+                
+        });
+        
+        $("#cardStatistics").show();
+    }
+
+    function loadNama(elemen, dbref){
+        dbref.get().then((snapshot)=>{
+            elemen.innerHTML = "";
+            snapshot.forEach((rows)=>{
+                elemen.innerHTML += `<li class="collection-item avatar valign-wrapper">
+                        <img src="images/${rows.data().nama.toLowerCase()}.png" alt="noimg" class="circle">
+                        <span>
+                            ${rows.data().nama}
+                            <p id='jumlah${rows.data().nama}'>0</p>
+                        </span>
+                    </li>`;
+            });
+        });
+    }
+
+    var db;
+    document.addEventListener('DOMContentLoaded', ()=>{
+        db = firebase.firestore();
+        var teamRef = db.collection('teams');
+
+        teamRef.get().then((snapshot)=>{
+            var select = document.querySelector('#comboBoxTeams');
+            snapshot.forEach((docs)=>{
+                // console.log('docs', docs); 
+                // console.log('id', docs.id); 
+                // console.log('data', docs.data());
+                let temp = docs.id.charAt(0).toUpperCase()+docs.id.slice(1);
+                var opt = `<option value='${docs.id}' `;
+                for (let i in docs.data()){
+                    opt += ` ${i} = '${docs.data()[i]}' `;
+                }
+                opt += `>${temp}</option>`;
+                select.innerHTML += opt;
+            });
+        }).finally(
+            ()=>{ M.AutoInit(); }
+        );
+
+        var isiResource = document.querySelector('#isiResource');
+        var isiProduct = document.querySelector('#isiProduct');
+
+        var resourceRef = db.collection('resource');
+        var productRef = db.collection('product');
+
+        loadNama(isiResource, resourceRef);
+        loadNama(isiProduct, productRef);
+        
+    });
+</script>
+</html>

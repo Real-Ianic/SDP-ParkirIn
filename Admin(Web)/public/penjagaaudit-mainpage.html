@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Welcome to Firebase Hosting</title>
+
+    <!-- update the version number as needed -->
+    <script defer src="/__/firebase/6.0.2/firebase-app.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/6.0.2/firebase-auth.js"></script>
+    <script defer src="/__/firebase/6.0.2/firebase-firestore.js"></script>
+    <script defer src="/__/firebase/6.0.2/firebase-messaging.js"></script>
+    <script defer src="/__/firebase/6.0.2/firebase-storage.js"></script>
+    <!-- initialize the SDK after all desired features are loaded -->
+    <script defer src="/__/firebase/init.js"></script>
+    
+    <!-- ini deklarasi jQuery     -->
+    <script src="scripts/jquery.min.js"></script>
+
+    <!-- // MATERIALIZE JS DAN CSS \\ -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="materialize/css/materialize.min.css">
+    <script src="materialize/js/materialize.min.js"></script>
+
+    <script defer src="scripts/changePage.js"></script>
+    <script defer src="scripts/check_login.js"></script>
+    
+    <style media="screen">
+      body { background: #000000; color: rgba(0,0,0,0.87); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
+      #message { background: white; max-width: 360px; margin: 100px auto 16px; padding: 32px 24px 16px; border-radius: 3px; }
+      #message h3 { color: #888; font-weight: normal; font-size: 16px; margin: 16px 0 12px; }
+      #message h2 { color: rgba(0,0,0,0.6); font-weight: bold; font-size: 16px; margin: 0 0 8px; }
+      #message h1 { font-size: 22px; font-weight: 300; color: #ffa100; margin: 0 0 16px;}
+      #message p { line-height: 140%; margin: 16px 0 24px; font-size: 14px; }
+      #message a { display: block; text-align: center; background: #039be5; text-transform: uppercase; text-decoration: none; color: white; padding: 16px; border-radius: 4px; }
+      #message, #message a { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); }
+      #load { color: rgba(0,0,0,0.4); text-align: center; font-size: 13px; }
+      .col.s12 > .btn 
+      {
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    
+    <nav class="grey lighten-1">
+        <div class="nav-wrapper">
+          <a href="#!" class="brand-logo black-text">PSI 2019</a>
+          <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+          <ul class="right hide-on-med-and-down">
+            <li><a href="#" class="black-text gotoBeli">Beli</a></li>
+            <li><a href="#" class="black-text gotoJual">Jual</a></li>
+            <li><a href="#" class="black-text gotoCraft">Craft</a></li>
+            <li><a href="#" class="black-text gotoTrade">Trade</a></li>
+            <li><a href="#" class="black-text gotoCekStatus">Cek Status</a></li>
+            <!-- <li><a href="#">Mobile</a></li> -->
+          </ul>
+        </div>
+    
+        <ul class="sidenav" id="mobile-demo">
+            <li><a href="#" class="black-text gotoBeli">Beli</a></li>
+            <li><a href="#" class="black-text gotoJual">Jual</a></li>
+            <li><a href="#" class="black-text gotoCraft">Craft</a></li>
+            <li><a href="#" class="black-text gotoTrade">Trade</a></li>
+            <li><a href="#" class="black-text gotoCekStatus">Cek Status</a></li>
+        </ul>
+    </nav>
+        
+    <div id="message">
+      <div id="load"></div>
+      <h1>Navigation</h1>
+      <div class="row">
+        <div class="col s12">
+            <button class="btn waves-effect waves-light gotoBeli" id="btn_beli">Goto Beli Page</button>
+        </div>
+        <br><br>
+        <div class="col s12">
+            <button class="btn waves-effect waves-light gotoCekStatus" id="btn_cek_status">Goto Cek Status Page</button>
+        </div>
+        <br><br>
+        <div class="col s12">
+            <button class="btn waves-effect waves-light gotoCraft" id="btn_craft">Goto Craft Page</button>
+        </div>
+        <br><br>
+        <div class="col s12">
+            <button class="btn waves-effect waves-light gotoJual" id="btn_jual">Goto Jual Page</button>
+        </div>
+        <br><br>
+        <div class="col s12">
+            <button class="btn waves-effect waves-light gotoTrade" id="btn_trade">Goto Trade Page</button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        M.AutoInit();
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Master User</title>
+
+    <!-- update the version number as needed -->
+    <script defer src="/__/firebase/6.0.2/firebase-app.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/6.0.2/firebase-auth.js"></script>
+    <script defer src="/__/firebase/6.0.2/firebase-firestore.js"></script>
+    <script defer src="/__/firebase/6.0.2/firebase-messaging.js"></script>
+    <script defer src="/__/firebase/6.0.2/firebase-storage.js"></script>
+    <!-- initialize the SDK after all desired features are loaded -->
+    <script defer src="/__/firebase/init.js"></script>
+    
+    <!-- ini deklarasi jQuery     -->
+    <script defer src="scripts/jquery.min.js"></script>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="materialize/css/materialize.min.css">
+    <script src="materialize/js/materialize.min.js"></script>
+    <script defer src="scripts/changePage.js"></script>
+    <script defer src="scripts/check_login.js"></script>
+    
+    <script defer src="scripts/master-user.js"></script>
+    
+
+    <!-- ini css jadi jadian yaa -->
+    <style media="screen">
+        /* CUSTOM CSS OVERRIDE MATERIALIZE */
+        .dropdown-content li>span {
+            color: #212121;
+        }
+    </style>
+    
+  </head>
+  <body>
+    
+    <!-- NAVBAR -->
+    <nav class="grey lighten-1">
+        <div class="nav-wrapper">
+            <a href="#" class="brand-logo black-text gotoMasterMainPage">PSI 2019</a>
+            <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+            <ul class="right hide-on-med-and-down">
+            <li><a href="#" class="black-text gotoMasterUser">Master User</a></li>
+            <li><a href="#" class="black-text gotoMasterRegu">Master Regu</a></li>
+            <li><a href="#" class="black-text gotoMasterResources">Master Resource</a></li>
+            <!-- <li><a href="#">Mobile</a></li> -->
+            </ul>
+        </div>
+    
+        <ul class="sidenav" id="mobile-demo">
+            <li><a href="#" class="black-text gotoMasterUser">Master User</a></li>
+            <li><a href="#" class="black-text gotoMasterRegu">Master Regu</a></li>
+            <li><a href="#" class="black-text gotoMasterResources">Master Resource</a></li>
+        </ul>
+    </nav>
+      
+      <div class="container">
+        <div class="card hoverable" id="cardMasterUsers">
+            <div class="card-content" id="contentMasterUsers">
+                <span class="card-title">Users</span>
+                <table class='table striped responsive-table highlight'>
+                    <thead>
+                        <tr>
+                            <th>Email</th>
+                            <th>Role</th>
+                            <th>Pos</th>
+                        </tr>
+                    </thead>
+                    <tbody id='body_table_users'>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Add User Card -->
+        <div class="card">
+          <div class="card-content">
+            <span class="card-title">Add User</span>
+            <div class="row">
+                <div class="input-field col s4">
+                  <input type="email" class="validate" name="emailInput" id="emailInput">
+                  <label for="emailInput">Email</label>
+                </div>
+                <div class="input-field col s4">
+                    <select id="roleInput">
+                      <option value="" disabled selected>Choose your option</option>
+                      <option value="master">Master</option>
+                      <option value="penjaga pos minigame">Penjaga Pos Minigame</option>
+                      <option value="penjaga auditorium">Penjaga Auditorium</option>
+                    </select>
+                </div>
+                <div class="input-field col s4">
+                  <input type="text" name="posInput" id="posInput">
+                  <label for="posInput">Pos</label>
+                </div>
+                <button class='btn waves-effect' id="adduserBtn" onclick="add_user()">Add User</button>
+            </div>
+          </div>
+        </div>
+      </div>
+  </body>
+</html>

@@ -1,0 +1,57 @@
+jual.html
+
+>load semua resource yang dimiliki team dan list harga (ongoing dan masih error) 
+--> udah bisa load resources dan bisa tampil - Ivan 11 Jul 19
+--> tinggal ganti jd load product n kalau memungkinan optimisasi koding ngeloadnya (bukan deklarasi variabel 1-1)
+>buat event onchange dari numericupdownpicker untuk penggantian subtotal (ga tau numericupdownpicker nya apa idnya)
+>buat event button jual
+
+Notes : 
+>Jangan lupa untuk resource dengan property forSale = false harga dibuat 0
+
+>ga tau kenapa id="tabelResource" ga tampil setelah diisi htmlnya
+
+======================================================================
+
+penjagapos-mainpage.html
+
+>style masih bingung, dikarenakan ada yang solo dan ada yang battle (mungkin dibedakan jadi 2 page? dipertimbangkan dulu)
+
+Rencana :
+>Semua pos jadi 1 page, prizelist diambil dari tabel sesuai dari pos user
+
+Notes :
+>Bisa Menang/Seri/Kalah
+>Hadiah ada 3 jenis ==> Hadiah 1 / 2 / 3
+
+======================================================================
+
+untuk semua mainpage.html 
+
+>page terlalu kosong, mungkin diisi sesuatu selain navbarnya ? (kecuali penjaga pos)
+
+Notes :
+> Jangan lupa buat tambah logout button
+
+======================================================================
+
+buat master yang belum dibuat tapi ga penting (lebih baik diganti di database)
+> prizelist pos
+
+======================================================================
+page yang belum dibuat :
+
+>historybackend.html
+ Rencana :
+	> semua termasuk login, beli, jual, craft, (mungkin penggantian isi database, masih dipertimbangkan)
+
+
+>historypos.html
+ Rencana : 
+	> semua termasuk ketika suatu tim mendapatkan poin, user mana yang memberi kan
+ =====================================================================
+
+untuk semua page
+
+Notes :
+> Beri pengecekan untuk cek role user sekarang (anti tembak page) dan pasang terakhir saja tulong daripada stres dewe ntik nge debug

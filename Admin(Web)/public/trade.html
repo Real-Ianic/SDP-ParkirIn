@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>PSI 2019</title>
+    <!-- update the version number as needed -->
+    <script defer src="/__/firebase/6.0.2/firebase-app.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/6.0.2/firebase-auth.js"></script>
+    <script defer src="/__/firebase/6.0.2/firebase-firestore.js"></script>
+    <script defer src="/__/firebase/6.0.2/firebase-messaging.js"></script>
+    <script defer src="/__/firebase/6.0.2/firebase-storage.js"></script>
+    <!-- initialize the SDK after all desired features are loaded -->
+    <script defer src="/__/firebase/init.js"></script>
+
+    <!-- ini deklarasi jQuery
+        kalau butuh lib lain, masukin dibawah comment ini
+        jangan lupa pake defer (script d load setelah DOM selesai di load)
+    -->
+    <script defer src="scripts/jquery.min.js"></script>
+
+    <!-- link file JS disini
+        <script defer src="scripts/namascriptmudisini.js"></script> 
+    -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="materialize/css/materialize.min.css">
+    <script defer src="materialize/js/materialize.min.js"></script>
+    <script defer src="scripts/changePage.js"></script>
+    <script defer src="scripts/check_login.js"></script>
+    <script defer src="scripts/trade.js"></script>
+
+
+    <!-- ini css jadi jadian yaa -->
+    <style media="screen">
+        /* CUSTOM CSS OVERRIDE MATERIALIZE */
+        .dropdown-content li>span {
+            color: #212121;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- CONTAINER -->
+    <div class="container">
+
+        <!-- ROW INPUTS -->
+        <div class="row" id="row_inputs" hidden>
+
+            <div class="col s6">
+                <!-- CARD INPUT TEAM1 -->
+                <div class="card hoverable">
+                    <div class="card-content">
+    
+                        <span class="card-title" id="nama_team1"></span>
+    
+                        <select id="comboBoxResource1">
+                        </select>
+                        <input type="number" min='0' id="numericResource1">
+                        <button class="btn waves-effect" onclick="additem('additem1')" id="additem1">Add Item</button><br>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col s6">
+                <!-- CARD INPUT TEAM 2 -->
+                <div class="card hoverable">
+                    <div class="card-content">
+    
+                        <span class="card-title" id="nama_team2"></span>
+    
+                        <select id="comboBoxResource2">
+                        </select>
+                        <input type="number" min='0' id="numericResource2">
+                        <button class="btn waves-effect" onclick="additem('additem2')" id="additem2">Add Item</button><br>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ROW STATUS -->
+        <div class="row" id="row_status" hidden>
+
+            <div class="col s6">
+                <!-- CARD STATUS TEAM 1 -->
+                <div class="card hoverable">
+                    <div class="card-content">
+                        <span class="card-title">Current Stats</span>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Item Name</th>
+                                    <th>Quantity</th>
+                                </tr>
+                            </thead>
+                    
+                            <tbody id="listResource1">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col s6">
+                <!-- CARD RESOURCE TEAM 2 -->
+                <div class="card hoverable">
+                    <div class="card-content">
+                        <span class="card-title">Current Stats</span>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Item Name</th>
+                                    <th>Quantity</th>
+                                </tr>
+                            </thead>
+                    
+                            <tbody id="listResource2">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CART TRADE -->
+        <div class="row" id="row_cart" hidden>
+
+            <div class="col s6">
+                <!-- CARD CART TEAM 1 -->
+                <div class="card hoverable">
+                    <div class="card-content">
+                        <span class="card-title">Items to be Traded</span>
+                        
+                        <ul class="collection" id="collection1">
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col s6">
+                <!-- CARD CART TEAM 2 -->
+                <div class="card hoverable">
+                    <div class="card-content">
+
+                        <span class="card-title">Items to be Traded</span>
+    
+                    <ul class="collection" id="collection2">
+                    </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CARD BUTTONS -->
+        <div class="row" id="row_buttons" hidden>
+            <div class="card">
+                <div class="card-content center-align">
+                    <button class="btn waves-effect btn-large" id="tradeButton" onclick=tradeButton()>TRADE</button>
+                    <button class="btn waves-effect  btn-large red" id="cancelButton" onclick=reset_page()>CANCEL</button>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+
+    <!-- CONTAINER -->
+    <div class="container row">
+        <div class="col s6">
+            <div class="card hoverable" id ="selectTeam1">
+                <div class="card-content">
+
+                    <span class="card-title">Teams</span>
+
+                    <!-- PRELOADER -->
+                    <div class="progress loadingTeams">
+                        <div class="indeterminate"></div>
+                    </div>
+                    
+                    <!-- COMBOBOX TEAMS -->
+                    <select name="selectTeam" id="comboBoxTeams1">
+                        <optgroup label="Teams" class="groupTeams">
+                        </optgroup>
+                        <optgroup label="Admin" class="groupAdmin">
+                        </optgroup>
+                    </select>
+
+                    <button class="btn waves-effect" id="button_ok_kiri" onclick="button_ready('button_ok_kiri')">Ready</button>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="col s6">
+            <div class="card hoverable">
+                <div class="card-content" id ="selectTeam2">
+
+                    <span class="card-title">Teams</span>
+
+                    <!-- PRELOADER -->
+                    <div class="progress loadingTeams">
+                        <div class="indeterminate"></div>
+                    </div>
+            
+                    <!-- COMBOBOX TEAMS -->
+                    <select name="selectTeam" id="comboBoxTeams2">
+                        <optgroup label="Teams" class="groupTeams">
+                        </optgroup>
+                        <optgroup label="Admin" class="groupAdmin">
+                        </optgroup>
+                    </select>
+
+                    <button class="btn waves-effect" id="button_ok_kanan" onclick="button_ready('button_ok_kanan')">Ready</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
