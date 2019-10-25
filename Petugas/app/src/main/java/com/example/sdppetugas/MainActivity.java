@@ -2,19 +2,26 @@ package com.example.sdppetugas;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
+import android.app.ActionBar;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
+import android.text.Layout;
 import android.text.TextWatcher;
+import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.PopupWindow;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -26,12 +33,14 @@ public class MainActivity extends AppCompatActivity {
     ArrayAdapter<String> infoAdapter;
     EditText etSearch;
     TextWatcher twSearch;
+    ConstraintLayout mConstraintLayout;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         lvKendaraan = findViewById(R.id.lvKendaraan);
         etSearch = findViewById(R.id.etSearch);
+        mConstraintLayout = (ConstraintLayout) findViewById(R.id.cl);
         arrInfo =  new ArrayList<String>();
         arrOnGoing = new ArrayList<String>();
         arrPlat = new ArrayList<String>();
@@ -110,7 +119,7 @@ public class MainActivity extends AppCompatActivity {
             startActivity(i);
         }
         else if(item.getItemId()==R.id.optLogout){
-            Intent i = new Intent(this,LoginActivity.class);
+            Intent i = new Intent(MainActivity.this,LoginActivity.class);
             finish();
             startActivity(i);
         }
