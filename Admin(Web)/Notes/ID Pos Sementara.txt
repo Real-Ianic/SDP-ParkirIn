@@ -1,0 +1,10 @@
+Burger Builder > BB
+Math Genius > MG
+Kartu24 > K24
+Kumpul Kelereng > KK
+Tower of Hanoi > TH
+Blindfold Rubik > BR
+KnightTour > KT
+Tangram > TG
+Memory Tes> MT
+Blind Tictactoe > BT

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>PSI 2019</title>
+    <!-- update the version number as needed -->
+    <script defer src="/__/firebase/6.0.2/firebase-app.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/6.0.2/firebase-auth.js"></script>
+    <script defer src="/__/firebase/6.0.2/firebase-firestore.js"></script>
+    <script defer src="/__/firebase/6.0.2/firebase-messaging.js"></script>
+    <script defer src="/__/firebase/6.0.2/firebase-storage.js"></script>
+    <!-- initialize the SDK after all desired features are loaded -->
+    <script defer src="/__/firebase/init.js"></script>
+
+    <!-- ini deklarasi jQuery
+        kalau butuh lib lain, masukin dibawah comment ini
+        jangan lupa pake defer (script d load setelah DOM selesai di load)
+    -->
+    <script defer src="scripts/jquery.min.js"></script>
+
+    <!-- link file JS disini
+        <script defer src="scripts/namascriptmudisini.js"></script> 
+    -->
+    <script defer src="scripts/check_login.js"></script>
+    <script defer src="scripts/jual.js"></script>
+
+    <!-- // MATERIALIZE JS DAN CSS \\ -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="materialize/css/materialize.min.css">
+    <script src="materialize/js/materialize.min.js"></script>
+
+    <style media="screen">
+        /* CUSTOM CSS OVERRIDE MATERIALIZE */
+        .dropdown-content li>span {
+            color: #212121;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- SELECT TEAM -->
+        <div class="card" id="cardSelectTeam">
+            <div class="card-content">
+                <span class="card-title">Teams</span>
+                <div class="input-field">
+                    <select name="" id="comboBoxTeams">
+                        <option value="" disabled selected>Select Team</option>
+                        <optgroup label="Teams" id="groupTeams">
+                        </optgroup>
+                        <optgroup label="Admin" id="groupAdmin">
+                        </optgroup>
+                    </select>
+                    <button class="btn waves-effect" id="btnSelectTeam" onclick="ShowSellCard(),btnSelectTeam()"><i class="material-icons right">arrow_forward</i>Next</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- SELL CARD -->
+        <div class="card" id="cardSellItem" hidden>
+            <div class="card-content">
+                <h4 class='center-align'>Market</h4>
+                
+                <!-- MONEY -->
+                <span class="card-title">
+                    <span id="namaTeam"></span>
+                    <span id="textMoney">Money: 1000</span>
+
+                </span> 
+
+                <!-- TABLE LIST ITEM -->
+                <span class="card-title" id="textItems">Items: </span>
+
+                <table class="table responsive-table highlight" id="tableProduct">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Item</th>
+                            <th>Price</th>
+                            <th>Owned</th>
+                            <th>Quantity</th>
+                            <th>Subtotal</th>
+                        </tr>
+                    </thead>
+                    <tbody id="bodyTableProduct">
+
+                    </tbody>
+                </table>
+
+                <!-- BUTTONS -->
+                <div class="card-action">
+                    <Button class="btn waves-effect red" onclick="ShowSelectTeams()"><i class="material-icons left">arrow_back</i>Back</Button>
+                    <Button class="btn waves-effect modal-trigger" data-target="modalConfirmation" id="buttonBuy" onclick="fill()"><i class="material-icons left">local_atm</i>Sell</Button>
+                </div>
+            </div>
+        </div>
+
+        <!-- MODAL CONFIRMATION -->
+        <div class="modal modal-fixed-footer" id="modalConfirmation">
+            <div class="modal-content">
+                <h4>Confirmation</h4>
+                <p>Konfirmasi Penjualan ?</p>
+
+                <!-- TABLE CONFIRMATION -->
+                <table class="table-responsive stripped" id="tableConfirmation">
+                    <thead>
+                        <tr>
+                            <td>Item</td>
+                            <td>Harga</td>
+                            <td>Quantity</td>
+                            <td>Subtotal</td>
+                        </tr>
+                    </thead>
+                    <tbody id="tabelResource">
+                        <tr>
+                            <td>Item 1</td>
+                            <td>1000</td>
+                            <td>10</td>
+                            <td>10000</td>
+                        </tr>
+                        <tr>
+                            <td>Item 2</td>
+                            <td>1000</td>
+                            <td>10</td>
+                            <td>10000</td>
+                        </tr>
+                        <tr>
+                            <td>Item 3</td>
+                            <td>1000</td>
+                            <td>10</td>
+                            <td>10000</td>
+                        </tr>
+                        <tr>
+                            <td>Item 4</td>
+                            <td>1000</td>
+                            <td>10</td>
+                            <td>10000</td>
+                        </tr>
+                        <tr>
+                            <td>Item 5</td>
+                            <td>1000</td>
+                            <td>10</td>
+                            <td>10000</td>
+                        </tr>
+                    </tbody>
+                </table>
+                Total : <span id="total">0</span>
+            </div>
+            <!-- FOOTER MODAL -->
+            <div class="modal-footer">
+                <!-- BUTTON KONFIRMASI YESNO -->
+                <button class="modal-close btn red">CANCEL</button>
+                <button class="modal-close btn green" onclick="finalize()">OK</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>PSI 2019</title>
+    <!-- update the version number as needed -->
+    <script defer src="/__/firebase/6.0.2/firebase-app.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/6.0.2/firebase-auth.js"></script>
+    <script defer src="/__/firebase/6.0.2/firebase-firestore.js"></script>
+    <script defer src="/__/firebase/6.0.2/firebase-messaging.js"></script>
+    <script defer src="/__/firebase/6.0.2/firebase-storage.js"></script>
+    <!-- initialize the SDK after all desired features are loaded -->
+    <script defer src="/__/firebase/init.js"></script>
+
+    <script defer src="scripts/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="materialize/css/materialize.min.css">
+    <script defer src="materialize/js/materialize.min.js"></script>
+    <script defer src="scripts/changePage.js"></script>
+    <script defer src="scripts/check_login.js"></script>
+
+    <script defer src="scripts/master-resource.js"></script>
+
+    <!-- ini css jadi jadian yaa -->
+    <style media="screen">
+        /* CUSTOM CSS OVERRIDE MATERIALIZE */
+        .dropdown-content li>span {
+            color: #212121;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="grey lighten-1">
+        <div class="nav-wrapper">
+            <a href="#" class="brand-logo black-text gotoMasterMainPage">PSI 2019</a>
+            <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+            <ul class="right hide-on-med-and-down">
+            <li><a href="#" class="black-text gotoMasterUser">Master User</a></li>
+            <li><a href="#" class="black-text gotoMasterRegu">Master Regu</a></li>
+            <li><a href="#" class="black-text gotoMasterResources">Master Resource</a></li>
+            <!-- <li><a href="#">Mobile</a></li> -->
+            </ul>
+        </div>
+    
+        <ul class="sidenav" id="mobile-demo">
+            <li><a href="#" class="black-text gotoMasterUser">Master User</a></li>
+            <li><a href="#" class="black-text gotoMasterRegu">Master Regu</a></li>
+            <li><a href="#" class="black-text gotoMasterResources">Master Resource</a></li>
+        </ul>
+    </nav>
+
+
+    <div class="container">
+        <!-- CARD RESOURCE -->
+        <div class="card hoverable" id="cardMasterResource">
+            <div class="card-content" id="contentMasterResource">
+                <span class="card-title">Resources</span>
+                <table class='table striped responsive-table highlight' id="tableResource">
+                    <thead>
+                        <tr>
+                            <td>ID</td>
+                            <td>Nama</td>
+                            <td>Harga Jual</td>
+                            <td>Multiplier</td>
+                            <td>On Sale</td>
+                            <td>Current Stock</td>
+                            <td>Action</td>
+                        </tr>
+                    </thead>
+                    <tbody id='isiResources'>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- CARD MASTER ITEM -->
+        <div class="card hoverable">
+            <div class="card-content"><span class="card-title">Item</span>
+                <table class='table striped responsive-table highlight' id="tableItem">
+                    <thead>
+                        <tr>
+                            <td>ID</td>
+                            <td>Nama</td>
+                            <td>Harga Beli</td>
+                            <td>Multiplier</td>
+                            <td>Action</td>
+                        </tr>
+                    </thead>
+                    <tbody id='isiProduct'></tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- CARD ADD RESOURCE -->
+        <div class="card hoverable">
+            <div class="card-content">
+                <span class="card-title">Add Resource</span>
+                <!-- FORM INPUT RESOURCE -->
+                <form id='inputs' action="#">
+                    <div>Nama Resource : <input type="text" id="namaRes"></div>
+                    <div>Jenis : <div class="input-field"> <select id="jenisRes"> <option selected disabled>PILIH DULU</option> <option value="rawmat">Material</option> <option value="product">Barang Jadi</option> </select> </div> </div>
+                    <div id='munculKalauProduct'>
+                        Recipe : 
+                        <div>
+                            <div id='appendHere'>
+                                <div class='row'><div class='col s6'><input type="text" id='bahan1' placeholder='Nama Resource'></div> <div class="col s6"><input type="number" placeholder='Jumlah' id='jumlah1' min=0 ></div></div>
+                            </div>
+                            <button class='btn' id='addBahan'>Add</button>
+                            <button class='btn red' id='removeBahan'>Remove</button>
+                            <button class='btn red' id='clearAll'>Clear All</button>
+                        </div>
+                    </div>
+                    <div>Price : <input type="number" id='hargaJual'></div>
+                    <div>Stock : <input type="number" id="inputStok"></div>
+                    <!-- <div>Image : <input type="file" id="gbrRes"></div> -->
+                    <div><button id="insertRes" class='btn'>Insert</button></div>
+                </form>
+            </div>
+        </div>
+
+        <div class="row" id="row_buttons">
+            <div class="card">
+                <div class="card-content center-align">
+                    <Button class="btn waves-effect red gotoMasterMainPage"><i class="material-icons left">arrow_back</i>Back</Button>
+                    <button class='btn' onclick="start()">Start</button>
+                    <button class='btn' onclick='full()'>Refill to full</button>
+                    <button class='btn' onclick="rounds()">Refill (per round)</button>
+                </div>
+            </div>
+        </div>
+        
+    </div>    
+</body>
+</html>
