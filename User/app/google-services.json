@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "633338955694",
+    "firebase_url": "https://parkirin-160fb.firebaseio.com",
+    "project_id": "parkirin-160fb",
+    "storage_bucket": "parkirin-160fb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:633338955694:android:7b01ea25ae744829a72a3f",
+        "android_client_info": {
+          "package_name": "com.example.parkirin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "633338955694-q8l3aebjcidti97lghd5gad69tce0pc5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.parkirin",
+            "certificate_hash": "f521ca9e3702ef6d499cba4d82b3efff9050168c"
+          }
+        },
+        {
+          "client_id": "633338955694-tkr1u09tc3chvndd7fv7qj5k8jhjk85n.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD39Sv1XqO24CaV_K5_HDgPaRG_Y8utDGE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "633338955694-tkr1u09tc3chvndd7fv7qj5k8jhjk85n.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
