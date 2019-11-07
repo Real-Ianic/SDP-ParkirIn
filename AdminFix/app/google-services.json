@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "98894363535",
+    "firebase_url": "https://adminfix-9d248.firebaseio.com",
+    "project_id": "adminfix-9d248",
+    "storage_bucket": "adminfix-9d248.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:98894363535:android:043e3002ed9ac4eb97e9fa",
+        "android_client_info": {
+          "package_name": "com.example.adminfix"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "98894363535-8hslsef7ssh0605inmhsl3fgu0k45fet.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.adminfix",
+            "certificate_hash": "f521ca9e3702ef6d499cba4d82b3efff9050168c"
+          }
+        },
+        {
+          "client_id": "98894363535-vnkfu9oq8v8j2uj1d17qb4o2pk1iaeru.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCRsXWFt6moL6QjDqkAsTR-32eOpwhVXhg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "98894363535-vnkfu9oq8v8j2uj1d17qb4o2pk1iaeru.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
