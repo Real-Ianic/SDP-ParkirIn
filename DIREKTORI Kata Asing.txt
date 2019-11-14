@@ -1,0 +1,109 @@
+LIST KATA ASING
+
+
+BAB 1 
+hardware, Hal 4, Pendahuluan, Paragraf 1, Kalimat 4
+software, Hal 4, Pendahuluan, Paragraf 1, Kalimat 4
+mall, Hal 4
+
+user, Hal 6, Ruang Lingkup, Paragraf 2, Poin 2
+
+smartphone, Hal 5, Tujuan, Paragraf 1, Poin 1
+
+Iterative Waterfall, Hal 8, Metodelogi, Paragraf 1, Kalimat 1
+sequential, Hal 8, Metodelogi , Paragraf 1, Kalimat 2
+feedback, Hal 8, Metodelogi , Paragraf 1, Kalimat 3
+
+gigabyte, hal 7, hardware, paragraf 1, poin 1
+ram, hal 7, hardware, paragraf 1, poin 1	
+monitor, hal 7, hardware, paragraf 1, poin 2
+
+BAB 2
+front end
+back end 
+layout 
+device
+mobile device programming
+database
+
+2.1 frontend
+interface 
+website
+experience
+keyboard
+mouse
+LINEAR
+gravity 
+RELATIVE
+widget
+layer
+CONSTRAINT
+view
+parent
+FRAME
+button 
+TextView
+Table 
+Row
+Column
+
+anchor point 
+helper
+Editor
+EditText
+Spinner
+ListView
+Fragment
+
+2.2 backend
+tablet
+e-reader
+debug
+Model-View-Controller
+Viewers 
+Object Oriented Programming
+Server Side 
+Thin Client
+Mixed Client Side and Server Side 
+Rich Internet Application 
+Integrated Development Environment 
+Compiler
+Linker
+preview 
+
+
+2.2.3 database
+Speed
+Space
+Accuracy
+Security
+Consistant
+shared
+Standardization
+Remote Config 
+Realtime 
+startup 
+
+2.2.4
+Application 
+system calls 
+editing 
+
+
+bab 3
+
+3.3
+cashless 
+
+
+
+
+
+
+
+
+
+
+
+
+
