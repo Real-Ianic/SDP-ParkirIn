@@ -18,40 +18,21 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp">
-            <EditText android:id="@+id/namaLokasi"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:backgroundTint="@android:color/holo_blue_light"
-                android:hint="Nama Lokasi" />
-        </LinearLayout>
+            android:layout_marginBottom="8dp"/>
 
         <!-- Email Label -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp">
-            <EditText android:id="@+id/alamatLokasi"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:backgroundTint="@android:color/holo_blue_light"
-                android:hint="Alamat" />
-        </LinearLayout>
+            android:layout_marginBottom="8dp"/>
 
         <!-- Password Label -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp">
-            <EditText android:id="@+id/jumlahSlot"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="number"
-                android:backgroundTint="@android:color/holo_blue_light"
-                android:hint="Slot"/>
-        </LinearLayout>
+            android:layout_marginBottom="8dp"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -66,14 +47,6 @@
         </LinearLayout>
 
         <!-- Signup Button -->
-        <Button
-            android:id="@+id/btnTambahLokasi"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:backgroundTint="@android:color/holo_blue_light"
-            android:textColor="@android:color/white"
-            android:text="Tambah Lokasi"/>
         <Button
             android:id="@+id/btnCancel"
             android:layout_width="fill_parent"
