@@ -9,9 +9,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".AddLokasiActivity" android:parentActivityName=".LokasiActivity"></activity>
-        <activity android:name=".LokasiActivity" android:parentActivityName=".HomeActivity"/>
-        <activity android:name=".HomeActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

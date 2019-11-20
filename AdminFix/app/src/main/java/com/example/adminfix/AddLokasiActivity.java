@@ -16,8 +16,6 @@ import android.widget.EditText;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-import java.lang.reflect.Member;
-
 public class AddLokasiActivity extends AppCompatActivity {
     EditText nama,alamat,pemilik,slot;
     String sNama,sAlamat,sPemilik;
@@ -32,7 +30,7 @@ public class AddLokasiActivity extends AppCompatActivity {
         nama=findViewById(R.id.namaLokasi);
         add=findViewById(R.id.btnTambahLokasi);
         alamat=findViewById(R.id.alamatLokasi);
-        slot=findViewById(R.id.jumlahSlot);
+        slot=findViewById(R.id.jumlahSlotMobil);
         pemilik=findViewById(R.id.pemilikLokasi);
         l = new LokasiClass();
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -76,9 +74,6 @@ public class AddLokasiActivity extends AppCompatActivity {
             Intent i = new Intent(this,MainActivity.class);
             startActivity(i);
         }
-        if(item.getItemId()==R.id.menuHome){
-            Intent i = new Intent(this,HomeActivity.class);
-            startActivity(i);        }
         return true;
     }
 }

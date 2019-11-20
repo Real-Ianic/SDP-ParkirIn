@@ -1,0 +1,5 @@
+https://medium.com/@Hendrawanss/jenis-jenis-layout-pada-android-studio-331e21d24872
+https://www.codepolitan.com/mempelajari-layout-pada-android-studio
+http://sis.binus.ac.id/2019/04/01/membuat-user-interface-yang-baik/
+https://contentisi.blogspot.com/2018/07/mengenal-perbandingan-layout-android-studio.html
+https://medium.com/wonogiridev/berkenalan-dengan-constraintlayout-di-android-cb7fbc2cd746

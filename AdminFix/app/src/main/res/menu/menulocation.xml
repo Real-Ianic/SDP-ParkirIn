@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/menuaddlocation"
+        android:icon="@drawable/addlocation"
+        android:title="add" />
+    <item
+        android:id="@+id/menueditlocation"
+        android:icon="@drawable/editlocation"
+        android:title="edit" />
+</menu>
