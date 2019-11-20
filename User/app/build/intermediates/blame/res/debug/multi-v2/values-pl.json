@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "D:\\ParkirinFix\\User\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-pl\\values-pl.xml",
+            "outputFile": "D:\\Git\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-pl\\values-pl.xml",
             "map": [
                 {
                     "source": "C:\\Users\\Albert\\.gradle\\caches\\transforms-2\\files-2.1\\b6b5951a20836cbe843a8e306a5032d5\\core-1.1.0\\res\\values-pl\\values-pl.xml",

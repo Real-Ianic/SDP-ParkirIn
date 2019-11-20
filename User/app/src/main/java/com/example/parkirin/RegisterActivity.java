@@ -23,7 +23,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class RegisterActivity extends AppCompatActivity {
 
-    EditText nama,email,password,alamat,nohp,passconf;
+    EditText nama,email,password,alamat,nohp;
     TextView linkLogin;
     Member member;
     Button register;
@@ -42,7 +42,6 @@ public class RegisterActivity extends AppCompatActivity {
         alamat=findViewById(R.id.regisalamat);
         nohp=findViewById(R.id.regisnohp);
         register=findViewById(R.id.btn_signup);
-        passconf=findViewById(R.id.regispassconf);
         progressBar = new ProgressBar(this);
         database=FirebaseDatabase.getInstance();
         reff = database.getReference("Member");
@@ -54,7 +53,6 @@ public class RegisterActivity extends AppCompatActivity {
                 final String namatemp=nama.getText().toString();
                 final String emailtemp=email.getText().toString();
                 String pass = password.getText().toString();
-                String passc=passconf.getText().toString();
                 final String almt = alamat.getText().toString();
                 final String hp = nohp.getText().toString();
                 if(namatemp.isEmpty()){
@@ -72,20 +70,14 @@ public class RegisterActivity extends AppCompatActivity {
                 if(hp.isEmpty()){
                     nohp.setError( "Nomor HP harus diisi!" );
                 }
-                if(passc.isEmpty()){
-                    passconf.setError( "Nomor HP harus diisi!" );
-                }
-                if(!passc.equals(pass)){
-                    passconf.setError( "Konfirmasi Password harus sama dengan password!" );
-                }
                 progressBar.setVisibility(View.VISIBLE);
-                if((!(namatemp.isEmpty()||emailtemp.isEmpty()||pass.isEmpty()||almt.isEmpty()||hp.isEmpty()))&&pass.equals(passc)){
+                if(!(namatemp.isEmpty()||emailtemp.isEmpty()||pass.isEmpty()||almt.isEmpty()||hp.isEmpty())){
                     mAuth.createUserWithEmailAndPassword(emailtemp,pass).addOnCompleteListener(RegisterActivity.this, new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             progressBar.setVisibility(View.GONE);
                             if(task.isSuccessful()){
-                                member = new Member(namatemp,emailtemp,almt,hp,0,"");
+                                member = new Member(namatemp,emailtemp,almt,hp,0);
                                 FirebaseDatabase.getInstance().getReference("Member").child(FirebaseAuth.getInstance().getCurrentUser().getUid()).setValue(member).addOnCompleteListener(new OnCompleteListener<Void>() {
                                     @Override
                                     public void onComplete(@NonNull Task<Void> task) {

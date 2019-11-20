@@ -1,35 +1,18 @@
 package com.example.parkirin;
 
 public class Member {
-    private String nama,email,alamat,nohp,history;
-    int saldo;
+    private String nama,email,alamat,nohp;
+    private int Saldo;
 
     public Member() {
     }
 
-    public Member(String nama, String email,String alamat, String nohp, int saldo, String history) {
+    public Member(String nama, String email,String alamat, String nohp, int Saldo) {
         this.nama = nama;
         this.email = email;
         this.alamat = alamat;
         this.nohp = nohp;
-        this.saldo = saldo;
-        this.history = history;
-    }
-
-    public String getHistory() {
-        return history;
-    }
-
-    public void setHistory(String history) {
-        this.history = history;
-    }
-
-    public int getSaldo() {
-        return saldo;
-    }
-
-    public void setSaldo(int saldo) {
-        this.saldo = saldo;
+        this.Saldo = Saldo;
     }
 
     public String getNama() {

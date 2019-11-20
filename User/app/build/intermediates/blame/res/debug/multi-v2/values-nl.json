@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "D:\\ParkirinFix\\User\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-nl\\values-nl.xml",
+            "outputFile": "D:\\Git\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-nl\\values-nl.xml",
             "map": [
                 {
                     "source": "C:\\Users\\Albert\\.gradle\\caches\\transforms-2\\files-2.1\\6bbf63c05b068c034460c769552fff6e\\jetified-play-services-basement-17.0.0\\res\\values-nl\\values.xml",

@@ -1108,6 +1108,7 @@ drawable ic_launcher_foreground
 drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
+drawable ic_my_location_black_24dp
 drawable ic_person_black_24dp
 drawable ic_receipt_black_24dp
 drawable ic_search_black_24dp
@@ -1203,6 +1204,7 @@ id btn10k
 id btn50k
 id btnBuyDetail
 id btnHistori
+id btnLocation
 id btnPengaturan
 id btnTopUp
 id btn_login
@@ -1319,14 +1321,13 @@ id pin
 id progress_circular
 id progress_horizontal
 id radio
-id radioParkir
-id radioTitip
+id radioButton
+id radioButton2
 id regisalamat
 id regisemail
 id regisname
 id regisnohp
 id regispass
-id regispassconf
 id right
 id right_icon
 id right_side

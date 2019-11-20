@@ -65,7 +65,6 @@
             app:layout_constraintRight_toRightOf="parent"/>
 
         <RadioGroup
-            android:id="@+id/radio"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintTop_toTopOf="parent"
@@ -73,14 +72,13 @@
             app:layout_constraintLeft_toRightOf="@id/z1">
 
             <RadioButton
-                android:id="@+id/radioTitip"
+                android:id="@+id/radioButton2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:checked="true"
                 android:text="Titip (Hari)" />
 
             <RadioButton
-                android:id="@+id/radioParkir"
+                android:id="@+id/radioButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Parkir (Jam)" />
