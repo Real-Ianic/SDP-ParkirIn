@@ -65,8 +65,30 @@ public class AddLokasiFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_add_lokasi, container, false);
+        View view = inflater.inflate(R.layout.fragment_add_lokasi, container, false);
+        /*SupportMapFragment mapFragment = (SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.map);  //use SuppoprtMapFragment for using in fragment instead of activity  MapFragment = activity   SupportMapFragment = fragment
+                mapFragment.getMapAsync(new OnMapReadyCallback() {
+                    @Override
+                    public void onMapReady(final GoogleMap mMap) {
+                        mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
+
+                        mMap.clear(); //clear old markers
+
+                        CameraPosition googlePlex = CameraPosition.builder()
+                                .target(new LatLng(-7.2613561,112.6839624))
+                                .zoom(10)
+                                .bearing(0)
+                                .tilt(0)
+                                .build();
+
+                        mMap.animateCamera(CameraUpdateFactory.newCameraPosition(googlePlex), 100, null);
+
+         */
+
+
+
+        return view;
+
     }
 
     // TODO: Rename method, update argument and hook method into UI event

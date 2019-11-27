@@ -6,181 +6,180 @@
 6
 7    <uses-sdk
 8        android:minSdkVersion="21"
-8-->D:\Git\app\src\main\AndroidManifest.xml
+8-->D:\KULIAH\semester5\SDP\GIT\User\app\src\main\AndroidManifest.xml
 9        android:targetSdkVersion="29" />
-9-->D:\Git\app\src\main\AndroidManifest.xml
+9-->D:\KULIAH\semester5\SDP\GIT\User\app\src\main\AndroidManifest.xml
 10
 11    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-11-->D:\Git\app\src\main\AndroidManifest.xml:5:5-79
-11-->D:\Git\app\src\main\AndroidManifest.xml:5:22-76
+11-->D:\KULIAH\semester5\SDP\GIT\User\app\src\main\AndroidManifest.xml:5:5-79
+11-->D:\KULIAH\semester5\SDP\GIT\User\app\src\main\AndroidManifest.xml:5:22-76
 12    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-12-->D:\Git\app\src\main\AndroidManifest.xml:6:5-81
-12-->D:\Git\app\src\main\AndroidManifest.xml:6:22-78
+12-->D:\KULIAH\semester5\SDP\GIT\User\app\src\main\AndroidManifest.xml:6:5-81
+12-->D:\KULIAH\semester5\SDP\GIT\User\app\src\main\AndroidManifest.xml:6:22-78
 13    <uses-permission android:name="android.permission.INTERNET" />
-13-->D:\Git\app\src\main\AndroidManifest.xml:7:5-67
-13-->D:\Git\app\src\main\AndroidManifest.xml:7:22-64
+13-->D:\KULIAH\semester5\SDP\GIT\User\app\src\main\AndroidManifest.xml:7:5-67
+13-->D:\KULIAH\semester5\SDP\GIT\User\app\src\main\AndroidManifest.xml:7:22-64
 14
 15    <uses-feature
-15-->D:\Git\app\src\main\AndroidManifest.xml:9:5-11:35
+15-->D:\KULIAH\semester5\SDP\GIT\User\app\src\main\AndroidManifest.xml:9:5-11:35
 16        android:glEsVersion="0x00020000"
-16-->D:\Git\app\src\main\AndroidManifest.xml:10:9-41
+16-->D:\KULIAH\semester5\SDP\GIT\User\app\src\main\AndroidManifest.xml:10:9-41
 17        android:required="true" />
-17-->D:\Git\app\src\main\AndroidManifest.xml:11:9-32
+17-->D:\KULIAH\semester5\SDP\GIT\User\app\src\main\AndroidManifest.xml:11:9-32
 18
 19    <!-- Although the *SdkVersion is captured in gradle build files, this is required for non gradle builds -->
 20    <!-- <uses-sdk android:minSdkVersion="14"/> -->
 21    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-21-->[com.google.firebase:firebase-database:17.0.0] C:\Users\Albert\.gradle\caches\transforms-2\files-2.1\30357c8e4ae080ebf26370ddd4f26de8\jetified-firebase-database-17.0.0\AndroidManifest.xml:25:5-79
-21-->[com.google.firebase:firebase-database:17.0.0] C:\Users\Albert\.gradle\caches\transforms-2\files-2.1\30357c8e4ae080ebf26370ddd4f26de8\jetified-firebase-database-17.0.0\AndroidManifest.xml:25:22-76
+21-->[com.google.firebase:firebase-database:17.0.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\7092ea8548e8d7e3b083047aa454c885\jetified-firebase-database-17.0.0\AndroidManifest.xml:25:5-79
+21-->[com.google.firebase:firebase-database:17.0.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\7092ea8548e8d7e3b083047aa454c885\jetified-firebase-database-17.0.0\AndroidManifest.xml:25:22-76
 22
 23    <application
-23-->D:\Git\app\src\main\AndroidManifest.xml:13:5-49:19
+23-->D:\KULIAH\semester5\SDP\GIT\User\app\src\main\AndroidManifest.xml:13:5-49:19
 24        android:allowBackup="true"
-24-->D:\Git\app\src\main\AndroidManifest.xml:14:9-35
+24-->D:\KULIAH\semester5\SDP\GIT\User\app\src\main\AndroidManifest.xml:14:9-35
 25        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-25-->[androidx.core:core:1.1.0] C:\Users\Albert\.gradle\caches\transforms-2\files-2.1\b6b5951a20836cbe843a8e306a5032d5\core-1.1.0\AndroidManifest.xml:24:18-86
+25-->[androidx.core:core:1.1.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\478b79604eaaf934858ce3739dce1708\core-1.1.0\AndroidManifest.xml:24:18-86
 26        android:debuggable="true"
 27        android:icon="@mipmap/ic_launcher"
-27-->D:\Git\app\src\main\AndroidManifest.xml:15:9-43
+27-->D:\KULIAH\semester5\SDP\GIT\User\app\src\main\AndroidManifest.xml:15:9-43
 28        android:label="@string/app_name"
-28-->D:\Git\app\src\main\AndroidManifest.xml:16:9-41
+28-->D:\KULIAH\semester5\SDP\GIT\User\app\src\main\AndroidManifest.xml:16:9-41
 29        android:roundIcon="@mipmap/ic_launcher_round"
-29-->D:\Git\app\src\main\AndroidManifest.xml:17:9-54
+29-->D:\KULIAH\semester5\SDP\GIT\User\app\src\main\AndroidManifest.xml:17:9-54
 30        android:supportsRtl="true"
-30-->D:\Git\app\src\main\AndroidManifest.xml:18:9-35
-31        android:testOnly="true"
-32        android:theme="@style/AppTheme" >
-32-->D:\Git\app\src\main\AndroidManifest.xml:19:9-40
-33        <activity android:name="com.example.parkirin.RegisterActivity" />
-33-->D:\Git\app\src\main\AndroidManifest.xml:20:9-63
-33-->D:\Git\app\src\main\AndroidManifest.xml:20:19-51
-34        <activity android:name="com.example.parkirin.LoginActivity" >
-34-->D:\Git\app\src\main\AndroidManifest.xml:21:9-26:36
-34-->D:\Git\app\src\main\AndroidManifest.xml:21:19-48
-35            <intent-filter>
-35-->D:\Git\app\src\main\AndroidManifest.xml:22:9-26:25
-36                <action android:name="android.intent.action.MAIN" />
-36-->D:\Git\app\src\main\AndroidManifest.xml:23:13-65
-36-->D:\Git\app\src\main\AndroidManifest.xml:23:21-62
-37
-38                <category android:name="android.intent.category.LAUNCHER" />
-38-->D:\Git\app\src\main\AndroidManifest.xml:25:13-73
-38-->D:\Git\app\src\main\AndroidManifest.xml:25:23-70
-39            </intent-filter>
-40        </activity>
-41        <activity android:name="com.example.parkirin.EditPassActivity" />
-41-->D:\Git\app\src\main\AndroidManifest.xml:27:9-54
-41-->D:\Git\app\src\main\AndroidManifest.xml:27:19-51
-42        <activity
-42-->D:\Git\app\src\main\AndroidManifest.xml:28:9-30:58
-43            android:name="com.example.parkirin.historyActivity"
-43-->D:\Git\app\src\main\AndroidManifest.xml:29:13-44
-44            android:parentActivityName="com.example.parkirin.MainActivity" />
-44-->D:\Git\app\src\main\AndroidManifest.xml:30:13-55
-45        <activity android:name="com.example.parkirin.EditProfileActivity" />
-45-->D:\Git\app\src\main\AndroidManifest.xml:31:9-57
-45-->D:\Git\app\src\main\AndroidManifest.xml:31:19-54
-46        <activity android:name="com.example.parkirin.TransActivity" />
-46-->D:\Git\app\src\main\AndroidManifest.xml:32:9-51
-46-->D:\Git\app\src\main\AndroidManifest.xml:32:19-48
-47        <activity android:name="com.example.parkirin.DetailTransaksi" />
-47-->D:\Git\app\src\main\AndroidManifest.xml:33:9-53
-47-->D:\Git\app\src\main\AndroidManifest.xml:33:19-50
-48        <activity
-48-->D:\Git\app\src\main\AndroidManifest.xml:34:9-36:58
-49            android:name="com.example.parkirin.pemesananActivity"
-49-->D:\Git\app\src\main\AndroidManifest.xml:35:13-46
-50            android:parentActivityName="com.example.parkirin.MainActivity" />
-50-->D:\Git\app\src\main\AndroidManifest.xml:36:13-55
-51
-52        <meta-data
-52-->D:\Git\app\src\main\AndroidManifest.xml:38:9-40:47
-53            android:name="com.google.android.geo.API_KEY"
-53-->D:\Git\app\src\main\AndroidManifest.xml:39:13-58
-54            android:value="@string/map_key" />
-54-->D:\Git\app\src\main\AndroidManifest.xml:40:13-44
-55
-56        <activity android:name="com.example.parkirin.MainActivity" >
-56-->D:\Git\app\src\main\AndroidManifest.xml:42:9-48:20
-56-->D:\Git\app\src\main\AndroidManifest.xml:42:19-47
-57            <intent-filter>
-57-->D:\Git\app\src\main\AndroidManifest.xml:22:9-26:25
-58                <action android:name="android.intent.action.MAIN" />
-58-->D:\Git\app\src\main\AndroidManifest.xml:23:13-65
-58-->D:\Git\app\src\main\AndroidManifest.xml:23:21-62
-59
-60                <category android:name="android.intent.category.LAUNCHER" />
-60-->D:\Git\app\src\main\AndroidManifest.xml:25:13-73
-60-->D:\Git\app\src\main\AndroidManifest.xml:25:23-70
-61            </intent-filter>
-62        </activity>
-63
-64        <service
-64-->[com.google.firebase:firebase-database:17.0.0] C:\Users\Albert\.gradle\caches\transforms-2\files-2.1\30357c8e4ae080ebf26370ddd4f26de8\jetified-firebase-database-17.0.0\AndroidManifest.xml:29:9-33:19
-65            android:name="com.google.firebase.components.ComponentDiscoveryService"
-65-->[com.google.firebase:firebase-database:17.0.0] C:\Users\Albert\.gradle\caches\transforms-2\files-2.1\30357c8e4ae080ebf26370ddd4f26de8\jetified-firebase-database-17.0.0\AndroidManifest.xml:29:18-89
-66            android:exported="false" >
-66-->[com.google.firebase:firebase-auth:19.1.0] C:\Users\Albert\.gradle\caches\transforms-2\files-2.1\e94d4c46262c04452ee9877596073b58\firebase-auth-19.1.0\AndroidManifest.xml:35:13-37
-67            <meta-data
-67-->[com.google.firebase:firebase-database:17.0.0] C:\Users\Albert\.gradle\caches\transforms-2\files-2.1\30357c8e4ae080ebf26370ddd4f26de8\jetified-firebase-database-17.0.0\AndroidManifest.xml:30:13-32:85
-68                android:name="com.google.firebase.components:com.google.firebase.database.DatabaseRegistrar"
-68-->[com.google.firebase:firebase-database:17.0.0] C:\Users\Albert\.gradle\caches\transforms-2\files-2.1\30357c8e4ae080ebf26370ddd4f26de8\jetified-firebase-database-17.0.0\AndroidManifest.xml:31:17-109
-69                android:value="com.google.firebase.components.ComponentRegistrar" />
-69-->[com.google.firebase:firebase-database:17.0.0] C:\Users\Albert\.gradle\caches\transforms-2\files-2.1\30357c8e4ae080ebf26370ddd4f26de8\jetified-firebase-database-17.0.0\AndroidManifest.xml:32:17-82
-70            <meta-data
-70-->[com.google.firebase:firebase-auth:19.1.0] C:\Users\Albert\.gradle\caches\transforms-2\files-2.1\e94d4c46262c04452ee9877596073b58\firebase-auth-19.1.0\AndroidManifest.xml:36:13-38:85
-71                android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
-71-->[com.google.firebase:firebase-auth:19.1.0] C:\Users\Albert\.gradle\caches\transforms-2\files-2.1\e94d4c46262c04452ee9877596073b58\firebase-auth-19.1.0\AndroidManifest.xml:37:17-109
-72                android:value="com.google.firebase.components.ComponentRegistrar" />
-72-->[com.google.firebase:firebase-auth:19.1.0] C:\Users\Albert\.gradle\caches\transforms-2\files-2.1\e94d4c46262c04452ee9877596073b58\firebase-auth-19.1.0\AndroidManifest.xml:38:17-82
-73        </service> <!-- Needs to be explicitly declared on P+ -->
-74        <uses-library
-74-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\Albert\.gradle\caches\transforms-2\files-2.1\54ab3033ac1c0ed86f67ec5de980edd5\play-services-maps-17.0.0\AndroidManifest.xml:33:9-35:40
-75            android:name="org.apache.http.legacy"
-75-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\Albert\.gradle\caches\transforms-2\files-2.1\54ab3033ac1c0ed86f67ec5de980edd5\play-services-maps-17.0.0\AndroidManifest.xml:34:13-50
-76            android:required="false" />
-76-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\Albert\.gradle\caches\transforms-2\files-2.1\54ab3033ac1c0ed86f67ec5de980edd5\play-services-maps-17.0.0\AndroidManifest.xml:35:13-37
-77
-78        <activity
-78-->[com.google.firebase:firebase-auth:19.1.0] C:\Users\Albert\.gradle\caches\transforms-2\files-2.1\e94d4c46262c04452ee9877596073b58\firebase-auth-19.1.0\AndroidManifest.xml:24:9-31:50
-79            android:name="com.google.firebase.auth.internal.FederatedSignInActivity"
-79-->[com.google.firebase:firebase-auth:19.1.0] C:\Users\Albert\.gradle\caches\transforms-2\files-2.1\e94d4c46262c04452ee9877596073b58\firebase-auth-19.1.0\AndroidManifest.xml:25:13-85
-80            android:excludeFromRecents="true"
-80-->[com.google.firebase:firebase-auth:19.1.0] C:\Users\Albert\.gradle\caches\transforms-2\files-2.1\e94d4c46262c04452ee9877596073b58\firebase-auth-19.1.0\AndroidManifest.xml:26:13-46
-81            android:exported="true"
-81-->[com.google.firebase:firebase-auth:19.1.0] C:\Users\Albert\.gradle\caches\transforms-2\files-2.1\e94d4c46262c04452ee9877596073b58\firebase-auth-19.1.0\AndroidManifest.xml:27:13-36
-82            android:launchMode="singleTask"
-82-->[com.google.firebase:firebase-auth:19.1.0] C:\Users\Albert\.gradle\caches\transforms-2\files-2.1\e94d4c46262c04452ee9877596073b58\firebase-auth-19.1.0\AndroidManifest.xml:28:13-44
-83            android:permission="com.google.firebase.auth.api.gms.permission.LAUNCH_FEDERATED_SIGN_IN"
-83-->[com.google.firebase:firebase-auth:19.1.0] C:\Users\Albert\.gradle\caches\transforms-2\files-2.1\e94d4c46262c04452ee9877596073b58\firebase-auth-19.1.0\AndroidManifest.xml:29:13-102
-84            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-84-->[com.google.firebase:firebase-auth:19.1.0] C:\Users\Albert\.gradle\caches\transforms-2\files-2.1\e94d4c46262c04452ee9877596073b58\firebase-auth-19.1.0\AndroidManifest.xml:30:13-72
-85        <activity
-85-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\Albert\.gradle\caches\transforms-2\files-2.1\26923404d8e377cf48027104175cd048\play-services-base-17.1.0\AndroidManifest.xml:23:9-26:75
-86            android:name="com.google.android.gms.common.api.GoogleApiActivity"
-86-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\Albert\.gradle\caches\transforms-2\files-2.1\26923404d8e377cf48027104175cd048\play-services-base-17.1.0\AndroidManifest.xml:24:13-79
-87            android:exported="false"
-87-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\Albert\.gradle\caches\transforms-2\files-2.1\26923404d8e377cf48027104175cd048\play-services-base-17.1.0\AndroidManifest.xml:25:13-37
-88            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-88-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\Albert\.gradle\caches\transforms-2\files-2.1\26923404d8e377cf48027104175cd048\play-services-base-17.1.0\AndroidManifest.xml:26:13-72
-89
-90        <provider
-90-->[com.google.firebase:firebase-common:19.0.0] C:\Users\Albert\.gradle\caches\transforms-2\files-2.1\b1384c5fdf3acad4baebcde528b744a2\firebase-common-19.0.0\AndroidManifest.xml:12:9-16:39
-91            android:name="com.google.firebase.provider.FirebaseInitProvider"
-91-->[com.google.firebase:firebase-common:19.0.0] C:\Users\Albert\.gradle\caches\transforms-2\files-2.1\b1384c5fdf3acad4baebcde528b744a2\firebase-common-19.0.0\AndroidManifest.xml:13:13-77
-92            android:authorities="com.example.parkirin.firebaseinitprovider"
-92-->[com.google.firebase:firebase-common:19.0.0] C:\Users\Albert\.gradle\caches\transforms-2\files-2.1\b1384c5fdf3acad4baebcde528b744a2\firebase-common-19.0.0\AndroidManifest.xml:14:13-72
-93            android:exported="false"
-93-->[com.google.firebase:firebase-common:19.0.0] C:\Users\Albert\.gradle\caches\transforms-2\files-2.1\b1384c5fdf3acad4baebcde528b744a2\firebase-common-19.0.0\AndroidManifest.xml:15:13-37
-94            android:initOrder="100" />
-94-->[com.google.firebase:firebase-common:19.0.0] C:\Users\Albert\.gradle\caches\transforms-2\files-2.1\b1384c5fdf3acad4baebcde528b744a2\firebase-common-19.0.0\AndroidManifest.xml:16:13-36
-95
-96        <meta-data
-96-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\Albert\.gradle\caches\transforms-2\files-2.1\6bbf63c05b068c034460c769552fff6e\jetified-play-services-basement-17.0.0\AndroidManifest.xml:23:9-25:69
-97            android:name="com.google.android.gms.version"
-97-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\Albert\.gradle\caches\transforms-2\files-2.1\6bbf63c05b068c034460c769552fff6e\jetified-play-services-basement-17.0.0\AndroidManifest.xml:24:13-58
-98            android:value="@integer/google_play_services_version" />
-98-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\Albert\.gradle\caches\transforms-2\files-2.1\6bbf63c05b068c034460c769552fff6e\jetified-play-services-basement-17.0.0\AndroidManifest.xml:25:13-66
-99    </application>
-100
-101</manifest>
+30-->D:\KULIAH\semester5\SDP\GIT\User\app\src\main\AndroidManifest.xml:18:9-35
+31        android:theme="@style/AppTheme" >
+31-->D:\KULIAH\semester5\SDP\GIT\User\app\src\main\AndroidManifest.xml:19:9-40
+32        <activity android:name="com.example.parkirin.RegisterActivity" />
+32-->D:\KULIAH\semester5\SDP\GIT\User\app\src\main\AndroidManifest.xml:20:9-63
+32-->D:\KULIAH\semester5\SDP\GIT\User\app\src\main\AndroidManifest.xml:20:19-51
+33        <activity android:name="com.example.parkirin.LoginActivity" >
+33-->D:\KULIAH\semester5\SDP\GIT\User\app\src\main\AndroidManifest.xml:21:9-26:36
+33-->D:\KULIAH\semester5\SDP\GIT\User\app\src\main\AndroidManifest.xml:21:19-48
+34            <intent-filter>
+34-->D:\KULIAH\semester5\SDP\GIT\User\app\src\main\AndroidManifest.xml:22:9-26:25
+35                <action android:name="android.intent.action.MAIN" />
+35-->D:\KULIAH\semester5\SDP\GIT\User\app\src\main\AndroidManifest.xml:23:13-65
+35-->D:\KULIAH\semester5\SDP\GIT\User\app\src\main\AndroidManifest.xml:23:21-62
+36
+37                <category android:name="android.intent.category.LAUNCHER" />
+37-->D:\KULIAH\semester5\SDP\GIT\User\app\src\main\AndroidManifest.xml:25:13-73
+37-->D:\KULIAH\semester5\SDP\GIT\User\app\src\main\AndroidManifest.xml:25:23-70
+38            </intent-filter>
+39        </activity>
+40        <activity android:name="com.example.parkirin.EditPassActivity" />
+40-->D:\KULIAH\semester5\SDP\GIT\User\app\src\main\AndroidManifest.xml:27:9-54
+40-->D:\KULIAH\semester5\SDP\GIT\User\app\src\main\AndroidManifest.xml:27:19-51
+41        <activity
+41-->D:\KULIAH\semester5\SDP\GIT\User\app\src\main\AndroidManifest.xml:28:9-30:58
+42            android:name="com.example.parkirin.historyActivity"
+42-->D:\KULIAH\semester5\SDP\GIT\User\app\src\main\AndroidManifest.xml:29:13-44
+43            android:parentActivityName="com.example.parkirin.MainActivity" />
+43-->D:\KULIAH\semester5\SDP\GIT\User\app\src\main\AndroidManifest.xml:30:13-55
+44        <activity android:name="com.example.parkirin.EditProfileActivity" />
+44-->D:\KULIAH\semester5\SDP\GIT\User\app\src\main\AndroidManifest.xml:31:9-57
+44-->D:\KULIAH\semester5\SDP\GIT\User\app\src\main\AndroidManifest.xml:31:19-54
+45        <activity android:name="com.example.parkirin.TransActivity" />
+45-->D:\KULIAH\semester5\SDP\GIT\User\app\src\main\AndroidManifest.xml:32:9-51
+45-->D:\KULIAH\semester5\SDP\GIT\User\app\src\main\AndroidManifest.xml:32:19-48
+46        <activity android:name="com.example.parkirin.DetailTransaksi" />
+46-->D:\KULIAH\semester5\SDP\GIT\User\app\src\main\AndroidManifest.xml:33:9-53
+46-->D:\KULIAH\semester5\SDP\GIT\User\app\src\main\AndroidManifest.xml:33:19-50
+47        <activity
+47-->D:\KULIAH\semester5\SDP\GIT\User\app\src\main\AndroidManifest.xml:34:9-36:58
+48            android:name="com.example.parkirin.pemesananActivity"
+48-->D:\KULIAH\semester5\SDP\GIT\User\app\src\main\AndroidManifest.xml:35:13-46
+49            android:parentActivityName="com.example.parkirin.MainActivity" />
+49-->D:\KULIAH\semester5\SDP\GIT\User\app\src\main\AndroidManifest.xml:36:13-55
+50
+51        <meta-data
+51-->D:\KULIAH\semester5\SDP\GIT\User\app\src\main\AndroidManifest.xml:38:9-40:47
+52            android:name="com.google.android.geo.API_KEY"
+52-->D:\KULIAH\semester5\SDP\GIT\User\app\src\main\AndroidManifest.xml:39:13-58
+53            android:value="@string/map_key" />
+53-->D:\KULIAH\semester5\SDP\GIT\User\app\src\main\AndroidManifest.xml:40:13-44
+54
+55        <activity android:name="com.example.parkirin.MainActivity" >
+55-->D:\KULIAH\semester5\SDP\GIT\User\app\src\main\AndroidManifest.xml:42:9-48:20
+55-->D:\KULIAH\semester5\SDP\GIT\User\app\src\main\AndroidManifest.xml:42:19-47
+56            <intent-filter>
+56-->D:\KULIAH\semester5\SDP\GIT\User\app\src\main\AndroidManifest.xml:22:9-26:25
+57                <action android:name="android.intent.action.MAIN" />
+57-->D:\KULIAH\semester5\SDP\GIT\User\app\src\main\AndroidManifest.xml:23:13-65
+57-->D:\KULIAH\semester5\SDP\GIT\User\app\src\main\AndroidManifest.xml:23:21-62
+58
+59                <category android:name="android.intent.category.LAUNCHER" />
+59-->D:\KULIAH\semester5\SDP\GIT\User\app\src\main\AndroidManifest.xml:25:13-73
+59-->D:\KULIAH\semester5\SDP\GIT\User\app\src\main\AndroidManifest.xml:25:23-70
+60            </intent-filter>
+61        </activity>
+62
+63        <service
+63-->[com.google.firebase:firebase-database:17.0.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\7092ea8548e8d7e3b083047aa454c885\jetified-firebase-database-17.0.0\AndroidManifest.xml:29:9-33:19
+64            android:name="com.google.firebase.components.ComponentDiscoveryService"
+64-->[com.google.firebase:firebase-database:17.0.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\7092ea8548e8d7e3b083047aa454c885\jetified-firebase-database-17.0.0\AndroidManifest.xml:29:18-89
+65            android:exported="false" >
+65-->[com.google.firebase:firebase-auth:19.1.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\8aa3d6d048249cc1598139976559bd04\firebase-auth-19.1.0\AndroidManifest.xml:35:13-37
+66            <meta-data
+66-->[com.google.firebase:firebase-database:17.0.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\7092ea8548e8d7e3b083047aa454c885\jetified-firebase-database-17.0.0\AndroidManifest.xml:30:13-32:85
+67                android:name="com.google.firebase.components:com.google.firebase.database.DatabaseRegistrar"
+67-->[com.google.firebase:firebase-database:17.0.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\7092ea8548e8d7e3b083047aa454c885\jetified-firebase-database-17.0.0\AndroidManifest.xml:31:17-109
+68                android:value="com.google.firebase.components.ComponentRegistrar" />
+68-->[com.google.firebase:firebase-database:17.0.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\7092ea8548e8d7e3b083047aa454c885\jetified-firebase-database-17.0.0\AndroidManifest.xml:32:17-82
+69            <meta-data
+69-->[com.google.firebase:firebase-auth:19.1.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\8aa3d6d048249cc1598139976559bd04\firebase-auth-19.1.0\AndroidManifest.xml:36:13-38:85
+70                android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
+70-->[com.google.firebase:firebase-auth:19.1.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\8aa3d6d048249cc1598139976559bd04\firebase-auth-19.1.0\AndroidManifest.xml:37:17-109
+71                android:value="com.google.firebase.components.ComponentRegistrar" />
+71-->[com.google.firebase:firebase-auth:19.1.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\8aa3d6d048249cc1598139976559bd04\firebase-auth-19.1.0\AndroidManifest.xml:38:17-82
+72        </service> <!-- Needs to be explicitly declared on P+ -->
+73        <uses-library
+73-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\f6b8646714b47b7db438133a675fc810\play-services-maps-17.0.0\AndroidManifest.xml:33:9-35:40
+74            android:name="org.apache.http.legacy"
+74-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\f6b8646714b47b7db438133a675fc810\play-services-maps-17.0.0\AndroidManifest.xml:34:13-50
+75            android:required="false" />
+75-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\f6b8646714b47b7db438133a675fc810\play-services-maps-17.0.0\AndroidManifest.xml:35:13-37
+76
+77        <activity
+77-->[com.google.firebase:firebase-auth:19.1.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\8aa3d6d048249cc1598139976559bd04\firebase-auth-19.1.0\AndroidManifest.xml:24:9-31:50
+78            android:name="com.google.firebase.auth.internal.FederatedSignInActivity"
+78-->[com.google.firebase:firebase-auth:19.1.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\8aa3d6d048249cc1598139976559bd04\firebase-auth-19.1.0\AndroidManifest.xml:25:13-85
+79            android:excludeFromRecents="true"
+79-->[com.google.firebase:firebase-auth:19.1.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\8aa3d6d048249cc1598139976559bd04\firebase-auth-19.1.0\AndroidManifest.xml:26:13-46
+80            android:exported="true"
+80-->[com.google.firebase:firebase-auth:19.1.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\8aa3d6d048249cc1598139976559bd04\firebase-auth-19.1.0\AndroidManifest.xml:27:13-36
+81            android:launchMode="singleTask"
+81-->[com.google.firebase:firebase-auth:19.1.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\8aa3d6d048249cc1598139976559bd04\firebase-auth-19.1.0\AndroidManifest.xml:28:13-44
+82            android:permission="com.google.firebase.auth.api.gms.permission.LAUNCH_FEDERATED_SIGN_IN"
+82-->[com.google.firebase:firebase-auth:19.1.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\8aa3d6d048249cc1598139976559bd04\firebase-auth-19.1.0\AndroidManifest.xml:29:13-102
+83            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+83-->[com.google.firebase:firebase-auth:19.1.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\8aa3d6d048249cc1598139976559bd04\firebase-auth-19.1.0\AndroidManifest.xml:30:13-72
+84        <activity
+84-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\5361484794665ae726e7094cda0f326e\play-services-base-17.1.0\AndroidManifest.xml:23:9-26:75
+85            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+85-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\5361484794665ae726e7094cda0f326e\play-services-base-17.1.0\AndroidManifest.xml:24:13-79
+86            android:exported="false"
+86-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\5361484794665ae726e7094cda0f326e\play-services-base-17.1.0\AndroidManifest.xml:25:13-37
+87            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+87-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\5361484794665ae726e7094cda0f326e\play-services-base-17.1.0\AndroidManifest.xml:26:13-72
+88
+89        <provider
+89-->[com.google.firebase:firebase-common:19.0.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\fedcfa7aa3779c09d4cf8868861a7c40\firebase-common-19.0.0\AndroidManifest.xml:12:9-16:39
+90            android:name="com.google.firebase.provider.FirebaseInitProvider"
+90-->[com.google.firebase:firebase-common:19.0.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\fedcfa7aa3779c09d4cf8868861a7c40\firebase-common-19.0.0\AndroidManifest.xml:13:13-77
+91            android:authorities="com.example.parkirin.firebaseinitprovider"
+91-->[com.google.firebase:firebase-common:19.0.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\fedcfa7aa3779c09d4cf8868861a7c40\firebase-common-19.0.0\AndroidManifest.xml:14:13-72
+92            android:exported="false"
+92-->[com.google.firebase:firebase-common:19.0.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\fedcfa7aa3779c09d4cf8868861a7c40\firebase-common-19.0.0\AndroidManifest.xml:15:13-37
+93            android:initOrder="100" />
+93-->[com.google.firebase:firebase-common:19.0.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\fedcfa7aa3779c09d4cf8868861a7c40\firebase-common-19.0.0\AndroidManifest.xml:16:13-36
+94
+95        <meta-data
+95-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\8c656d0314600ba74503e470bedd6e4c\jetified-play-services-basement-17.0.0\AndroidManifest.xml:23:9-25:69
+96            android:name="com.google.android.gms.version"
+96-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\8c656d0314600ba74503e470bedd6e4c\jetified-play-services-basement-17.0.0\AndroidManifest.xml:24:13-58
+97            android:value="@integer/google_play_services_version" />
+97-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\8c656d0314600ba74503e470bedd6e4c\jetified-play-services-basement-17.0.0\AndroidManifest.xml:25:13-66
+98    </application>
+99
+100</manifest>
