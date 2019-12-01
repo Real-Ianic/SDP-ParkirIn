@@ -1,79 +1,105 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AddLokasiFragment" >
+    tools:context=".AddLokasiFragment">
 
-    <Button
-        android:id="@+id/btnTambahLokasi"
-        android:layout_width="fill_parent"
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="264dp"
-        android:backgroundTint="@android:color/holo_blue_light"
-        android:text="Tambah Lokasi"
-        android:textColor="@android:color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/jumlahSlotMotor" />
+        android:layout_marginTop="60dp"
+        android:text="TAMBAH LOKASI"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"/>
 
     <EditText
-        android:id="@+id/alamatLokasi"
+        android:id="@+id/etNamaLokasi"
+        android:backgroundTint="@android:color/holo_blue_light"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:hint="Nama"
+        android:layout_below="@+id/textView3"
+        android:inputType="textCapWords"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"/>
+
+    <EditText
+        android:id="@+id/etAlamatLokasi"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/etNamaLokasi"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
         android:backgroundTint="@android:color/holo_blue_light"
         android:hint="Alamat"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/namaLokasi" />
+        android:inputType="textCapWords" />
 
     <EditText
-        android:id="@+id/namaLokasi"
+        android:id="@+id/etLatitude"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="84dp"
         android:backgroundTint="@android:color/holo_blue_light"
-        android:hint="Nama Lokasi"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:hint="Latitude"
+        android:layout_below="@id/etAlamatLokasi"/>
 
     <EditText
-        android:id="@+id/jumlahSlotMobil"
+        android:id="@+id/etLongitude"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@android:color/holo_blue_light"
+        android:hint="Longitude"
+        android:layout_below="@id/etLatitude"/>
+
+    <EditText
+        android:id="@+id/etSlotmobil"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:backgroundTint="@android:color/holo_blue_light"
         android:hint="Jumlah Slot Mobil"
         android:inputType="number"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/alamatLokasi" />
+        android:layout_below="@id/etLongitude"/>
 
     <EditText
-        android:id="@+id/jumlahSlotMotor"
+        android:id="@+id/etSlotmotor"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:backgroundTint="@android:color/holo_blue_light"
         android:hint="Jumlah Slot Motor"
         android:inputType="number"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/jumlahSlotMobil" />
+        android:layout_below="@id/etSlotmobil"/>
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="0dp"
+
+    <EditText
+        android:id="@+id/etPemilik"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
-        android:text="TAMBAH LOKASI"
-        android:textAlignment="center"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:backgroundTint="@android:color/holo_blue_light"
+        android:hint="Pemilik"
+        android:inputType="textCapWords"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_below="@+id/etSlotmotor"/>
+
+    <Button
+        android:id="@+id/btnTambahLokasi"
+        android:layout_width="fill_parent"
+        android:layout_margin="20dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@android:color/holo_blue_light"
+        android:text="Tambah Lokasi"
+        android:textColor="@android:color/white"
+        android:layout_below="@+id/etPemilik" />
+</RelativeLayout>
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>

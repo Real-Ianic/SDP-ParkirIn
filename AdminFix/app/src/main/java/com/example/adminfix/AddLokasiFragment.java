@@ -1,135 +1,125 @@
 package com.example.adminfix;
 
-import android.content.Context;
-import android.net.Uri;
+
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.Toast;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
 
-/**
- * A simple {@link Fragment} subclass.
- * Activities that contain this fragment must implement the
- * {@link AddLokasiFragment.OnFragmentInteractionListener} interface
- * to handle interaction events.
- * Use the {@link AddLokasiFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class AddLokasiFragment extends Fragment {
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
-    private OnFragmentInteractionListener mListener;
+    EditText nama,alamat,pemilik,slotmotor,slotmobil,lat,lng;
+    String sNama;
+    String sAlamat;
+    String sPemilik;
+    double sLat;
+    double sLng;
+    int sMotor,sMobil;
+    DatabaseReference reff;
+    Button add;
+    LokasiClass l;
 
     public AddLokasiFragment() {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment AddLokasiFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static AddLokasiFragment newInstance(String param1, String param2) {
-        AddLokasiFragment fragment = new AddLokasiFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        nama=view.findViewById(R.id.etNamaLokasi);
+        add=view.findViewById(R.id.btnTambahLokasi);
+        alamat=view.findViewById(R.id.etAlamatLokasi);
+        slotmobil=view.findViewById(R.id.etSlotmobil);
+        slotmotor=view.findViewById(R.id.etSlotmotor);
+        pemilik=view.findViewById(R.id.etPemilik);
+        lat=view.findViewById(R.id.etLatitude);
+        lng=view.findViewById(R.id.etLongitude);
+        reff= FirebaseDatabase.getInstance().getReference();
+        add.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(TextUtils.isEmpty(nama.getText().toString())){
+                    nama.setError("Nama Lokasi Harus Diisi");
+                }
+                if(TextUtils.isEmpty(alamat.getText().toString())){
+                    alamat.setError("Alamat Lokasi Harus Diisi");
+                }
+                if(TextUtils.isEmpty(slotmobil.getText().toString())){
+                    slotmobil.setError("Slot Mobil Harus Diisi");
+                }
+                if(TextUtils.isEmpty(slotmotor.getText().toString())){
+                    slotmotor.setError("Slot Motor Harus Diisi");
+                }
+                if(TextUtils.isEmpty(pemilik.getText().toString())){
+                    pemilik.setError("Pemilik Lokasi Harus Diisi");
+                }
+                if(TextUtils.isEmpty(lat.getText().toString())){
+                    lat.setError("Latitude Lokasi Harus Diisi");
+                }
+                if(TextUtils.isEmpty(lng.getText().toString())){
+                    lng.setError("Longitude Lokasi Harus Diisi");
+                }
+                if(!(nama.getText().toString().isEmpty()||alamat.getText().toString().isEmpty()||slotmotor.getText().toString().isEmpty()||pemilik.getText().toString().isEmpty()||slotmobil.getText().toString().isEmpty()||lat.getText().toString().isEmpty()||lng.getText().toString().isEmpty())){
+                    sNama=nama.getText().toString();
+                    sAlamat=alamat.getText().toString();
+                    sPemilik=pemilik.getText().toString();
+                    sMobil=Integer.parseInt(slotmobil.getText().toString());
+                    sMotor=Integer.parseInt(slotmotor.getText().toString());
+                    sLat=Double.parseDouble(lat.getText().toString());
+                    sLng=Double.parseDouble(lng.getText().toString());
+                    Query query = reff.child("Lokasi").orderByChild("nama").equalTo(sNama);
+                    query.addListenerForSingleValueEvent(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(DataSnapshot dataSnapshot) {
+                            if (dataSnapshot.exists()) {
+                                Toast.makeText(getActivity(), "Lokasi Sudah Ada", Toast.LENGTH_SHORT).show();
+                            }else{
+                                l = new LokasiClass(sNama,sAlamat,sPemilik,sLat,sLng,sMobil,sMotor);
+                                reff.child("Lokasi").push().setValue(l);
+                                Toast.makeText(getContext(), "Input Berhasil", Toast.LENGTH_SHORT).show();
+                                nama.setText("");
+                                alamat.setText("");
+                                pemilik.setText("");
+                                slotmotor.setText("");
+                                slotmobil.setText("");
+                                lat.setText("");
+                                lng.setText("");
+                            }
+                        }
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                        }
+
+                    });
+                }else{
+                    Toast.makeText(getContext(), "Semua Data Wajib Diisi", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+        
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_add_lokasi, container, false);
-        /*SupportMapFragment mapFragment = (SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.map);  //use SuppoprtMapFragment for using in fragment instead of activity  MapFragment = activity   SupportMapFragment = fragment
-                mapFragment.getMapAsync(new OnMapReadyCallback() {
-                    @Override
-                    public void onMapReady(final GoogleMap mMap) {
-                        mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
-
-                        mMap.clear(); //clear old markers
-
-                        CameraPosition googlePlex = CameraPosition.builder()
-                                .target(new LatLng(-7.2613561,112.6839624))
-                                .zoom(10)
-                                .bearing(0)
-                                .tilt(0)
-                                .build();
-
-                        mMap.animateCamera(CameraUpdateFactory.newCameraPosition(googlePlex), 100, null);
-
-         */
-
-
-
-        return view;
-
+        return inflater.inflate(R.layout.fragment_add_lokasi, container, false);
     }
 
-    // TODO: Rename method, update argument and hook method into UI event
-    public void onButtonPressed(Uri uri) {
-        if (mListener != null) {
-            mListener.onFragmentInteraction(uri);
-        }
-    }
-
-    /*
-    @Override
-    public void onAttach(Context context) {
-        super.onAttach(context);
-        if (context instanceof OnFragmentInteractionListener) {
-            mListener = (OnFragmentInteractionListener) context;
-        } else {
-            throw new RuntimeException(context.toString()
-                    + " must implement OnFragmentInteractionListener");
-        }
-    }
-
-     */
-
-    @Override
-    public void onDetach() {
-        super.onDetach();
-        mListener = null;
-    }
-
-    /**
-     * This interface must be implemented by activities that contain this
-     * fragment to allow an interaction in this fragment to be communicated
-     * to the activity and potentially other fragments contained in that
-     * activity.
-     * <p>
-     * See the Android Training lesson <a href=
-     * "http://developer.android.com/training/basics/fragments/communicating.html"
-     * >Communicating with Other Fragments</a> for more information.
-     */
-    public interface OnFragmentInteractionListener {
-        // TODO: Update argument type and name
-        void onFragmentInteraction(Uri uri);
-    }
 }
