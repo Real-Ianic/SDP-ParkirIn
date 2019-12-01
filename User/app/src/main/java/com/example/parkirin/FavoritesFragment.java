@@ -16,11 +16,21 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.Map;
+
 public class FavoritesFragment extends Fragment {
     Button s,l,sk,topup;
     EditText etNominal;
     TextView txSaldo;
-    int saldo;
+    DatabaseReference reff;
+    int saldotopup;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -31,6 +41,19 @@ public class FavoritesFragment extends Fragment {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setHasOptionsMenu(true);
+        reff = FirebaseDatabase.getInstance().getReference().child("Member").child(FirebaseAuth.getInstance().getCurrentUser().getUid());
+        reff.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                saldotopup = Integer.parseInt(dataSnapshot.child("saldo").getValue().toString());
+                txSaldo.setText(saldotopup+"");
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
     }
 
     @Override
@@ -55,8 +78,7 @@ public class FavoritesFragment extends Fragment {
         sk=view.findViewById(R.id.btn100k);
         topup=view.findViewById(R.id.btnTopUp);
         etNominal=view.findViewById(R.id.etNominal);
-        txSaldo=view.findViewById(R.id.txtSaldo);
-
+        txSaldo=view.findViewById(R.id.txtSaldoTopUp);
         s.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -81,8 +103,7 @@ public class FavoritesFragment extends Fragment {
                 if(TextUtils.isEmpty(etNominal.getText().toString())){
                     etNominal.setError( "Jumlah harus diisi!" );
                 }else{
-                    saldo+=Integer.parseInt(etNominal.getText().toString());
-                    txSaldo.setText(saldo+"");
+                    reff.child("saldo").setValue(saldotopup+Integer.parseInt(etNominal.getText().toString()));
                 }
             }
         });

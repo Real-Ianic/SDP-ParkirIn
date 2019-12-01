@@ -23,7 +23,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class RegisterActivity extends AppCompatActivity {
 
-    EditText nama,email,password,alamat,nohp;
+    EditText nama,email,password,alamat,nohp,passconf;
     TextView linkLogin;
     Member member;
     Button register;
@@ -41,6 +41,7 @@ public class RegisterActivity extends AppCompatActivity {
         password=findViewById(R.id.regispass);
         alamat=findViewById(R.id.regisalamat);
         nohp=findViewById(R.id.regisnohp);
+        passconf=findViewById(R.id.regispassconf);
         register=findViewById(R.id.btn_signup);
         progressBar = new ProgressBar(this);
         database=FirebaseDatabase.getInstance();
@@ -64,6 +65,12 @@ public class RegisterActivity extends AppCompatActivity {
                 if(pass.isEmpty()){
                     password.setError( "Password harus diisi!" );
                 }
+                if(passconf.getText().toString().isEmpty()){
+                    passconf.setError( "Konfirmasi Password harus diisi!" );
+                }
+                if(!passconf.getText().toString().equals(pass)){
+                    password.setError( "Konfirmasi Password Harus Sama Dengan Password" );
+                }
                 if(almt.isEmpty()){
                     alamat.setError( "Alamat harus diisi!" );
                 }
@@ -71,7 +78,7 @@ public class RegisterActivity extends AppCompatActivity {
                     nohp.setError( "Nomor HP harus diisi!" );
                 }
                 progressBar.setVisibility(View.VISIBLE);
-                if(!(namatemp.isEmpty()||emailtemp.isEmpty()||pass.isEmpty()||almt.isEmpty()||hp.isEmpty())){
+                if(!(namatemp.isEmpty()||emailtemp.isEmpty()||pass.isEmpty()||almt.isEmpty()||hp.isEmpty())&&pass.equals(passconf.getText().toString())){
                     mAuth.createUserWithEmailAndPassword(emailtemp,pass).addOnCompleteListener(RegisterActivity.this, new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
@@ -81,9 +88,9 @@ public class RegisterActivity extends AppCompatActivity {
                                 FirebaseDatabase.getInstance().getReference("Member").child(FirebaseAuth.getInstance().getCurrentUser().getUid()).setValue(member).addOnCompleteListener(new OnCompleteListener<Void>() {
                                     @Override
                                     public void onComplete(@NonNull Task<Void> task) {
-                                        progressBar.setVisibility(View.GONE);
-                                        Toast.makeText(RegisterActivity.this, "Registrasi Berhasil", Toast.LENGTH_SHORT).show();
-                                        finish();
+                                    progressBar.setVisibility(View.GONE);
+                                    Toast.makeText(RegisterActivity.this, "Registrasi Berhasil", Toast.LENGTH_SHORT).show();
+                                    finish();
                                     }
                                 });
                             }else{

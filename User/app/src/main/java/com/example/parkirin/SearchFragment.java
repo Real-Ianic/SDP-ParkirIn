@@ -62,6 +62,7 @@ public class SearchFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(getActivity(),historyActivity.class);
+                i.putExtra("email",((MainActivity)getActivity()).email);
                 startActivity(i);
             }
         });

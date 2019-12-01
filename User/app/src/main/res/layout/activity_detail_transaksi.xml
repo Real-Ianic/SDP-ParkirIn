@@ -8,7 +8,8 @@
     tools:context=".DetailTransaksi">
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp">
 
         <TextView
             android:id="@+id/saldoo"
@@ -20,8 +21,7 @@
             app:layout_constraintRight_toLeftOf="@+id/txtSaldo"
             app:layout_constraintTop_toTopOf="parent" />
         <TextView
-            android:id="@+id/txtSaldo"
-            android:text="150000"
+            android:id="@+id/txtSaldoBayar"
             android:textSize="20sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -55,10 +55,9 @@
             app:layout_constraintRight_toRightOf="parent"/>
 
         <TextView
-            android:id="@+id/textView6"
+            android:id="@+id/txtDetailTempat"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Grand City Mall"
             android:textSize="20sp"
             app:layout_constraintLeft_toRightOf="@id/z"
             app:layout_constraintTop_toTopOf="parent" />
@@ -87,22 +86,76 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintRight_toRightOf="parent"/>
 
-        <RadioGroup
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginTop="30dp"
-            app:layout_constraintLeft_toRightOf="@id/z1"/>
-
         <TextView
-            android:id="@+id/textView8"
+            android:id="@+id/txtDetailJenis"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Titip"
             android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toRightOf="@id/z1"
             app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Plat Nomor"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/z7"
+            app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/z7"
+            android:text=" : "
+            android:textSize="20sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"/>
+        <TextView
+            android:id="@+id/txtDetailPlat"
+            android:textSize="20sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toRightOf="@id/z7"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Kendaraan"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/z6"
+            app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/z6"
+            android:text=" : "
+            android:textSize="20sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"/>
+        <TextView
+            android:id="@+id/txtDetailKendaraan"
+            android:textSize="20sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toRightOf="@id/z6"
+            app:layout_constraintTop_toTopOf="parent"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -128,8 +181,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintRight_toRightOf="parent"/>
         <TextView
-            android:id="@+id/txtDurasi"
-            android:text="2 Hari"
+            android:id="@+id/txtDetailDurasi"
             android:textSize="20sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -161,8 +213,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintRight_toRightOf="parent"/>
         <TextView
-            android:id="@+id/txtJumlah"
-            android:text="40000"
+            android:id="@+id/txtDetailJumlah"
             android:textSize="20sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

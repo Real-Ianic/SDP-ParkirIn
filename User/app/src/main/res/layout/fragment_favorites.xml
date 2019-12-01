@@ -14,12 +14,11 @@
         android:textSize="24sp"
         android:layout_alignParentTop="true"/>
     <TextView
-        android:id="@+id/txtSaldo"
+        android:id="@+id/txtSaldoTopUp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
         android:textSize="18sp"
-        android:text="0"
         android:layout_below="@id/saldoanda"/>
     <EditText
         android:layout_width="match_parent"
@@ -38,7 +37,7 @@
         android:id="@+id/btn10k"
         android:layout_marginTop="20dp"
         android:background="@android:color/white"
-        android:text="+ 10000"
+        android:text="+Rp 10000"
         android:layout_below="@id/etNominal"
         android:layout_marginLeft="50dp"/>
 
@@ -48,7 +47,7 @@
         android:id="@+id/btn50k"
         android:layout_marginTop="20dp"
         android:background="@android:color/white"
-        android:text="+ 50000"
+        android:text="+Rp 50000"
         android:layout_below="@id/etNominal"
         android:layout_toRightOf="@id/btn10k"
         android:layout_marginLeft="20dp"/>
@@ -59,7 +58,7 @@
         android:id="@+id/btn100k"
         android:layout_marginTop="20dp"
         android:background="@android:color/white"
-        android:text="+ 50000"
+        android:text="+Rp 100000"
         android:layout_below="@id/etNominal"
         android:layout_toRightOf="@id/btn50k"
         android:layout_marginLeft="20dp"/>

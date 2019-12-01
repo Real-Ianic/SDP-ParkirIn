@@ -30,12 +30,11 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintRight_toRightOf="parent"/>
 
-        <EditText
+        <TextView
             android:id="@+id/txtTempat"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:backgroundTint="@android:color/holo_blue_light"
-            android:text="iSTTS"
             android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toRightOf="@+id/z"
@@ -68,17 +67,19 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginTop="30dp"
+            android:id="@+id/radioJenis"
+            android:layout_marginTop="20dp"
             app:layout_constraintLeft_toRightOf="@id/z1">
 
             <RadioButton
-                android:id="@+id/radioButton2"
+                android:id="@+id/radioHari"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:checked="true"
                 android:text="Titip (Hari)" />
 
             <RadioButton
-                android:id="@+id/radioButton"
+                android:id="@+id/radioParkir"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Parkir (Jam)" />
@@ -109,7 +110,7 @@
             app:layout_constraintRight_toRightOf="parent"/>
 
         <EditText
-            android:id="@+id/editText"
+            android:id="@+id/txtDurasipemesanan"
             android:layout_width="wrap_content"
             android:backgroundTint="@android:color/holo_blue_light"
             android:layout_height="wrap_content"
@@ -117,6 +118,123 @@
             android:inputType="number"
             app:layout_constraintStart_toEndOf="@+id/z2"
             app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Plat Nomor"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/z5"
+            app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/z5"
+            android:text=" : "
+            android:textSize="20sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"/>
+
+        <EditText
+            android:id="@+id/txtPlatnomorDepan"
+            android:layout_width="wrap_content"
+            android:backgroundTint="@android:color/holo_blue_light"
+            android:layout_height="wrap_content"
+            android:ems="2"
+            android:inputType="text"
+            app:layout_constraintStart_toEndOf="@+id/z5"
+            app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/aa"
+            android:text="-"
+            android:textSize="20sp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/txtPlatnomorDepan"/>
+        <EditText
+            android:id="@+id/txtPlatnomorAngka"
+            android:layout_width="wrap_content"
+            android:backgroundTint="@android:color/holo_blue_light"
+            android:layout_height="wrap_content"
+            android:ems="4"
+            android:inputType="number"
+            app:layout_constraintLeft_toRightOf="@+id/aa"
+            app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/bb"
+            android:text="-"
+            android:textSize="20sp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/txtPlatnomorAngka"/>
+        <EditText
+            android:id="@+id/txtPlatnomorBelakang"
+            android:layout_width="wrap_content"
+            android:backgroundTint="@android:color/holo_blue_light"
+            android:layout_height="wrap_content"
+            android:ems="3"
+            android:inputType="text"
+            app:layout_constraintLeft_toRightOf="@id/bb"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:text="Jenis Kendaraan"
+            android:textSize="20sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintRight_toLeftOf="@+id/z6"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+        <TextView
+            android:id="@+id/z6"
+            android:text=" : "
+            android:textSize="20sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"/>
+
+        <RadioGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            android:id="@+id/radioJenisKendaraan"
+            android:layout_marginTop="20dp"
+            app:layout_constraintLeft_toRightOf="@id/z6">
+
+            <RadioButton
+                android:id="@+id/radioMotor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="Roda 2" />
+
+            <RadioButton
+                android:id="@+id/radioMobil"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Roda 4" />
+        </RadioGroup>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -136,4 +254,16 @@
             app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:textColor="@android:color/holo_red_dark"
+        android:text="* Plat Nomor Wajib Sesuai STNK"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:textColor="@android:color/holo_red_dark"
+        android:text="* Jenis Kendaraan Wajib Sesuai STNK"/>
 </LinearLayout>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="wrap_content">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:id="@+id/txtHistoryStatus"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:layout_marginLeft="10dp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/txtHistoryTempat"
+        android:id="@+id/txtHistoryPlat"
+        android:text="Plat Nomor : L 8"
+        android:textSize="18sp"
+        android:layout_marginLeft="10dp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/txtHistoryStatus"
+        android:id="@+id/txtHistoryTempat"
+        android:text="Tempat : aaa"
+        android:textSize="18sp"
+        android:layout_margin="10dp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/txtHistoryPlat"
+        android:id="@+id/txtHistoryJenis"
+        android:text="Jenis : Titip"
+        android:textSize="18sp"
+        android:layout_margin="10dp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/txtHistoryJenis"
+        android:id="@+id/txtHistoryDurasi"
+        android:text="Durasi : 2 jam"
+        android:textSize="18sp"
+        android:layout_margin="10dp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/txtHistoryDurasi"
+        android:id="@+id/txtHistoryTanggal"
+        android:text="Tanggal / Waktu :  "
+        android:textSize="18sp"
+        android:layout_margin="10dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/txtHistoryTanggal"
+        android:id="@+id/txtHistoryKendaraan"
+        android:text="Kendaraan : Roda 4"
+        android:textSize="18sp"
+        android:layout_margin="10dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/txtHistoryKendaraan"
+        android:id="@+id/txtHistoryTotal"
+        android:text="Total : 20000"
+        android:textSize="18sp"
+        android:layout_margin="10dp"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@android:color/darker_gray"
+        android:layout_below="@id/txtHistoryTotal"/>
+</RelativeLayout>

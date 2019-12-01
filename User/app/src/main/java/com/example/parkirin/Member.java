@@ -15,6 +15,13 @@ public class Member {
         this.Saldo = Saldo;
     }
 
+    public int getSaldo() {
+        return Saldo;
+    }
+
+    public void setSaldo(int saldo) {
+        Saldo = saldo;
+    }
     public String getNama() {
         return nama;
     }
