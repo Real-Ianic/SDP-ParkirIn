@@ -9,6 +9,19 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.sql.SQLOutput;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 
 
 /**
@@ -30,6 +43,12 @@ public class AddOperatorFragment extends Fragment {
     private String mParam2;
 
     private OnFragmentInteractionListener mListener;
+
+    List<LokasiClass> listLokasi = new ArrayList<LokasiClass>();
+    Spinner spinnerLokasiOperator;
+    ArrayList<String> listNamaLokasi = new ArrayList<String>();
+    ArrayAdapter<String> spinnerAdapter = new ArrayAdapter<String>(getActivity(),android.R.layout.simple_spinner_item,listNamaLokasi);
+
 
     public AddOperatorFragment() {
         // Required empty public constructor
@@ -60,12 +79,17 @@ public class AddOperatorFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+        spinnerLokasiOperator = container.findViewById(R.id.spinnerLokasiOperator);
+        spinnerLokasiOperator.setAdapter(spinnerAdapter);
+        loadLocations();
+        spinnerAdapter.notifyDataSetChanged();
         return inflater.inflate(R.layout.fragment_add_operator, container, false);
     }
 
@@ -108,5 +132,36 @@ public class AddOperatorFragment extends Fragment {
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);
+    }
+
+    //Added Functions
+
+    public void loadLocations()
+    {
+        FirebaseDatabase db = FirebaseDatabase.getInstance();
+        DatabaseReference ref = db.getReference("Lokasi");
+
+        ref.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                HashMap<String, Object> tempLokasi = (HashMap<String, Object>)dataSnapshot.getValue();
+                for (String key : tempLokasi.keySet())
+                {
+                    Object data = tempLokasi.get(key);
+                    LokasiClass temp = (LokasiClass) data;
+                    try{
+                        listLokasi.add((LokasiClass) data);
+                        listNamaLokasi.add(temp.getNama());
+                    }
+                    catch(ClassCastException cce){
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                System.out.println("The read failed: " + databaseError.getCode());
+            }
+        });
     }
 }
