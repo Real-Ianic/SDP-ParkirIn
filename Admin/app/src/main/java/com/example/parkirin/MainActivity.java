@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
             Intent i = new Intent(this, AdminHome.class);
             startActivity(i);
         } else {
-
+            Toast.makeText(this, "Username / Password salah !", Toast.LENGTH_SHORT).show();
         }
         edpass.setTransformationMethod(PasswordTransformationMethod.getInstance());
         cek=false;

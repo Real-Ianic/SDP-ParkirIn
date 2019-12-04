@@ -27,10 +27,10 @@ public class AddLokasiActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_lokasi);
-        nama=findViewById(R.id.namaLokasi);
+        nama=findViewById(R.id.etNamaLokasi);
         add=findViewById(R.id.btnTambahLokasi);
-        alamat=findViewById(R.id.alamatLokasi);
-        slot=findViewById(R.id.jumlahSlotMobil);
+        alamat=findViewById(R.id.etAlamatLokasi);
+        slot=findViewById(R.id.etSlotmobil);
         pemilik=findViewById(R.id.pemilikLokasi);
         l = new LokasiClass();
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -58,7 +58,7 @@ public class AddLokasiActivity extends AppCompatActivity {
                     l.setNama(sNama);
                     l.setAlamat(sAlamat);
                     l.setPemilik(sPemilik);
-                    l.setSlot(jumlahSlot);
+                    l.setSlotmobil(jumlahSlot);
                     reff.push().setValue(l);
                 }
             }
