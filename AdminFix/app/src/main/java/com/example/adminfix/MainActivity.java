@@ -94,4 +94,20 @@ public class MainActivity extends AppCompatActivity {
         petugasRef.push().setValue(op);
 
     }
+
+    public void editOperator(String id, OperatorClass op)
+    {
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference petugasRef = database.getReference("Petugas/" + id);
+
+        petugasRef.setValue(op);
+    }
+
+    public void deleteOperator(String id)
+    {
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference petugasRef = database.getReference("Petugas/" + id);
+
+        petugasRef.removeValue();
+    }
 }
