@@ -7,6 +7,11 @@ public class OperatorClass {
     private String nohp;
     private String idLokasi;
 
+    public OperatorClass()
+    {
+
+    }
+
     public OperatorClass(String nama, String email, String password, String nohp, String idLokasi)
     {
         this.setNama(nama);

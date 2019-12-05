@@ -16,6 +16,8 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -77,7 +79,6 @@ public class MainActivity extends AppCompatActivity {
         }
         return true;
     }
-<<<<<<< HEAD
 
     //Functional Functions (Add Edit Delete etc)
     // Operator
@@ -105,6 +106,4 @@ public class MainActivity extends AppCompatActivity {
 
         petugasRef.removeValue();
     }
-=======
->>>>>>> 83019f1afff5979900cf48b908aeea4a787ced34
 }
