@@ -13,19 +13,13 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
 
 public class MainActivity extends AppCompatActivity {
 
     BottomNavigationView bottomNavigationView;
-
-    EditText etNama,etEmail,etPassword,etNohp;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -83,6 +77,7 @@ public class MainActivity extends AppCompatActivity {
         }
         return true;
     }
+<<<<<<< HEAD
 
     //Functional Functions (Add Edit Delete etc)
     // Operator
@@ -110,4 +105,6 @@ public class MainActivity extends AppCompatActivity {
 
         petugasRef.removeValue();
     }
+=======
+>>>>>>> 83019f1afff5979900cf48b908aeea4a787ced34
 }

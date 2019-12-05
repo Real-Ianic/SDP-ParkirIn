@@ -1,14 +1,14 @@
 package com.example.adminfix;
 
 public class LokasiClass {
-    private String nama,alamat,pemilik;
+    private String nama,alamat,pemilik,linkgambar;
     Double lat,lng;
     private int slotmobil,slotmotor;
 
     public LokasiClass() {
     }
 
-    public LokasiClass(String nama, String alamat, String pemilik, Double lat, Double lng, int slotmobil, int slotmotor) {
+    public LokasiClass(String nama, String alamat, String pemilik, Double lat, Double lng, int slotmobil, int slotmotor, String linkgambar) {
         this.nama = nama;
         this.alamat = alamat;
         this.pemilik = pemilik;
@@ -16,6 +16,15 @@ public class LokasiClass {
         this.lng = lng;
         this.slotmobil = slotmobil;
         this.slotmotor = slotmotor;
+        this.linkgambar = linkgambar;
+    }
+
+    public String getLinkgambar() {
+        return linkgambar;
+    }
+
+    public void setLinkgambar(String linkgambar) {
+        this.linkgambar = linkgambar;
     }
 
     public Double getLat() {

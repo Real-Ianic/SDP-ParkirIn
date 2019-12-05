@@ -3,14 +3,23 @@ package com.example.parkirin;
 import android.Manifest;
 import android.content.Intent;
 import android.location.Location;
+import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
+import android.widget.CursorAdapter;
+import android.widget.SearchView;
+import android.widget.SimpleCursorAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -26,30 +35,42 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
+import com.google.android.gms.maps.model.Circle;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.storage.OnProgressListener;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
+import com.squareup.picasso.Picasso;
 
 import java.io.Console;
+import java.text.NumberFormat;
+import java.text.ParseException;
 import java.util.ArrayList;
 
 public class HomeFragment extends Fragment implements OnMapReadyCallback {
     Location currentLocation;
     FusedLocationProviderClient fusedLocationProviderClient;
-    Button btnCurrentLocation;
-    DatabaseReference reff;
+    Button btnCurrentLocation,btnPesan;
+    DatabaseReference reff,reff2;
     lokasi l;
-    String email;
+    String email,tempat,key;
     ArrayList<String> listLokasi = new ArrayList<String>();
-
-
+    Double lat,lng;
+    ArrayAdapter<String> adapter;
+    AutoCompleteTextView editText;
+    private SimpleCursorAdapter mAdapter;
     public HomeFragment() {
         // Required empty public constructor
     }
@@ -85,21 +106,37 @@ public class HomeFragment extends Fragment implements OnMapReadyCallback {
         fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(getActivity());
     }
 
-    public void retrievedata(){
-
-
-    }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(getActivity());
         btnCurrentLocation = view.findViewById(R.id.btnLocation);
+        btnPesan = view.findViewById(R.id.btnPesan);
+        editText = view.findViewById(R.id.actv);
+
         reff= FirebaseDatabase.getInstance().getReference("Lokasi");
         btnCurrentLocation.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 fetchLastLocation();
+            }
+        });
+
+        reff.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                for(DataSnapshot data : dataSnapshot.getChildren()){
+                    lokasi l = data.getValue(lokasi.class);
+                    listLokasi.add(l.getNama());
+                    adapter = new ArrayAdapter<String>(getContext(),android.R.layout.simple_list_item_1,listLokasi);
+                    editText.setAdapter(adapter);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
             }
         });
         fetchLastLocation();
@@ -121,9 +158,11 @@ public class HomeFragment extends Fragment implements OnMapReadyCallback {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if(item.getItemId()==R.id.menuLogout){
-            Intent i = new Intent(this.getActivity(),LoginActivity.class);
+            FirebaseAuth.getInstance().signOut();
+            Intent i = new Intent(getActivity(),LoginActivity.class);
+            i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(i);
-            getActivity().finish();
         }
         if(item.getItemId()==R.id.menuTrans){
             Intent i = new Intent(this.getActivity(),historyActivity.class);
@@ -155,44 +194,109 @@ public class HomeFragment extends Fragment implements OnMapReadyCallback {
 
             }
         });
-//        googleMap.addMarker(new MarkerOptions()
-//                .position(new LatLng(-7.2618583,112.7484354))
-//                .title("Grand City Mall").snippet("Sisa Slot : 20"));
+
+        editText.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference();
+                Query query1 = rootRef.child("Lokasi").orderByChild("nama").equalTo(editText.getText().toString());
+                ValueEventListener valueEventListener = new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        for(DataSnapshot ds : dataSnapshot.getChildren()) {
+                            key = ds.getKey();
+                            reff2 = FirebaseDatabase.getInstance().getReference().child("Lokasi").child(key);
+                            reff2.addValueEventListener(new ValueEventListener() {
+                                @Override
+                                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                    NumberFormat f = NumberFormat.getInstance();
+                                    try {
+                                        lat = f.parse(dataSnapshot.child("lat").getValue().toString()).doubleValue();
+                                    } catch (ParseException e) {
+                                        e.printStackTrace();
+                                    }
+                                    try {
+                                        lng = f.parse(dataSnapshot.child("lng").getValue().toString()).doubleValue();
+                                    } catch (ParseException e) {
+                                        e.printStackTrace();
+                                    }
+                                    LatLng lokasisearch = new LatLng(lat,lng);
+                                    googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(lokasisearch,18));
+
+                                }
+
+                                @Override
+                                public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                }
+                            });
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                    }
+                };
+                query1.addListenerForSingleValueEvent(valueEventListener);
+            }
+        });
+
+
+        googleMap.setOnCircleClickListener(new GoogleMap.OnCircleClickListener() {
+            @Override
+            public void onCircleClick(Circle circle) {
+                Toast.makeText(getContext(), "a", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        googleMap.setOnMapClickListener(new GoogleMap.OnMapClickListener() {
+            @Override
+            public void onMapClick(LatLng latLng) {
+                btnPesan.setVisibility(View.INVISIBLE);
+                btnPesan.setOnClickListener(null);
+                googleMap.animateCamera(CameraUpdateFactory.newLatLng(latLng));
+                googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng,12));
+                editText.setText(null);
+            }
+        });
+
+//        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+//            @Override
+//            public boolean onQueryTextSubmit(String query) {
+//                Toast.makeText(getContext(), query, Toast.LENGTH_SHORT).show();
+//                searchView.setSuggestionsAdapter();
+//                return false;
+//            }
 //
-//        googleMap.addMarker(new MarkerOptions()
-//                .position(new LatLng(-7.291306,112.756635))
-//                .title("iSTTS").snippet("Sisa Slot : 2"));
-//
-//        googleMap.addMarker(new MarkerOptions()
-//                .position(new LatLng(-7.2622971,112.7382203))
-//                .title("Tunjungan Plaza").snippet("Sisa Slot : 15"));
+//            @Override
+//            public boolean onQueryTextChange(String newText) {
+//                return false;
+//            }
+//        });
+
 
         googleMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
             @Override
-            public boolean onMarkerClick(Marker marker) {
-
-                if(marker.getTitle().equals("Grand City Mall")){
-                    Intent i = new Intent(getActivity(),pemesananActivity.class);
-                    i.putExtra("tempat","Grand City Mall");
-                    i.putExtra("email",email);
-                    startActivity(i);
-                }
-                if(marker.getTitle().equals("iSTTS")){
-                    Intent i = new Intent(getActivity(),pemesananActivity.class);
-                    i.putExtra("tempat","iSTTS");
-                    i.putExtra("email",email);
-                    startActivity(i);
-                }
-                if(marker.getTitle().equals("Tunjungan Plaza")){
-                    Intent i = new Intent(getActivity(),pemesananActivity.class);
-                    i.putExtra("tempat","Tunjungan Plaza");
-                    i.putExtra("email",email);
-                    startActivity(i);
-                }
+            public boolean onMarkerClick(final Marker marker) {
+                btnPesan.setVisibility(View.VISIBLE);
+                btnPesan.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        if(!marker.getTitle().equals("Lokasi Anda")){
+                            Intent i = new Intent(getContext(),tempatdetail.class);
+                            i.putExtra("tempat",marker.getTitle());
+                            i.putExtra("email",email);
+                            i.putExtra("currlat",currentLocation.getLatitude()+"");
+                            i.putExtra("currlng",currentLocation.getLongitude()+"");
+                            startActivity(i);
+                        }else{
+                            Toast.makeText(getContext(), "Lokasi Anda", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
                 return false;
             }
         });
     }
-
-
 }

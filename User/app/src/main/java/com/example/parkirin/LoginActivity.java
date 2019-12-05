@@ -115,4 +115,5 @@ public class LoginActivity extends AppCompatActivity {
         final AlertDialog alert = builder.create();
         alert.show();
     }
+
 }
