@@ -4,30 +4,11 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.Spinner;
-
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
-
-import org.json.JSONObject;
-
-import java.sql.SQLOutput;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
 
 
 /**
@@ -49,15 +30,6 @@ public class AddOperatorFragment extends Fragment {
     private String mParam2;
 
     private OnFragmentInteractionListener mListener;
-
-    List<LokasiClass> listLokasi = new ArrayList<LokasiClass>();
-    Spinner spinnerLokasiOperator;
-    ArrayList<String> listNamaLokasi = new ArrayList<String>();
-    ArrayAdapter<String> spinnerAdapter;
-    ArrayList<String> listIdLokasi = new ArrayList<>();
-
-    EditText etNama,etEmail,etPassword,etNohp;
-    Button btnRegisterOperator;
 
     public AddOperatorFragment() {
         // Required empty public constructor
@@ -88,7 +60,6 @@ public class AddOperatorFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
-
     }
 
     @Override
@@ -96,30 +67,6 @@ public class AddOperatorFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_add_operator, container, false);
-    }
-
-    @Override
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-        spinnerAdapter = new ArrayAdapter<String>(this.getActivity(),android.R.layout.simple_spinner_item,listNamaLokasi);
-
-        etNama = view.findViewById(R.id.edNamaOperator);
-        etEmail = view.findViewById(R.id.edEmailOperator);
-        etPassword = view.findViewById(R.id.edPasswordOperator);
-        etNohp = view.findViewById(R.id.edNoHPOperator);
-        btnRegisterOperator = view.findViewById(R.id.btnTambahOperator);
-
-        btnRegisterOperator.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                registerOperator();
-            }
-        });
-
-        spinnerLokasiOperator = view.findViewById(R.id.spinnerLokasiOperator);
-        spinnerLokasiOperator.setAdapter(spinnerAdapter);
-        loadLocations();
-        spinnerAdapter.notifyDataSetChanged();
     }
 
     // TODO: Rename method, update argument and hook method into UI event
@@ -161,94 +108,5 @@ public class AddOperatorFragment extends Fragment {
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);
-    }
-
-    //Added Functions
-
-    public void loadLocations()
-    {
-        FirebaseDatabase db = FirebaseDatabase.getInstance();
-        DatabaseReference ref = db.getReference("Lokasi");
-
-        ref.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                HashMap<String, Object> tempLokasi = (HashMap<String, Object>)dataSnapshot.getValue();
-
-                listLokasi.clear();
-                listNamaLokasi.clear();
-                listIdLokasi.clear();
-                for (String key : tempLokasi.keySet())
-                {
-                    listIdLokasi.add(key);
-                    System.out.println(tempLokasi.get(key));
-                    HashMap<String, String> tempObject = (HashMap<String,String>)tempLokasi.get(key);
-                    LokasiClass temporLokasi = new LokasiClass();
-                    temporLokasi.setNama(tempObject.get("nama"));
-                    temporLokasi.setPemilik(tempObject.get("pemilik"));
-
-                    String hi = String.valueOf(tempObject.get("slotmobil"));
-
-                    temporLokasi.setSlotmobil(Integer.parseInt(hi));
-                    temporLokasi.setAlamat(tempObject.get("alamat"));
-
-                    hi = String.valueOf(tempObject.get("lat"));
-                    temporLokasi.setLat(Double.parseDouble(hi));
-
-                    hi = String.valueOf(tempObject.get("lng"));
-                    temporLokasi.setLng(Double.parseDouble(hi));
-
-                    hi = String.valueOf(tempObject.get("slotmotor"));
-                    temporLokasi.setSlotmotor(Integer.parseInt(hi));
-
-                    System.out.println("=============");
-                    System.out.println(temporLokasi);
-
-                    listLokasi.add(temporLokasi);
-                    listNamaLokasi.add(temporLokasi.getNama());
-
-                    /*
-                    Object data = tempLokasi.get(key);
-                    LokasiClass temp = (LokasiClass) data;
-                    try{
-                        listLokasi.add((LokasiClass) data);
-                        listNamaLokasi.add(temp.getNama());
-                    }
-                    catch(ClassCastException cce){
-                    }
-                     */
-                    spinnerAdapter.notifyDataSetChanged();
-                }
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-                System.out.println("The read failed: " + databaseError.getCode());
-            }
-        });
-    }
-
-    public void registerOperator()
-    {
-        String name = etNama.getText().toString();
-        String email = etEmail.getText().toString();
-        String password = etPassword.getText().toString();
-        String nohp = etNohp.getText().toString();
-
-        String idLokasi = listIdLokasi.get(spinnerLokasiOperator.getSelectedItemPosition());
-
-        OperatorClass tempOperator = new OperatorClass(name,email,password,nohp,idLokasi);
-
-        MainActivity parentActivity = (MainActivity)this.getActivity();
-        parentActivity.addOperator(tempOperator);
-        clearForm();
-    }
-
-    public void clearForm()
-    {
-        etNama.setText("");
-        etEmail.setText("");
-        etPassword.setText("");
-        etNohp.setText("");
     }
 }

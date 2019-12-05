@@ -1,85 +1,149 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".EditLokasiFragment">
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
-        android:text="EDIT LOKASI"
-        android:textAlignment="center"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Spinner
-        android:id="@+id/spinner"
+    tools:context=".AddLokasiFragment">
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        android:layout_height="match_parent">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pilih Lokasi : "
+            android:layout_below="@id/textView3a"
+            android:id="@+id/pilih"
+            android:textSize="18sp"
+            android:layout_marginLeft="20dp"
+            android:layout_alignParentLeft="true"/>
+        <androidx.appcompat.widget.AppCompatSpinner
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/pilih"
+            android:layout_below="@id/textView3a"
+            android:id="@+id/spinnerEdit"/>
+        <TextView
+            android:id="@+id/textView3a"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
+            android:text="EDIT LOKASI"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"/>
 
-    <EditText
-        android:id="@+id/alamatLokasiEdit"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@android:color/holo_blue_light"
-        android:hint="Alamat"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/namaLokasiEdit" />
+        <EditText
+            android:id="@+id/etNamaLokasiEdit"
+            android:backgroundTint="@android:color/holo_blue_light"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:hint="Nama"
+            android:layout_below="@+id/spinnerEdit"
+            android:inputType="textCapWords"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"/>
 
-    <EditText
-        android:id="@+id/namaLokasiEdit"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@android:color/holo_blue_light"
-        android:hint="Nama Lokasi"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinner" />
+        <EditText
+            android:id="@+id/etAlamatLokasiEdit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/etNamaLokasiEdit"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:backgroundTint="@android:color/holo_blue_light"
+            android:hint="Alamat"
+            android:inputType="textCapWords" />
+        <ProgressBar
+            android:id="@+id/progressBarEdit"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+            android:layout_below="@id/btnTambahLokasiEdit"/>
 
-    <EditText
-        android:id="@+id/jumlahSlotMobilEdit"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@android:color/holo_blue_light"
-        android:hint="Jumlah Slot Mobil"
-        android:inputType="number"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/alamatLokasiEdit" />
+        <EditText
+            android:id="@+id/etLatitudeEdit"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@android:color/holo_blue_light"
+            android:hint="Latitude"
+            android:layout_below="@id/etAlamatLokasiEdit"/>
 
-    <EditText
-        android:id="@+id/jumlahSlotMotorEdit"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@android:color/holo_blue_light"
-        android:hint="Jumlah Slot Motor"
-        android:inputType="number"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/jumlahSlotMobilEdit" />
+        <EditText
+            android:id="@+id/etLongitudeEdit"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@android:color/holo_blue_light"
+            android:hint="Longitude"
+            android:layout_below="@id/etLatitudeEdit"/>
 
-    <Button
-        android:id="@+id/btnSaveEditLokasi"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@android:color/holo_blue_light"
-        android:text="SAVE"
-        android:textColor="@android:color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/jumlahSlotMotorEdit" />
+        <EditText
+            android:id="@+id/etSlotmobilEdit"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@android:color/holo_blue_light"
+            android:hint="Jumlah Slot Mobil"
+            android:inputType="number"
+            android:layout_below="@id/etLongitudeEdit"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <EditText
+            android:id="@+id/etSlotmotorEdit"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@android:color/holo_blue_light"
+            android:hint="Jumlah Slot Motor"
+            android:inputType="number"
+            android:layout_below="@id/etSlotmobilEdit"/>
+
+
+        <EditText
+            android:id="@+id/etPemilikEdit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@android:color/holo_blue_light"
+            android:hint="Pemilik"
+            android:inputType="textCapWords"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_below="@+id/etSlotmotorEdit"/>
+
+        <Button
+            android:id="@+id/btnGambarEdit"
+            android:layout_width="fill_parent"
+            android:layout_margin="20dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@android:color/holo_blue_light"
+            android:text="Input Gambar Baru"
+            android:textColor="@android:color/white"
+            android:layout_below="@+id/etPemilikEdit" />
+
+        <ImageView
+            android:id="@+id/previewImageEdit"
+            android:layout_width="250px"
+            android:layout_centerHorizontal="true"
+            android:layout_height="250px"
+            android:layout_below="@id/btnGambarEdit"/>
+
+        <Button
+            android:id="@+id/btnTambahLokasiEdit"
+            android:layout_width="fill_parent"
+            android:layout_margin="20dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@android:color/holo_blue_light"
+            android:text="Simpan Perubahan"
+            android:textColor="@android:color/white"
+            android:layout_below="@+id/previewImageEdit" />
+    </RelativeLayout>
+</ScrollView>
+
+

@@ -106,8 +106,6 @@ public class UserFragment extends Fragment {
         );
     }
 
-
-
     public void changeUserFragment(Fragment f, String data) {
         FragmentManager fz = getFragmentManager();
         FragmentTransaction ft = fz.beginTransaction();

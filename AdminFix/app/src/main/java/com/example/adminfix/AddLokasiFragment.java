@@ -1,38 +1,63 @@
 package com.example.adminfix;
 
 
+import android.app.ProgressDialog;
+import android.content.ContentResolver;
+import android.content.Intent;
+import android.graphics.Bitmap;
+import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import android.os.Handler;
+import android.provider.MediaStore;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.MimeTypeMap;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.OnProgressListener;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
+import com.squareup.picasso.Picasso;
+
+import java.io.IOException;
+import java.util.UUID;
+
+import static android.app.Activity.RESULT_OK;
 
 public class AddLokasiFragment extends Fragment {
     EditText nama,alamat,pemilik,slotmotor,slotmobil,lat,lng;
-    String sNama;
-    String sAlamat;
-    String sPemilik;
-    double sLat;
-    double sLng;
+    String sNama,sAlamat,sPemilik;
+    double sLat,sLng;
+    private Uri filePath;
+    private ImageView imageView;
     int sMotor,sMobil;
     DatabaseReference reff;
-    Button add;
+    Button add,btnimage;
+    private FirebaseStorage storage;
+    private StorageReference storageReference;
+    private ProgressBar progressBar;
     LokasiClass l;
 
     public AddLokasiFragment() {
@@ -49,7 +74,12 @@ public class AddLokasiFragment extends Fragment {
         slotmotor=view.findViewById(R.id.etSlotmotor);
         pemilik=view.findViewById(R.id.etPemilik);
         lat=view.findViewById(R.id.etLatitude);
+        progressBar=view.findViewById(R.id.progressBar);
         lng=view.findViewById(R.id.etLongitude);
+        btnimage=view.findViewById(R.id.btnGambar);
+        imageView=view.findViewById(R.id.previewImage);
+        storage = FirebaseStorage.getInstance();
+        storageReference = storage.getReference("gambar");
         reff= FirebaseDatabase.getInstance().getReference();
         add.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -90,8 +120,7 @@ public class AddLokasiFragment extends Fragment {
                             if (dataSnapshot.exists()) {
                                 Toast.makeText(getActivity(), "Lokasi Sudah Ada", Toast.LENGTH_SHORT).show();
                             }else{
-                                l = new LokasiClass(sNama,sAlamat,sPemilik,sLat,sLng,sMobil,sMotor);
-                                reff.child("Lokasi").push().setValue(l);
+                                uploadImage();
                                 Toast.makeText(getContext(), "Input Berhasil", Toast.LENGTH_SHORT).show();
                                 nama.setText("");
                                 alamat.setText("");
@@ -100,6 +129,7 @@ public class AddLokasiFragment extends Fragment {
                                 slotmobil.setText("");
                                 lat.setText("");
                                 lng.setText("");
+                                imageView.setImageResource(0);
                             }
                         }
                         @Override
@@ -113,7 +143,73 @@ public class AddLokasiFragment extends Fragment {
                 }
             }
         });
-        
+        btnimage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                chooseImage();
+            }
+        });
+    }
+
+    public void chooseImage(){
+        Intent i = new Intent();
+        i.setType("image/*");
+        i.setAction(Intent.ACTION_GET_CONTENT);
+        startActivityForResult(Intent.createChooser(i,"Pilih Gambar"),1);
+    }
+
+    private String getFileExtension(Uri uri){
+        ContentResolver cr = getContext().getContentResolver();
+        MimeTypeMap mime = MimeTypeMap.getSingleton();
+        return mime.getExtensionFromMimeType(cr.getType(uri));
+    }
+
+    public void uploadImage(){
+        if(filePath!=null){
+            final StorageReference reference = storageReference.child(System.currentTimeMillis()+"."+getFileExtension(filePath));
+            reference.putFile(filePath).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                @Override
+                public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                    reference.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                        @Override
+                        public void onSuccess(Uri uri) {
+                            Handler handler = new Handler();
+                            handler.postDelayed(new Runnable() {
+                                @Override
+                                public void run() {
+                                    progressBar.setProgress(0);
+                                }
+                            },5000);
+                            l = new LokasiClass(sNama,sAlamat,sPemilik,sLat,sLng,sMobil,sMotor,uri.toString());
+                            reff.child("Lokasi").push().setValue(l);
+                            Toast.makeText(getContext(), "Upload Gambar Berhasil", Toast.LENGTH_SHORT).show();
+                        }
+                    });
+                }
+            }).addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull Exception e) {
+                    Toast.makeText(getContext(), e.getMessage(), Toast.LENGTH_SHORT).show();
+                }
+            }).addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {
+                @Override
+                public void onProgress(UploadTask.TaskSnapshot taskSnapshot) {
+                    double progress = (100*taskSnapshot.getBytesTransferred()/taskSnapshot.getTotalByteCount());
+                    progressBar.setProgress((int)progress);
+                }
+            });
+        }else{
+            Toast.makeText(getContext(), "Tidak ada gambar yang dipilih", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(requestCode == 1 && resultCode==RESULT_OK && data!=null && data.getData()!=null){
+            filePath = data.getData();
+            Picasso.get().load(filePath).into(imageView);
+        }
     }
 
     @Override
