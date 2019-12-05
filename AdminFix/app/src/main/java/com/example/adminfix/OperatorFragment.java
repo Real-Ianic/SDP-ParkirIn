@@ -72,7 +72,6 @@ public class OperatorFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         bottomNavOperator = getView().findViewById(R.id.bottomNavOperator);
-        changeOperatorFragment(new AddOperatorFragment(), "");
         bottomNavOperator.setOnNavigationItemSelectedListener(
                 new BottomNavigationView.OnNavigationItemSelectedListener() {
                     @Override
@@ -87,6 +86,7 @@ public class OperatorFragment extends Fragment {
                     }
                 }
         );
+        changeOperatorFragment(new AddOperatorFragment(), "");
     }
 
     public void changeOperatorFragment(Fragment f, String data) {
