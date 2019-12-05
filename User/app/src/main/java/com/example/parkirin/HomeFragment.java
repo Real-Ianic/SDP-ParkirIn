@@ -121,6 +121,8 @@ public class HomeFragment extends Fragment implements OnMapReadyCallback {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if(item.getItemId()==R.id.menuLogout){
+            Intent i = new Intent(this.getActivity(),LoginActivity.class);
+            startActivity(i);
             getActivity().finish();
         }
         if(item.getItemId()==R.id.menuTrans){

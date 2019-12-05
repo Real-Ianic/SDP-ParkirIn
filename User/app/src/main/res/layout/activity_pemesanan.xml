@@ -5,30 +5,34 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:paddingLeft="30dp"
+    android:paddingRight="30dp"
     tools:context=".pemesananActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@android:dimen/thumbnail_height">
+
         <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:text="Tempat"
             android:textSize="20sp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintRight_toLeftOf="@+id/z"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent" />
+            app:layout_constraintTop_toTopOf="parent" />
+
         <TextView
             android:id="@+id/z"
-            android:text=" : "
-            android:textSize="20sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
+            android:text=" : "
+            android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintRight_toRightOf="parent"/>
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/txtTempat"
@@ -40,36 +44,38 @@
             app:layout_constraintLeft_toRightOf="@+id/z"
             app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:text="Jenis"
             android:textSize="20sp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintRight_toLeftOf="@+id/z1"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent" />
+            app:layout_constraintTop_toTopOf="parent" />
+
         <TextView
             android:id="@+id/z1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:text=" : "
             android:textSize="20sp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintRight_toRightOf="parent"/>
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <RadioGroup
+            android:id="@+id/radioJenis"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toTopOf="parent"
-            android:id="@+id/radioJenis"
             android:layout_marginTop="20dp"
-            app:layout_constraintLeft_toRightOf="@id/z1">
+            app:layout_constraintLeft_toRightOf="@id/z1"
+            app:layout_constraintTop_toTopOf="parent">
 
             <RadioButton
                 android:id="@+id/radioHari"
@@ -86,6 +92,7 @@
         </RadioGroup>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -98,22 +105,23 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintRight_toLeftOf="@+id/z2"
             app:layout_constraintTop_toTopOf="parent" />
+
         <TextView
             android:id="@+id/z2"
-            android:text=" : "
-            android:textSize="20sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
+            android:text=" : "
+            android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintRight_toRightOf="parent"/>
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
             android:id="@+id/txtDurasipemesanan"
             android:layout_width="wrap_content"
-            android:backgroundTint="@android:color/holo_blue_light"
             android:layout_height="wrap_content"
+            android:backgroundTint="@android:color/holo_blue_light"
             android:ems="3"
             android:inputType="number"
             app:layout_constraintStart_toEndOf="@+id/z2"
@@ -132,58 +140,63 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintRight_toLeftOf="@+id/z5"
             app:layout_constraintTop_toTopOf="parent" />
+
         <TextView
             android:id="@+id/z5"
-            android:text=" : "
-            android:textSize="20sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
+            android:text=" : "
+            android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintRight_toRightOf="parent"/>
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
             android:id="@+id/txtPlatnomorDepan"
             android:layout_width="wrap_content"
-            android:backgroundTint="@android:color/holo_blue_light"
             android:layout_height="wrap_content"
+            android:backgroundTint="@android:color/holo_blue_light"
             android:ems="2"
             android:inputType="text"
             app:layout_constraintStart_toEndOf="@+id/z5"
             app:layout_constraintTop_toTopOf="parent" />
+
         <TextView
+            android:id="@+id/aa"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/aa"
             android:text="-"
             android:textSize="20sp"
-            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toRightOf="@+id/txtPlatnomorDepan"/>
+            app:layout_constraintLeft_toRightOf="@+id/txtPlatnomorDepan"
+            app:layout_constraintTop_toTopOf="parent" />
+
         <EditText
             android:id="@+id/txtPlatnomorAngka"
-            android:layout_width="wrap_content"
+            android:layout_width="70dp"
+            android:layout_height="45dp"
             android:backgroundTint="@android:color/holo_blue_light"
-            android:layout_height="wrap_content"
             android:ems="4"
             android:inputType="number"
             app:layout_constraintLeft_toRightOf="@+id/aa"
             app:layout_constraintTop_toTopOf="parent" />
+
         <TextView
+            android:id="@+id/bb"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/bb"
             android:text="-"
             android:textSize="20sp"
-            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toRightOf="@+id/txtPlatnomorAngka"/>
+            app:layout_constraintLeft_toRightOf="@+id/txtPlatnomorAngka"
+            app:layout_constraintTop_toTopOf="parent" />
+
         <EditText
             android:id="@+id/txtPlatnomorBelakang"
             android:layout_width="wrap_content"
-            android:backgroundTint="@android:color/holo_blue_light"
             android:layout_height="wrap_content"
+            android:backgroundTint="@android:color/holo_blue_light"
             android:ems="3"
             android:inputType="text"
             app:layout_constraintLeft_toRightOf="@id/bb"
@@ -195,31 +208,32 @@
         android:layout_height="wrap_content">
 
         <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:text="Jenis Kendaraan"
             android:textSize="20sp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintRight_toLeftOf="@+id/z6"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent" />
+            app:layout_constraintTop_toTopOf="parent" />
+
         <TextView
             android:id="@+id/z6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:text=" : "
             android:textSize="20sp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintRight_toRightOf="parent"/>
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <RadioGroup
+            android:id="@+id/radioJenisKendaraan"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toTopOf="parent"
-            android:id="@+id/radioJenisKendaraan"
             android:layout_marginTop="20dp"
-            app:layout_constraintLeft_toRightOf="@id/z6">
+            app:layout_constraintLeft_toRightOf="@id/z6"
+            app:layout_constraintTop_toTopOf="parent">
 
             <RadioButton
                 android:id="@+id/radioMotor"
@@ -244,26 +258,28 @@
         <Button
             android:id="@+id/btnBuyDetail"
             android:layout_width="match_parent"
-            android:layout_margin="20dp"
             android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:background="@android:color/holo_blue_light"
             android:onClick="onClick"
             android:text="Next"
-            android:background="@android:color/holo_blue_light"
             android:textColor="@android:color/white"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
-        android:textColor="@android:color/holo_red_dark"
-        android:text="* Plat Nomor Wajib Sesuai STNK"/>
+        android:text="* Plat Nomor Wajib Sesuai STNK"
+        android:textColor="@android:color/holo_red_dark" />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
-        android:textColor="@android:color/holo_red_dark"
-        android:text="* Jenis Kendaraan Wajib Sesuai STNK"/>
+        android:text="* Jenis Kendaraan Wajib Sesuai STNK"
+        android:textColor="@android:color/holo_red_dark" />
 </LinearLayout>

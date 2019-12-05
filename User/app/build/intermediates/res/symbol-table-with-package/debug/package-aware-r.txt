@@ -1107,10 +1107,12 @@ drawable design_snackbar_background
 drawable googleg_disabled_color_18
 drawable googleg_standard_color_18
 drawable ic_attach_money_black_24dp
+drawable ic_check_circle_black_24dp
 drawable ic_done_black_24dp
 drawable ic_home_black_24dp
 drawable ic_launcher_background
 drawable ic_launcher_foreground
+drawable ic_launcherlogoparkirin_background
 drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
@@ -1581,6 +1583,9 @@ menu optionmenu
 menu search
 mipmap ic_launcher
 mipmap ic_launcher_round
+mipmap ic_launcherlogoparkirin
+mipmap ic_launcherlogoparkirin_foreground
+mipmap ic_launcherlogoparkirin_round
 string abc_action_bar_home_description
 string abc_action_bar_up_description
 string abc_action_menu_overflow_description
