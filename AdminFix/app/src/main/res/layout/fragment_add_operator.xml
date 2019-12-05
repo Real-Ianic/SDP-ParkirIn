@@ -64,6 +64,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="36dp"
         android:backgroundTint="@android:color/holo_blue_light"
+        android:onClick="registerOperator"
         android:text="Tambah operator"
         android:textColor="@android:color/white"
         app:layout_constraintEnd_toEndOf="parent"

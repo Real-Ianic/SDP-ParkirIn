@@ -12,6 +12,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Spinner;
 
 import com.google.firebase.database.DataSnapshot;
@@ -52,7 +54,10 @@ public class AddOperatorFragment extends Fragment {
     Spinner spinnerLokasiOperator;
     ArrayList<String> listNamaLokasi = new ArrayList<String>();
     ArrayAdapter<String> spinnerAdapter;
+    ArrayList<String> listIdLokasi = new ArrayList<>();
 
+    EditText etNama,etEmail,etPassword,etNohp;
+    Button btnRegisterOperator;
 
     public AddOperatorFragment() {
         // Required empty public constructor
@@ -97,6 +102,19 @@ public class AddOperatorFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         spinnerAdapter = new ArrayAdapter<String>(this.getActivity(),android.R.layout.simple_spinner_item,listNamaLokasi);
+
+        etNama = view.findViewById(R.id.edNamaOperator);
+        etEmail = view.findViewById(R.id.edEmailOperator);
+        etPassword = view.findViewById(R.id.edPasswordOperator);
+        etNohp = view.findViewById(R.id.edNoHPOperator);
+        btnRegisterOperator = view.findViewById(R.id.btnTambahOperator);
+
+        btnRegisterOperator.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                registerOperator();
+            }
+        });
 
         spinnerLokasiOperator = view.findViewById(R.id.spinnerLokasiOperator);
         spinnerLokasiOperator.setAdapter(spinnerAdapter);
@@ -159,8 +177,10 @@ public class AddOperatorFragment extends Fragment {
 
                 listLokasi.clear();
                 listNamaLokasi.clear();
+                listIdLokasi.clear();
                 for (String key : tempLokasi.keySet())
                 {
+                    listIdLokasi.add(key);
                     System.out.println(tempLokasi.get(key));
                     HashMap<String, String> tempObject = (HashMap<String,String>)tempLokasi.get(key);
                     LokasiClass temporLokasi = new LokasiClass();
@@ -206,5 +226,29 @@ public class AddOperatorFragment extends Fragment {
                 System.out.println("The read failed: " + databaseError.getCode());
             }
         });
+    }
+
+    public void registerOperator()
+    {
+        String name = etNama.getText().toString();
+        String email = etEmail.getText().toString();
+        String password = etPassword.getText().toString();
+        String nohp = etNohp.getText().toString();
+
+        String idLokasi = listIdLokasi.get(spinnerLokasiOperator.getSelectedItemPosition());
+
+        OperatorClass tempOperator = new OperatorClass(name,email,password,nohp,idLokasi);
+
+        MainActivity parentActivity = (MainActivity)this.getActivity();
+        parentActivity.addOperator(tempOperator);
+        clearForm();
+    }
+
+    public void clearForm()
+    {
+        etNama.setText("");
+        etEmail.setText("");
+        etPassword.setText("");
+        etNohp.setText("");
     }
 }
