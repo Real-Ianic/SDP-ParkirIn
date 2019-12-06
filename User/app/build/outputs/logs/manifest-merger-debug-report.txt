@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from D:\Git\app\src\main\AndroidManifest.xml:2:1-57:12
-INJECTED from D:\Git\app\src\main\AndroidManifest.xml:2:1-57:12
-INJECTED from D:\Git\app\src\main\AndroidManifest.xml:2:1-57:12
-INJECTED from D:\Git\app\src\main\AndroidManifest.xml:2:1-57:12
+ADDED from D:\Git\app\src\main\AndroidManifest.xml:2:1-61:12
+INJECTED from D:\Git\app\src\main\AndroidManifest.xml:2:1-61:12
+INJECTED from D:\Git\app\src\main\AndroidManifest.xml:2:1-61:12
+INJECTED from D:\Git\app\src\main\AndroidManifest.xml:2:1-61:12
 MERGED from [com.google.android.material:material:1.0.0] C:\Users\Albert\.gradle\caches\transforms-2\files-2.1\f5cee04665f635392fbc3a078a89e818\material-1.0.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.appcompat:appcompat:1.1.0] C:\Users\Albert\.gradle\caches\transforms-2\files-2.1\78d780e7e979f381c0cb40b5ded8691d\appcompat-1.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] C:\Users\Albert\.gradle\caches\transforms-2\files-2.1\6d16290c97378708d50718ed6ea0b1c0\constraintlayout-1.1.3\AndroidManifest.xml:2:1-11:12
@@ -71,20 +71,20 @@ MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] C:\Users\Albert\.
 MERGED from [androidx.arch.core:core-runtime:2.0.0] C:\Users\Albert\.gradle\caches\transforms-2\files-2.1\c92e9c6549150a4bd8eb347f54ac769d\core-runtime-2.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [com.google.firebase:firebase-database-collection:16.0.1] C:\Users\Albert\.gradle\caches\transforms-2\files-2.1\dfa85ef2ef2f15544ca6328533e11ff4\firebase-database-collection-16.0.1\AndroidManifest.xml:2:1-7:12
 MERGED from [io.card:android-sdk:5.5.0] C:\Users\Albert\.gradle\caches\transforms-2\files-2.1\3618df737e5a849b38efd8cf2afa51f6\jetified-android-sdk-5.5.0\AndroidManifest.xml:2:1-26:12
-INJECTED from D:\Git\app\src\main\AndroidManifest.xml:2:1-57:12
-INJECTED from D:\Git\app\src\main\AndroidManifest.xml:2:1-57:12
-INJECTED from D:\Git\app\src\main\AndroidManifest.xml:2:1-57:12
+INJECTED from D:\Git\app\src\main\AndroidManifest.xml:2:1-61:12
+INJECTED from D:\Git\app\src\main\AndroidManifest.xml:2:1-61:12
+INJECTED from D:\Git\app\src\main\AndroidManifest.xml:2:1-61:12
 	package
 		ADDED from D:\Git\app\src\main\AndroidManifest.xml:3:5-35
 		INJECTED from D:\Git\app\src\main\AndroidManifest.xml
 		INJECTED from D:\Git\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from D:\Git\app\src\main\AndroidManifest.xml
-		ADDED from D:\Git\app\src\main\AndroidManifest.xml:2:1-57:12
+		ADDED from D:\Git\app\src\main\AndroidManifest.xml:2:1-61:12
 		INJECTED from D:\Git\app\src\main\AndroidManifest.xml
 	android:versionCode
 		INJECTED from D:\Git\app\src\main\AndroidManifest.xml
-		ADDED from D:\Git\app\src\main\AndroidManifest.xml:2:1-57:12
+		ADDED from D:\Git\app\src\main\AndroidManifest.xml:2:1-61:12
 		INJECTED from D:\Git\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from D:\Git\app\src\main\AndroidManifest.xml:2:11-69
@@ -129,7 +129,7 @@ MERGED from [com.google.android.gms:play-services-maps:17.0.0] C:\Users\Albert\.
 	android:required
 		ADDED from D:\Git\app\src\main\AndroidManifest.xml:11:9-32
 application
-ADDED from D:\Git\app\src\main\AndroidManifest.xml:13:5-55:19
+ADDED from D:\Git\app\src\main\AndroidManifest.xml:13:5-59:19
 MERGED from [com.google.android.material:material:1.0.0] C:\Users\Albert\.gradle\caches\transforms-2\files-2.1\f5cee04665f635392fbc3a078a89e818\material-1.0.0\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.0.0] C:\Users\Albert\.gradle\caches\transforms-2\files-2.1\f5cee04665f635392fbc3a078a89e818\material-1.0.0\AndroidManifest.xml:22:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] C:\Users\Albert\.gradle\caches\transforms-2\files-2.1\6d16290c97378708d50718ed6ea0b1c0\constraintlayout-1.1.3\AndroidManifest.xml:9:5-20
@@ -206,78 +206,84 @@ MERGED from [io.card:android-sdk:5.5.0] C:\Users\Albert\.gradle\caches\transform
 		ADDED from D:\Git\app\src\main\AndroidManifest.xml:14:9-35
 	android:theme
 		ADDED from D:\Git\app\src\main\AndroidManifest.xml:19:9-40
-activity#com.example.parkirin.Topupberhasil
-ADDED from D:\Git\app\src\main\AndroidManifest.xml:20:9-60
+activity#com.example.parkirin.currTransaksi
+ADDED from D:\Git\app\src\main\AndroidManifest.xml:20:9-21:67
+	android:parentActivityName
+		ADDED from D:\Git\app\src\main\AndroidManifest.xml:21:13-55
 	android:name
 		ADDED from D:\Git\app\src\main\AndroidManifest.xml:20:19-48
+activity#com.example.parkirin.Topupberhasil
+ADDED from D:\Git\app\src\main\AndroidManifest.xml:22:9-51
+	android:name
+		ADDED from D:\Git\app\src\main\AndroidManifest.xml:22:19-48
 activity#com.example.parkirin.tempatdetail
-ADDED from D:\Git\app\src\main\AndroidManifest.xml:21:9-22:57
+ADDED from D:\Git\app\src\main\AndroidManifest.xml:23:9-25:58
 	android:parentActivityName
-		ADDED from D:\Git\app\src\main\AndroidManifest.xml:22:13-55
+		ADDED from D:\Git\app\src\main\AndroidManifest.xml:25:13-55
 	android:name
-		ADDED from D:\Git\app\src\main\AndroidManifest.xml:21:19-47
+		ADDED from D:\Git\app\src\main\AndroidManifest.xml:24:13-41
 activity#com.example.parkirin.pembayaranberhasil
-ADDED from D:\Git\app\src\main\AndroidManifest.xml:23:9-56
+ADDED from D:\Git\app\src\main\AndroidManifest.xml:26:9-56
 	android:name
-		ADDED from D:\Git\app\src\main\AndroidManifest.xml:23:19-53
+		ADDED from D:\Git\app\src\main\AndroidManifest.xml:26:19-53
 activity#com.example.parkirin.RegisterActivity
-ADDED from D:\Git\app\src\main\AndroidManifest.xml:24:9-54
+ADDED from D:\Git\app\src\main\AndroidManifest.xml:27:9-54
 	android:name
-		ADDED from D:\Git\app\src\main\AndroidManifest.xml:24:19-51
+		ADDED from D:\Git\app\src\main\AndroidManifest.xml:27:19-51
 activity#com.example.parkirin.LoginActivity
-ADDED from D:\Git\app\src\main\AndroidManifest.xml:25:9-31:20
+ADDED from D:\Git\app\src\main\AndroidManifest.xml:28:9-34:20
 	android:name
-		ADDED from D:\Git\app\src\main\AndroidManifest.xml:25:19-48
+		ADDED from D:\Git\app\src\main\AndroidManifest.xml:28:19-48
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from D:\Git\app\src\main\AndroidManifest.xml:26:13-30:29
+ADDED from D:\Git\app\src\main\AndroidManifest.xml:29:13-33:29
 action#android.intent.action.MAIN
-ADDED from D:\Git\app\src\main\AndroidManifest.xml:27:17-69
+ADDED from D:\Git\app\src\main\AndroidManifest.xml:30:17-69
 	android:name
-		ADDED from D:\Git\app\src\main\AndroidManifest.xml:27:25-66
+		ADDED from D:\Git\app\src\main\AndroidManifest.xml:30:25-66
 category#android.intent.category.LAUNCHER
-ADDED from D:\Git\app\src\main\AndroidManifest.xml:29:17-77
+ADDED from D:\Git\app\src\main\AndroidManifest.xml:32:17-77
 	android:name
-		ADDED from D:\Git\app\src\main\AndroidManifest.xml:29:27-74
+		ADDED from D:\Git\app\src\main\AndroidManifest.xml:32:27-74
 activity#com.example.parkirin.EditPassActivity
-ADDED from D:\Git\app\src\main\AndroidManifest.xml:32:9-54
+ADDED from D:\Git\app\src\main\AndroidManifest.xml:35:9-54
 	android:name
-		ADDED from D:\Git\app\src\main\AndroidManifest.xml:32:19-51
+		ADDED from D:\Git\app\src\main\AndroidManifest.xml:35:19-51
 activity#com.example.parkirin.historyActivity
-ADDED from D:\Git\app\src\main\AndroidManifest.xml:33:9-35:58
+ADDED from D:\Git\app\src\main\AndroidManifest.xml:36:9-38:58
 	android:parentActivityName
-		ADDED from D:\Git\app\src\main\AndroidManifest.xml:35:13-55
+		ADDED from D:\Git\app\src\main\AndroidManifest.xml:38:13-55
 	android:name
-		ADDED from D:\Git\app\src\main\AndroidManifest.xml:34:13-44
+		ADDED from D:\Git\app\src\main\AndroidManifest.xml:37:13-44
 activity#com.example.parkirin.EditProfileActivity
-ADDED from D:\Git\app\src\main\AndroidManifest.xml:36:9-57
+ADDED from D:\Git\app\src\main\AndroidManifest.xml:39:9-57
 	android:name
-		ADDED from D:\Git\app\src\main\AndroidManifest.xml:36:19-54
+		ADDED from D:\Git\app\src\main\AndroidManifest.xml:39:19-54
 activity#com.example.parkirin.TransActivity
-ADDED from D:\Git\app\src\main\AndroidManifest.xml:37:9-51
+ADDED from D:\Git\app\src\main\AndroidManifest.xml:40:9-51
 	android:name
-		ADDED from D:\Git\app\src\main\AndroidManifest.xml:37:19-48
+		ADDED from D:\Git\app\src\main\AndroidManifest.xml:40:19-48
 activity#com.example.parkirin.DetailTransaksi
-ADDED from D:\Git\app\src\main\AndroidManifest.xml:38:9-39:62
+ADDED from D:\Git\app\src\main\AndroidManifest.xml:41:9-43:63
 	android:parentActivityName
-		ADDED from D:\Git\app\src\main\AndroidManifest.xml:39:13-60
+		ADDED from D:\Git\app\src\main\AndroidManifest.xml:43:13-60
 	android:name
-		ADDED from D:\Git\app\src\main\AndroidManifest.xml:38:19-50
+		ADDED from D:\Git\app\src\main\AndroidManifest.xml:42:13-44
 activity#com.example.parkirin.pemesananActivity
-ADDED from D:\Git\app\src\main\AndroidManifest.xml:40:9-42:58
+ADDED from D:\Git\app\src\main\AndroidManifest.xml:44:9-46:58
 	android:parentActivityName
-		ADDED from D:\Git\app\src\main\AndroidManifest.xml:42:13-55
+		ADDED from D:\Git\app\src\main\AndroidManifest.xml:46:13-55
 	android:name
-		ADDED from D:\Git\app\src\main\AndroidManifest.xml:41:13-46
+		ADDED from D:\Git\app\src\main\AndroidManifest.xml:45:13-46
 meta-data#com.google.android.geo.API_KEY
-ADDED from D:\Git\app\src\main\AndroidManifest.xml:44:9-46:47
+ADDED from D:\Git\app\src\main\AndroidManifest.xml:48:9-50:47
 	android:value
-		ADDED from D:\Git\app\src\main\AndroidManifest.xml:46:13-44
+		ADDED from D:\Git\app\src\main\AndroidManifest.xml:50:13-44
 	android:name
-		ADDED from D:\Git\app\src\main\AndroidManifest.xml:45:13-58
+		ADDED from D:\Git\app\src\main\AndroidManifest.xml:49:13-58
 activity#com.example.parkirin.MainActivity
-ADDED from D:\Git\app\src\main\AndroidManifest.xml:48:9-54:20
+ADDED from D:\Git\app\src\main\AndroidManifest.xml:52:9-58:20
 	android:name
-		ADDED from D:\Git\app\src\main\AndroidManifest.xml:48:19-47
+		ADDED from D:\Git\app\src\main\AndroidManifest.xml:52:19-47
 uses-sdk
 INJECTED from D:\Git\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from D:\Git\app\src\main\AndroidManifest.xml

@@ -1,25 +1,24 @@
 package com.example.sdppetugas;
 
 public class DataSetFire {
-    String platnomor;
-    String durasiutktampil;
-    int total;
-    String status;
-    public DataSetFire() {
+    String tempat,jenis,platnomor,tipekendaraan,emailcust,waktutransaksi,durasiutktampil,status;
+    int durasijam,total;
+
+    public DataSetFire(){
+
     }
 
-    public DataSetFire(String platnomor, String durasiutktampil, String status) {
+    public DataSetFire(String tempat, String jenis, String platnomor, String tipekendaraan, int durasijam, int total, String emailcust,String waktutransaksi,String durasiutktampil,String status) {
+        this.tempat = tempat;
+        this.jenis = jenis;
         this.platnomor = platnomor;
-        this.durasiutktampil = durasiutktampil;
-        this.status = status;
-    }
-
-    public int getTotal() {
-        return total;
-    }
-
-    public void setTotal(int total) {
+        this.tipekendaraan = tipekendaraan;
+        this.durasijam = durasijam;
         this.total = total;
+        this.emailcust=emailcust;
+        this.waktutransaksi=waktutransaksi;
+        this.durasiutktampil=durasiutktampil;
+        this.status=status;
     }
 
     public String getStatus() {
@@ -30,6 +29,46 @@ public class DataSetFire {
         this.status = status;
     }
 
+    public String getDurasiutktampil() {
+        return durasiutktampil;
+    }
+
+    public void setDurasiutktampil(String durasiutktampil) {
+        this.durasiutktampil = durasiutktampil;
+    }
+
+    public String getWaktutransaksi() {
+        return waktutransaksi;
+    }
+
+    public void setWaktutransaksi(String waktutransaksi) {
+        this.waktutransaksi = waktutransaksi;
+    }
+
+    public int getDurasijam() {
+        return durasijam;
+    }
+
+    public void setDurasijam(int durasijam) {
+        this.durasijam = durasijam;
+    }
+
+    public String getTempat() {
+        return tempat;
+    }
+
+    public void setTempat(String tempat) {
+        this.tempat = tempat;
+    }
+
+    public String getJenis() {
+        return jenis;
+    }
+
+    public void setJenis(String jenis) {
+        this.jenis = jenis;
+    }
+
     public String getPlatnomor() {
         return platnomor;
     }
@@ -38,11 +77,28 @@ public class DataSetFire {
         this.platnomor = platnomor;
     }
 
-    public String getDurasiutktampil() {
-        return durasiutktampil;
+    public String getTipekendaraan() {
+        return tipekendaraan;
     }
 
-    public void setDurasiutktampil(String durasiutktampil) {
-        this.durasiutktampil = durasiutktampil;
+    public void setTipekendaraan(String tipekendaraan) {
+        this.tipekendaraan = tipekendaraan;
+    }
+
+
+    public int getTotal() {
+        return total;
+    }
+
+    public void setTotal(int total) {
+        this.total = total;
+    }
+
+    public String getEmailcust() {
+        return emailcust;
+    }
+
+    public void setEmailcust(String emailcust) {
+        this.emailcust = emailcust;
     }
 }

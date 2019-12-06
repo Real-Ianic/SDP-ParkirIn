@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -54,7 +55,7 @@ public class historyActivity extends AppCompatActivity {
         rvHistory.setLayoutManager(linearLayoutManager);
         linearLayoutManager.setStackFromEnd(true);
         linearLayoutManager.setReverseLayout(true);
-        Query query = FirebaseDatabase.getInstance().getReference("Transaksi").orderByChild("emailcust").equalTo(email);
+        Query query = FirebaseDatabase.getInstance().getReference("Transaksi").orderByChild("emailcust").equalTo(FirebaseAuth.getInstance().getCurrentUser().getUid()+"");
         query.keepSynced(true);
         options = new FirebaseRecyclerOptions.Builder<classtransaksi>().setQuery(query,classtransaksi.class).build();
         adapter = new FirebaseRecyclerAdapter<classtransaksi, FirebaseViewHolder>(options) {

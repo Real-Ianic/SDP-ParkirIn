@@ -97,8 +97,8 @@ public class DetailTransaksi extends AppCompatActivity {
 
     public void onClick(View view) {
         if(harga<=saldobayar){
-            ct=new classtransaksi(tempat+"",jenis+"",platnomor+"",kendaraan+"",waktutotal,harga,email+"",strDate,durasi+" "+waktu,"Menunggu Konfirmasi Petugas");
-            reff.child("Transaksi").push().setValue(ct);
+            ct=new classtransaksi(tempat+"",jenis+"",platnomor+"",kendaraan+"",waktutotal,harga,FirebaseAuth.getInstance().getCurrentUser().getUid()+"",strDate,durasi+" "+waktu,"Menunggu Konfirmasi Petugas");
+            reff.child("currTransaksi").push().setValue(ct);
             reffuser.child("saldo").setValue(saldobayar-harga);
             Toast.makeText(this, "Transaksi Berhasil", Toast.LENGTH_SHORT).show();
             Intent i = new Intent(DetailTransaksi.this,pembayaranberhasil.class);
