@@ -4,11 +4,22 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.RadioGroup;
+import android.widget.Toast;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
 
 
 /**
@@ -30,6 +41,12 @@ public class AddUserFragment extends Fragment {
     private String mParam2;
 
     private OnFragmentInteractionListener mListener;
+
+    EditText etNama,etEmail,etPassword,etNohp,etTglLahir,etAlamat;
+    RadioGroup rgGender;
+    Button btnAddUser;
+
+    MainActivity parentActivity;
 
     public AddUserFragment() {
         // Required empty public constructor
@@ -67,6 +84,31 @@ public class AddUserFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_add_user, container, false);
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        //Getting Components
+        etNama = view.findViewById(R.id.edNamaUser);
+        etEmail = view.findViewById(R.id.edEmailUser);
+        etPassword = view.findViewById(R.id.edPasswordUser);
+        etNohp = view.findViewById(R.id.edNoHPuser);
+        etTglLahir = view.findViewById(R.id.edTglLahirUser);
+        etAlamat = view.findViewById(R.id.edAlamatUser);
+
+        rgGender = view.findViewById(R.id.rgGenderUser);
+
+        parentActivity = (MainActivity)getActivity();
+
+        btnAddUser = view.findViewById(R.id.btnTambahUser);
+        btnAddUser.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                addUser();
+            }
+        });
     }
 
     // TODO: Rename method, update argument and hook method into UI event
@@ -109,5 +151,37 @@ public class AddUserFragment extends Fragment {
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);
+    }
+
+    public void addUser()
+    {
+        Member tempUser = new Member();
+        tempUser.setEmail(etEmail.getText().toString());
+        tempUser.setNama(etNama.getText().toString());
+        tempUser.setAlamat(etAlamat.getText().toString());
+        tempUser.setNohp(etNohp.getText().toString());
+        tempUser.setSaldo(0);
+
+        registerByFirebaseAuth(tempUser);
+        parentActivity.addUser(tempUser);
+    }
+
+    public void registerByFirebaseAuth(Member user)
+    {
+        String password = etPassword.getText().toString();
+
+        FirebaseAuth mAuth = FirebaseAuth.getInstance();
+        mAuth.createUserWithEmailAndPassword(user.getEmail(),password)
+                .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()) {
+                            Toast.makeText(getActivity().getApplicationContext(), "Registration successful!", Toast.LENGTH_SHORT).show();
+                        }
+                        else {
+                            Toast.makeText(getActivity().getApplicationContext(), "Registration failed! Please try again later", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
     }
 }

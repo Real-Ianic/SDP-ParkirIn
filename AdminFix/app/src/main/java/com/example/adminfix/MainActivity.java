@@ -106,4 +106,23 @@ public class MainActivity extends AppCompatActivity {
 
         petugasRef.removeValue();
     }
+
+    // User
+    public void addUser(Member user)
+    {
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference userRef = database.getReference("Member");
+
+        userRef.push().setValue(user);
+    }
+
+    public void editUser(String id, Member user)
+    {
+
+    }
+
+    public void deleteUser(String id, Member user)
+    {
+
+    }
 }
