@@ -6,8 +6,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -16,8 +18,9 @@ import java.util.regex.Pattern;
 
 public class pemesananActivity extends AppCompatActivity {
 
-    TextView txttempat;
+    TextView txttempat,txtKeterangan;
     RadioButton titip,parkir,roda2,roda4;
+    RadioGroup rg;
     EditText etdurasi,etplatnomordepan,etplatnomorangka,getEtplatnomorbelakang;
     String platnomor,jenis,kendaraan,tempat,durasi;
     String email;
@@ -31,6 +34,8 @@ public class pemesananActivity extends AppCompatActivity {
         email = getIntent().getStringExtra("email");
         titip = findViewById(R.id.radioHari);
         parkir = findViewById(R.id.radioParkir);
+        txtKeterangan = findViewById(R.id.keterangan);
+        rg = findViewById(R.id.radioJenis);
         roda2 = findViewById(R.id.radioMotor);
         roda4 = findViewById(R.id.radioMobil);
         etdurasi = findViewById(R.id.txtDurasipemesanan);
@@ -39,7 +44,27 @@ public class pemesananActivity extends AppCompatActivity {
         getEtplatnomorbelakang = findViewById(R.id.txtPlatnomorBelakang);
         tempat = getIntent().getStringExtra("tempat");
         txttempat.setText(tempat);
+        titip.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                etdurasi.setText("24");
+                etdurasi.setEnabled(false);
+                txtKeterangan.setText("Jam");
+            }
+        });
+        parkir.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                etdurasi.setText("");
+                etdurasi.setEnabled(true);
+                txtKeterangan.setText("Hari");
+            }
+        });
     }
+
+//    RadioGroup rGroup = (RadioGroup)findViewById(R.id.radioJenis);
+//    // This will get the radiobutton in the radiogroup that is checked
+//    RadioButton checkedRadioButton = (RadioButton)rGroup.findViewById(rGroup.getCheckedRadioButtonId());
 
     public void onClick(View view) {
         if(titip.isChecked()){
@@ -58,6 +83,10 @@ public class pemesananActivity extends AppCompatActivity {
         if(TextUtils.isEmpty(etdurasi.getText().toString())){
             etdurasi.setError("Durasi Harus Diisi");
         }
+
+        if(etdurasi.getText().toString().equals("0")||etdurasi.getText().toString().equals("1")){
+            etdurasi.setError("Penitipan Harus Lebih Dari 1 Hari");
+        }
         if(TextUtils.isEmpty(etplatnomordepan.getText().toString())||TextUtils.isEmpty(etplatnomorangka.getText().toString())){
             getEtplatnomorbelakang.setError("Plat Nomor Harus Diisi");
         }
@@ -73,7 +102,10 @@ public class pemesananActivity extends AppCompatActivity {
         if(getEtplatnomorbelakang.length()>3){
             getEtplatnomorbelakang.setError("Format Plat Nomor Tidak Sesuai");
         }
-        if(!etdurasi.getText().toString().equals("")&&!etplatnomordepan.getText().toString().equals("")&&!etplatnomorangka.getText().toString().equals("")&&etplatnomordepan.getText().toString().length()<=2&&etplatnomorangka.getText().toString().length()<=4&&getEtplatnomorbelakang.getText().toString().length()<=3&&bs==true){
+        if(!etdurasi.getText().toString().equals("")&&!etplatnomordepan.getText().toString().equals("")
+                &&!etplatnomorangka.getText().toString().equals("")&&etplatnomordepan.getText().toString().length()<=2
+                &&etplatnomorangka.getText().toString().length()<=4&&getEtplatnomorbelakang.getText().toString().length()<=3&&bs==true
+        &&!etdurasi.getText().toString().equals("0")&&!etdurasi.getText().toString().equals("1")){
             platnomor = etplatnomordepan.getText().toString().toUpperCase()+" "+etplatnomorangka.getText().toString()+" "+getEtplatnomorbelakang.getText().toString().toUpperCase();
             durasi = etdurasi.getText().toString();
             Intent i = new Intent(this,DetailTransaksi.class);

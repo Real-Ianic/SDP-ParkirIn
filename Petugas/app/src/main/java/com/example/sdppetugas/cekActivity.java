@@ -86,12 +86,7 @@ public class cekActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        if(item.getItemId()==R.id.optOnGoing){
-            Intent i = new Intent(this,MainActivity.class);
-            finish();
-            startActivity(i);
-        }
-        else if(item.getItemId()==R.id.optLogout){
+        if(item.getItemId()==R.id.optLogout){
             Intent i = new Intent(this,LoginActivity.class);
             finish();
             startActivity(i);

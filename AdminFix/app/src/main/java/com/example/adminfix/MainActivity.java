@@ -16,6 +16,8 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -76,5 +78,32 @@ public class MainActivity extends AppCompatActivity {
             finish();
         }
         return true;
+    }
+
+    //Functional Functions (Add Edit Delete etc)
+    // Operator
+    public void addOperator(OperatorClass op)
+    {
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference petugasRef = database.getReference("Petugas");
+
+        petugasRef.push().setValue(op);
+
+    }
+
+    public void editOperator(String id, OperatorClass op)
+    {
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference petugasRef = database.getReference("Petugas/" + id);
+
+        petugasRef.setValue(op);
+    }
+
+    public void deleteOperator(String id)
+    {
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference petugasRef = database.getReference("Petugas/" + id);
+
+        petugasRef.removeValue();
     }
 }

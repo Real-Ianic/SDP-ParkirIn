@@ -1,105 +1,134 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".AddLokasiFragment">
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
-        android:text="TAMBAH LOKASI"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"/>
-
-    <EditText
-        android:id="@+id/etNamaLokasi"
-        android:backgroundTint="@android:color/holo_blue_light"
-        android:layout_height="wrap_content"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:hint="Nama"
-        android:layout_below="@+id/textView3"
-        android:inputType="textCapWords"
-        android:layout_marginRight="20dp"
-        android:layout_marginLeft="20dp"/>
+        android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
+            android:text="TAMBAH LOKASI"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"/>
 
-    <EditText
-        android:id="@+id/etAlamatLokasi"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/etNamaLokasi"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:backgroundTint="@android:color/holo_blue_light"
-        android:hint="Alamat"
-        android:inputType="textCapWords" />
+        <EditText
+            android:id="@+id/etNamaLokasi"
+            android:backgroundTint="@android:color/holo_blue_light"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:hint="Nama"
+            android:layout_below="@+id/textView3"
+            android:inputType="textCapWords"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"/>
 
-    <EditText
-        android:id="@+id/etLatitude"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@android:color/holo_blue_light"
-        android:hint="Latitude"
-        android:layout_below="@id/etAlamatLokasi"/>
+        <EditText
+            android:id="@+id/etAlamatLokasi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/etNamaLokasi"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:backgroundTint="@android:color/holo_blue_light"
+            android:hint="Alamat"
+            android:inputType="textCapWords" />
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+            android:layout_below="@id/btnTambahLokasi"/>
 
-    <EditText
-        android:id="@+id/etLongitude"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@android:color/holo_blue_light"
-        android:hint="Longitude"
-        android:layout_below="@id/etLatitude"/>
+        <EditText
+            android:id="@+id/etLatitude"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@android:color/holo_blue_light"
+            android:hint="Latitude"
+            android:layout_below="@id/etAlamatLokasi"/>
 
-    <EditText
-        android:id="@+id/etSlotmobil"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@android:color/holo_blue_light"
-        android:hint="Jumlah Slot Mobil"
-        android:inputType="number"
-        android:layout_below="@id/etLongitude"/>
+        <EditText
+            android:id="@+id/etLongitude"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@android:color/holo_blue_light"
+            android:hint="Longitude"
+            android:layout_below="@id/etLatitude"/>
 
-    <EditText
-        android:id="@+id/etSlotmotor"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@android:color/holo_blue_light"
-        android:hint="Jumlah Slot Motor"
-        android:inputType="number"
-        android:layout_below="@id/etSlotmobil"/>
+        <EditText
+            android:id="@+id/etSlotmobil"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@android:color/holo_blue_light"
+            android:hint="Jumlah Slot Mobil"
+            android:inputType="number"
+            android:layout_below="@id/etLongitude"/>
+
+        <EditText
+            android:id="@+id/etSlotmotor"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@android:color/holo_blue_light"
+            android:hint="Jumlah Slot Motor"
+            android:inputType="number"
+            android:layout_below="@id/etSlotmobil"/>
 
 
-    <EditText
-        android:id="@+id/etPemilik"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@android:color/holo_blue_light"
-        android:hint="Pemilik"
-        android:inputType="textCapWords"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_below="@+id/etSlotmotor"/>
+        <EditText
+            android:id="@+id/etPemilik"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@android:color/holo_blue_light"
+            android:hint="Pemilik"
+            android:inputType="textCapWords"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_below="@+id/etSlotmotor"/>
 
-    <Button
-        android:id="@+id/btnTambahLokasi"
-        android:layout_width="fill_parent"
-        android:layout_margin="20dp"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@android:color/holo_blue_light"
-        android:text="Tambah Lokasi"
-        android:textColor="@android:color/white"
-        android:layout_below="@+id/etPemilik" />
-</RelativeLayout>
+        <Button
+            android:id="@+id/btnGambar"
+            android:layout_width="fill_parent"
+            android:layout_margin="20dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@android:color/holo_blue_light"
+            android:text="Input Gambar"
+            android:textColor="@android:color/white"
+            android:layout_below="@+id/etPemilik" />
+
+        <ImageView
+            android:id="@+id/previewImage"
+            android:layout_width="250px"
+            android:layout_centerHorizontal="true"
+            android:layout_height="250px"
+            android:layout_below="@id/btnGambar"/>
+
+        <Button
+            android:id="@+id/btnTambahLokasi"
+            android:layout_width="fill_parent"
+            android:layout_margin="20dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@android:color/holo_blue_light"
+            android:text="Tambah Lokasi"
+            android:textColor="@android:color/white"
+            android:layout_below="@+id/previewImage" />
+    </RelativeLayout>
+</ScrollView>
 
 
