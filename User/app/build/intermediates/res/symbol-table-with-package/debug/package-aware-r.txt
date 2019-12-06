@@ -1267,7 +1267,6 @@ id disableHome
 id duraasi
 id durasi
 id editText
-id editText2
 id editText3
 id edit_query
 id end
@@ -1275,6 +1274,9 @@ id end_padder
 id enterAlways
 id enterAlwaysCollapsed
 id etNominal
+id etPassLama
+id etPassbaru
+id etPassbaruconf
 id exitUntilCollapsed
 id expand_activities_button
 id expanded_menu

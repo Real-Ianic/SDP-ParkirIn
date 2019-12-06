@@ -29,6 +29,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -38,7 +39,23 @@ public class LoginActivity extends AppCompatActivity {
     Button login;
     TextView SignUp;
     FusedLocationProviderClient fusedLocationProviderClient;
+    FirebaseUser user;
     private FirebaseAuth mAuth;
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this);
+        fusedLocationProviderClient.getLastLocation();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(LoginActivity.this);
+        fusedLocationProviderClient.getLastLocation();
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,8 +66,13 @@ public class LoginActivity extends AppCompatActivity {
         SignUp=findViewById(R.id.link_signup);
         statusCheck();
         mAuth=FirebaseAuth.getInstance();
+        user=mAuth.getCurrentUser();
         fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this);
         fusedLocationProviderClient.getLastLocation();
+        if(user != null){
+            startActivity(new Intent(LoginActivity.this,MainActivity.class));
+            finish();
+        }
         SignUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -74,6 +96,8 @@ public class LoginActivity extends AppCompatActivity {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()) {
+                                fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(LoginActivity.this);
+                                fusedLocationProviderClient.getLastLocation();
                                 Intent i = new Intent(LoginActivity.this, MainActivity.class);
                                 i.putExtra("email",email.getText().toString()+"");
                                 startActivity(i);
@@ -94,20 +118,19 @@ public class LoginActivity extends AppCompatActivity {
         final LocationManager manager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
         if (!manager.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
             buildAlertMessageNoGps();
-
         }
     }
 
     private void buildAlertMessageNoGps() {
         final AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setMessage("Your GPS seems to be disabled, do you want to enable it?")
+        builder.setMessage("Aplikasi membutuhkan akses lokasi apakah anda ingin menyalakan lokasi?")
                 .setCancelable(false)
-                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                .setPositiveButton("Ya", new DialogInterface.OnClickListener() {
                     public void onClick(final DialogInterface dialog, final int id) {
                         startActivity(new Intent(android.provider.Settings.ACTION_LOCATION_SOURCE_SETTINGS));
                     }
                 })
-                .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                .setNegativeButton("Tidak", new DialogInterface.OnClickListener() {
                     public void onClick(final DialogInterface dialog, final int id) {
                         dialog.cancel();
                     }

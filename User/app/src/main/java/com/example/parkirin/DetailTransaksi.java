@@ -38,7 +38,7 @@ public class DetailTransaksi extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail_transaksi);
-        getSupportActionBar().setTitle("Pemesanan");
+        getSupportActionBar().setTitle("Detail Transaksi");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         tvTempat=findViewById(R.id.txtDetailTempat);
         tvPlat=findViewById(R.id.txtDetailPlat);

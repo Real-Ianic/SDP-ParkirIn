@@ -52,6 +52,8 @@ public class tempatdetail extends AppCompatActivity {
         tvJarak=findViewById(R.id.jarakdetail);
         tvAlamat=findViewById(R.id.alamattempatdetail);
         namatempat=getIntent().getStringExtra("tempat");
+        getSupportActionBar().setTitle(namatempat+"");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         currlat = getIntent().getStringExtra("currlat");
         currlng = getIntent().getStringExtra("currlng");
         currLoc = new Location("Lokasi Sekarang");

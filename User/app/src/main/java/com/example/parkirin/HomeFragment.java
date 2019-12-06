@@ -81,6 +81,7 @@ public class HomeFragment extends Fragment implements OnMapReadyCallback {
         setHasOptionsMenu(true);
         email = ((MainActivity)getActivity()).email;
         fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(getActivity());
+        fusedLocationProviderClient.getLastLocation();
     }
 
     public void fetchLastLocation() {
@@ -104,6 +105,14 @@ public class HomeFragment extends Fragment implements OnMapReadyCallback {
     public void onStart() {
         super.onStart();
         fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(getActivity());
+        fusedLocationProviderClient.getLastLocation();
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(getActivity());
+        fusedLocationProviderClient.getLastLocation();
     }
 
 
@@ -163,6 +172,7 @@ public class HomeFragment extends Fragment implements OnMapReadyCallback {
             i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(i);
+            getActivity().finish();
         }
         if(item.getItemId()==R.id.menuTrans){
             Intent i = new Intent(this.getActivity(),historyActivity.class);

@@ -94,6 +94,7 @@ public class TopUpFragment extends Fragment {
             i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(i);
+            getActivity().finish();
         }
         if(item.getItemId()==R.id.menuTrans){
             Intent i = new Intent(this.getActivity(),historyActivity.class);

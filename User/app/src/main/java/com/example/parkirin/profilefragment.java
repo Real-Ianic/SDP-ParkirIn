@@ -15,6 +15,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 public class profilefragment extends Fragment {
     Button edit,histori,pass,hub;
     @Nullable
@@ -38,7 +40,17 @@ public class profilefragment extends Fragment {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if(item.getItemId()==R.id.menuLogout){
+            FirebaseAuth.getInstance().signOut();
+            Intent i = new Intent(getActivity(),LoginActivity.class);
+            i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            startActivity(i);
             getActivity().finish();
+        }
+        if(item.getItemId()==R.id.menuTrans){
+            Intent i = new Intent(this.getActivity(),historyActivity.class);
+            i.putExtra("email",((MainActivity)getActivity()).email);
+            startActivity(i);
         }
         return true;
     }

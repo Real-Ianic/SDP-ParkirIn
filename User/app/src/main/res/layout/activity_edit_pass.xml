@@ -32,12 +32,11 @@
             app:layout_constraintRight_toRightOf="parent"/>
 
         <EditText
-            android:id="@+id/txtTempat"
+            android:id="@+id/etPassLama"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:backgroundTint="@android:color/holo_blue_light"
-            android:textSize="20sp"
-            android:ems="3"
+            android:ems="5"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toRightOf="@+id/z"
             app:layout_constraintTop_toTopOf="parent" />
@@ -47,11 +46,12 @@
         android:layout_height="wrap_content">
 
         <EditText
-            android:id="@+id/editText2"
+            android:id="@+id/etPassbaru"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:backgroundTint="@android:color/holo_blue_light"
-            android:ems="3"
+            android:ems="5"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/z1"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -99,11 +99,11 @@
             app:layout_constraintRight_toRightOf="parent"/>
 
         <EditText
-            android:id="@+id/editText"
+            android:id="@+id/etPassbaruconf"
             android:layout_width="wrap_content"
             android:backgroundTint="@android:color/holo_blue_light"
             android:layout_height="wrap_content"
-            android:ems="3"
+            android:ems="5"
             android:inputType="number"
             app:layout_constraintStart_toEndOf="@+id/z2"
             app:layout_constraintTop_toTopOf="parent" />
