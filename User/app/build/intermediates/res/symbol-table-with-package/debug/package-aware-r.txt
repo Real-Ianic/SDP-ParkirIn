@@ -1115,6 +1115,7 @@ drawable design_snackbar_background
 drawable googleg_disabled_color_18
 drawable googleg_standard_color_18
 drawable ic_attach_money_black_24dp
+drawable ic_check_circle_black_24dp
 drawable ic_done_black_24dp
 drawable ic_home_black_24dp
 drawable ic_launcher_background

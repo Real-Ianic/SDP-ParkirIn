@@ -92,7 +92,7 @@ public class DetailTransaksi extends AppCompatActivity {
         tvTempat.setText(tempat+"");
         tvPlat.setText(platnomor+"");
         tvKendaraan.setText(kendaraan+"");
-        tvJumlah.setText(harga+"");
+        tvJumlah.setText(harga/1000+".000");
     }
 
     public void onClick(View view) {
