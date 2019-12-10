@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/locationsmenu"
+        android:icon="@drawable/ic_location_on_black_24dp"
+        android:title="Locations" />
+    <item
+        android:id="@+id/addlocationmenu"
+        android:icon="@drawable/ic_add_location_black_24dp"
+        android:title="Add Location" />
+    <item
+        android:id="@+id/editlocationmenu"
+        android:icon="@drawable/ic_edit_location_black_24dp"
+        android:title="Edit Location" />
+</menu>
