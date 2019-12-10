@@ -30,15 +30,21 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
 
 public class LoginActivity extends AppCompatActivity {
 
     EditText email,password;
     Button login;
     TextView SignUp;
+    String emaillogin,pass;
     FusedLocationProviderClient fusedLocationProviderClient;
+    Query reff;
     FirebaseUser user;
     private FirebaseAuth mAuth;
 
@@ -83,8 +89,8 @@ public class LoginActivity extends AppCompatActivity {
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String emaillogin=email.getText().toString();
-                String pass=password.getText().toString();
+                emaillogin=email.getText().toString();
+                pass=password.getText().toString();
                 if(emaillogin.isEmpty()){
                     email.setError("Email Harus Diisi!");
                 }
@@ -92,19 +98,34 @@ public class LoginActivity extends AppCompatActivity {
                     password.setError("Password Harus Diisi!");
                 }
                 if(!emaillogin.isEmpty()&&!pass.isEmpty()) {
-                    mAuth.signInWithEmailAndPassword(emaillogin, pass).addOnCompleteListener(LoginActivity.this, new OnCompleteListener<AuthResult>() {
+                    reff = FirebaseDatabase.getInstance().getReference().child("Member").orderByChild("email").equalTo(emaillogin);
+                    reff.addListenerForSingleValueEvent(new ValueEventListener() {
                         @Override
-                        public void onComplete(@NonNull Task<AuthResult> task) {
-                            if (task.isSuccessful()) {
-                                fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(LoginActivity.this);
-                                fusedLocationProviderClient.getLastLocation();
-                                Intent i = new Intent(LoginActivity.this, MainActivity.class);
-                                i.putExtra("email",email.getText().toString()+"");
-                                startActivity(i);
-                                finish();
-                            } else {
+                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                            if(dataSnapshot.exists()){
+                                mAuth.signInWithEmailAndPassword(emaillogin, pass).addOnCompleteListener(LoginActivity.this, new OnCompleteListener<AuthResult>() {
+                                    @Override
+                                    public void onComplete(@NonNull Task<AuthResult> task) {
+                                        if (task.isSuccessful()) {
+                                            fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(LoginActivity.this);
+                                            fusedLocationProviderClient.getLastLocation();
+                                            Intent i = new Intent(LoginActivity.this, MainActivity.class);
+                                            i.putExtra("email",email.getText().toString()+"");
+                                            startActivity(i);
+                                            finish();
+                                        } else {
+                                            Toast.makeText(LoginActivity.this, "Login gagal!", Toast.LENGTH_SHORT).show();
+                                        }
+                                    }
+                                });
+                            }else{
                                 Toast.makeText(LoginActivity.this, "Login gagal!", Toast.LENGTH_SHORT).show();
                             }
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError databaseError) {
+
                         }
                     });
                 }

@@ -23,7 +23,7 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class historyActivity extends AppCompatActivity {
+public class currTransaksi extends AppCompatActivity {
 
     private RecyclerView rvHistory;
     private ArrayList<classtransaksi> listTrans = new ArrayList<classtransaksi>();
@@ -47,7 +47,7 @@ public class historyActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_history);
-        getSupportActionBar().setTitle("Histori");
+        getSupportActionBar().setTitle("Transaksi Saat Ini");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         email=getIntent().getStringExtra("email");
         rvHistory = findViewById(R.id.rvHistory);
@@ -55,7 +55,7 @@ public class historyActivity extends AppCompatActivity {
         rvHistory.setLayoutManager(linearLayoutManager);
         linearLayoutManager.setStackFromEnd(true);
         linearLayoutManager.setReverseLayout(true);
-        Query query = FirebaseDatabase.getInstance().getReference("Transaksi").orderByChild("emailcust").equalTo(FirebaseAuth.getInstance().getCurrentUser().getUid()+"");
+        Query query = FirebaseDatabase.getInstance().getReference("currTransaksi").orderByChild("emailcust").equalTo(FirebaseAuth.getInstance().getCurrentUser().getUid()+"");
         query.keepSynced(true);
         options = new FirebaseRecyclerOptions.Builder<classtransaksi>().setQuery(query,classtransaksi.class).build();
         adapter = new FirebaseRecyclerAdapter<classtransaksi, FirebaseViewHolder>(options) {
@@ -80,7 +80,7 @@ public class historyActivity extends AppCompatActivity {
             @NonNull
             @Override
             public FirebaseViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-                return new FirebaseViewHolder(LayoutInflater.from(historyActivity.this).inflate(R.layout.recyclerhistory,parent,false));
+                return new FirebaseViewHolder(LayoutInflater.from(currTransaksi.this).inflate(R.layout.recyclerhistory,parent,false));
             }
         };
         rvHistory.setAdapter(adapter);

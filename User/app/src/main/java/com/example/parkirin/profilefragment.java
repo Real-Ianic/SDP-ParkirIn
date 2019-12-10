@@ -48,7 +48,7 @@ public class profilefragment extends Fragment {
             getActivity().finish();
         }
         if(item.getItemId()==R.id.menuTrans){
-            Intent i = new Intent(this.getActivity(),historyActivity.class);
+            Intent i = new Intent(this.getActivity(),currTransaksi.class);
             i.putExtra("email",((MainActivity)getActivity()).email);
             startActivity(i);
         }

@@ -15,7 +15,12 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -58,6 +63,7 @@ public class AddOperatorFragment extends Fragment {
 
     EditText etNama,etEmail,etPassword,etNohp;
     Button btnRegisterOperator;
+    FirebaseAuth mAuth;
 
     public AddOperatorFragment() {
         // Required empty public constructor
@@ -102,7 +108,7 @@ public class AddOperatorFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         spinnerAdapter = new ArrayAdapter<String>(this.getActivity(),android.R.layout.simple_spinner_item,listNamaLokasi);
-
+        mAuth = FirebaseAuth.getInstance();
         etNama = view.findViewById(R.id.edNamaOperator);
         etEmail = view.findViewById(R.id.edEmailOperator);
         etPassword = view.findViewById(R.id.edPasswordOperator);
@@ -226,17 +232,31 @@ public class AddOperatorFragment extends Fragment {
             }
         });
     }
-
+    OperatorClass tempOperator;
     public void registerOperator()
     {
-        String name = etNama.getText().toString();
-        String email = etEmail.getText().toString();
-        String password = etPassword.getText().toString();
-        String nohp = etNohp.getText().toString();
+        final String name = etNama.getText().toString();
+        final String email = etEmail.getText().toString();
+        final String password = etPassword.getText().toString();
+        final String nohp = etNohp.getText().toString();
 
-        String idLokasi = listIdLokasi.get(spinnerLokasiOperator.getSelectedItemPosition());
-
-        OperatorClass tempOperator = new OperatorClass(name,email,password,nohp,idLokasi);
+        final String idLokasi = listIdLokasi.get(spinnerLokasiOperator.getSelectedItemPosition());
+        mAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(getActivity(), new OnCompleteListener<AuthResult>() {
+            @Override
+            public void onComplete(@NonNull Task<AuthResult> task) {
+                if(task.isSuccessful()){
+                    tempOperator = new OperatorClass(name,email,password,nohp,idLokasi);
+                    FirebaseDatabase.getInstance().getReference("Petugas").child(FirebaseAuth.getInstance().getCurrentUser().getUid()).setValue(tempOperator).addOnCompleteListener(new OnCompleteListener<Void>() {
+                        @Override
+                        public void onComplete(@NonNull Task<Void> task) {
+                            Toast.makeText(getContext(),"Register Petugas Berhasil",Toast.LENGTH_SHORT).show();
+                        }
+                    });
+                }else{
+                    Toast.makeText(getContext(), task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
 
         MainActivity parentActivity = (MainActivity)this.getActivity();
         parentActivity.addOperator(tempOperator);

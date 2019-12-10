@@ -17,9 +17,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Topupberhasil"></activity>
-        <activity android:name=".tempatdetail"
-            android:parentActivityName=".MainActivity"/>
+        <activity android:name=".currTransaksi"
+            android:parentActivityName=".MainActivity"></activity>
+        <activity android:name=".Topupberhasil" />
+        <activity
+            android:name=".tempatdetail"
+            android:parentActivityName=".MainActivity" />
         <activity android:name=".pembayaranberhasil" />
         <activity android:name=".RegisterActivity" />
         <activity android:name=".LoginActivity">
@@ -35,8 +38,9 @@
             android:parentActivityName=".MainActivity" />
         <activity android:name=".EditProfileActivity" />
         <activity android:name=".TransActivity" />
-        <activity android:name=".DetailTransaksi"
-            android:parentActivityName=".pemesananActivity"/>
+        <activity
+            android:name=".DetailTransaksi"
+            android:parentActivityName=".pemesananActivity" />
         <activity
             android:name=".pemesananActivity"
             android:parentActivityName=".tempatdetail" />

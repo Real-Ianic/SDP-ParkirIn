@@ -444,8 +444,17 @@
         "source": "C:\\Users\\user\\.gradle\\caches\\transforms-2\\files-2.1\\8b7353a4da394401f2770946eabec9bd\\appcompat-1.1.0\\res\\drawable\\abc_cab_background_internal_bg.xml"
     },
     {
+<<<<<<< HEAD
         "merged": "D:\\KULIAH\\semester5\\SDP\\project\\User\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_cio_ic_paypal_monogram.png.flat",
         "source": "C:\\Users\\user\\.gradle\\caches\\transforms-2\\files-2.1\\e10b31094a5f031edc12f0f2fc453964\\jetified-android-sdk-5.5.0\\res\\drawable-hdpi-v4\\cio_ic_paypal_monogram.png"
+=======
+        "merged": "D:\\Git\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_curr_transaksi.xml.flat",
+        "source": "D:\\Git\\app\\src\\main\\res\\layout\\activity_curr_transaksi.xml"
+    },
+    {
+        "merged": "D:\\Git\\app\\build\\intermediates\\res\\merged\\debug\\drawable_btn_radio_on_to_off_mtrl_animation.xml.flat",
+        "source": "C:\\Users\\Albert\\.gradle\\caches\\transforms-2\\files-2.1\\78d780e7e979f381c0cb40b5ded8691d\\appcompat-1.1.0\\res\\drawable\\btn_radio_on_to_off_mtrl_animation.xml"
+>>>>>>> 78f2aca46fe1dcb464d8016042b9340ace1ceb3a
     },
     {
         "merged": "D:\\KULIAH\\semester5\\SDP\\project\\User\\app\\build\\intermediates\\res\\merged\\debug\\animator_mtrl_fab_show_motion_spec.xml.flat",
