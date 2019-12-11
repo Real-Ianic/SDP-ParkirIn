@@ -81,7 +81,7 @@ public class OperatorFragment extends Fragment {
                             changeOperatorFragment(new AddOperatorFragment(), "");
                         }
                         else if (menuItem.getItemId() == R.id.menueditpeople){
-                            //changeOperatorFragment(new EditOperatorFragment(), "");
+                            changeOperatorFragment(new EditOperatorFragment(), "");
                         }
                         return true;
                     }

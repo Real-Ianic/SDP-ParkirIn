@@ -94,20 +94,20 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-        Query idTrans = FirebaseDatabase.getInstance().getReference("currTransaksi").orderByChild("tempat").equalTo(namaLokasi);
-        idTrans.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                idCurr=dataSnapshot.getKey();
-                Toast.makeText(MainActivity.this, idCurr, Toast.LENGTH_SHORT).show();
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-            }
-        });
-        query = FirebaseDatabase.getInstance().getReference("currTransaksi").orderByChild("tempat").equalTo(namaLokasi);
+//        Query idTrans = FirebaseDatabase.getInstance().getReference("currTransaksi").orderByChild("tempat").equalTo(namaLokasi);
+//        idTrans.addValueEventListener(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+//                idCurr=dataSnapshot.getKey();
+//                Toast.makeText(MainActivity.this, idCurr, Toast.LENGTH_SHORT).show();
+//            }
+//
+//            @Override
+//            public void onCancelled(@NonNull DatabaseError databaseError) {
+//
+//            }
+//        });
+        query = FirebaseDatabase.getInstance().getReference("currTransaksi").orderByChild("tempat");
         query.keepSynced(true);
         options = new FirebaseRecyclerOptions.Builder<DataSetFire>().setQuery(query,DataSetFire.class).build();
         adapter = new FirebaseRecyclerAdapter<DataSetFire, FirebaseViewHolder>(options) {
@@ -135,6 +135,10 @@ public class MainActivity extends AppCompatActivity {
                 firebaseViewHolder.tvTotal.setText("Total : "+ct.getTotal()+"");
                 if(ct.getStatus().equals("Menunggu Konfirmasi Petugas")){
                     firebaseViewHolder.btnCheckout.setEnabled(false);
+                }
+                else if(ct.getStatus().equals("Diterima")){
+                    firebaseViewHolder.btnCheckin.setEnabled(false);
+                    firebaseViewHolder.btnTolak.setEnabled(false);
                 }
                 firebaseViewHolder.btnCheckin.setOnClickListener(new View.OnClickListener() {
                     @Override

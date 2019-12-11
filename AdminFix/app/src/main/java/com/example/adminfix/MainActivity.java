@@ -123,7 +123,29 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void deleteUser(String id, Member user)
+    public void deleteUser(String id)
+    {
+
+    }
+
+    // Owner
+    public void addOwner(OwnerClass owner)
+    {
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference ownerRef = database.getReference("Owner");
+
+        ownerRef.push().setValue(owner);
+    }
+
+    public void editOwner(String id, OwnerClass owner)
+    {
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference ownerRef = database.getReference("Owner/" +id);
+
+        ownerRef.setValue(owner);
+    }
+
+    public void deleteOwner(String id)
     {
 
     }

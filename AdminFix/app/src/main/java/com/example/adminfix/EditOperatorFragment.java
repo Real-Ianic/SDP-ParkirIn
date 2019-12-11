@@ -15,9 +15,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
-import android.widget.SpinnerAdapter;
 import android.widget.TextView;
-import android.widget.ViewAnimator;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -27,7 +25,6 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 
 
 /**
@@ -36,13 +33,13 @@ import java.util.List;
 public class EditOperatorFragment extends Fragment {
 
     EditText etNama,etNohp,etPassword;
-    List<OperatorClass> listOperator = new ArrayList<OperatorClass>();
-    List<LokasiClass> listLokasi = new ArrayList<LokasiClass>();
+    ArrayList<OperatorClass> listOperator = new ArrayList<OperatorClass>();
+    ArrayList<LokasiClass> listLokasi = new ArrayList<LokasiClass>();
     Button btnEdit;
     TextView tvLokasi;
 
     Spinner spinnerEmail,spinnerLokasi;
-    List<String> listEmail,listNamaLokasi,listIdLokasi,listIdOperator = new ArrayList<String>();
+    ArrayList<String> listEmail,listNamaLokasi,listIdLokasi,listIdOperator = new ArrayList<String>();
     ArrayAdapter<String> adapterEmail,adapterLokasi;
 
     MainActivity parentActivity;
@@ -70,10 +67,18 @@ public class EditOperatorFragment extends Fragment {
         tvLokasi = view.findViewById(R.id.currentLokasi);
 
         spinnerEmail = view.findViewById(R.id.spinnerEditOperatorEmail);
-        spinnerLokasi = view.findViewById(R.id.spinnerEditOperatorLokasi);
+        spinnerLokasi = view.findViewById(R.id.spinnerEditOperatorEmail);
 
-        adapterEmail = new ArrayAdapter<String>(this.getActivity(),android.R.layout.simple_list_item_1,listEmail);
-        adapterLokasi = new ArrayAdapter<String>(this.getActivity(),android.R.layout.simple_list_item_1,listNamaLokasi);
+        listEmail = new ArrayList<String>();
+        listNamaLokasi = new ArrayList<String>();
+        listIdLokasi = new ArrayList<String>();
+        listIdOperator = new ArrayList<String>();
+
+        loadLokasi();
+        loadEmail();
+
+        adapterEmail = new ArrayAdapter<String>(getContext(),android.R.layout.simple_spinner_item,listEmail);
+        adapterLokasi = new ArrayAdapter<String>(getContext(),android.R.layout.simple_spinner_item,listNamaLokasi);
 
         //Setting Adapter to Spinners
         spinnerEmail.setAdapter(adapterEmail);
@@ -102,14 +107,14 @@ public class EditOperatorFragment extends Fragment {
             }
         });
 
-        loadLokasi();
-        loadEmail();
+        adapterEmail.notifyDataSetChanged();
+        adapterLokasi.notifyDataSetChanged();
     }
 
     public void loadEmail()
     {
         FirebaseDatabase db = FirebaseDatabase.getInstance();
-        DatabaseReference ref = db.getReference("Lokasi");
+        DatabaseReference ref = db.getReference("Petugas");
 
         ref.addValueEventListener(new ValueEventListener() {
             @Override
@@ -147,7 +152,7 @@ public class EditOperatorFragment extends Fragment {
     public void loadLokasi()
     {
         FirebaseDatabase db = FirebaseDatabase.getInstance();
-        DatabaseReference ref = db.getReference("Petugas");
+        DatabaseReference ref = db.getReference("Lokasi");
 
         ref.addValueEventListener(new ValueEventListener() {
             @Override
