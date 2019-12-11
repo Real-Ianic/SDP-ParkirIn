@@ -11,53 +11,59 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
-        android:layout_marginTop="89dp"
-        android:text="Plat No. :"
+        android:layout_marginTop="75dp"
+        android:text="Plat No"
         android:textColor="@android:color/black"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/btnBack"
+    <TextView
+        android:id="@+id/textView14"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="130dp"
-        android:text="Decline"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="75dp"
+        android:text=": "
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvTotal" />
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/btnCekIn"
+    <TextView
+        android:id="@+id/textView15"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="130dp"
-        android:layout_marginEnd="40dp"
-        android:text="Check in"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvTotal" />
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="60dp"
+        android:text=": "
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView14" />
 
-    <Button
-        android:id="@+id/btnCekOut"
+    <TextView
+        android:id="@+id/textView16"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="130dp"
-        android:text="check out"
-        app:layout_constraintEnd_toStartOf="@+id/btnCekIn"
-        app:layout_constraintStart_toEndOf="@+id/btnBack"
-        app:layout_constraintTop_toBottomOf="@+id/tvTotal" />
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="60dp"
+        android:text=": "
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView15" />
 
     <TextView
         android:id="@+id/tvPlatNomor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="35dp"
-        android:layout_marginTop="89dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="75dp"
         android:text="TextView"
         android:textColor="@android:color/black"
         android:textSize="18sp"
-        app:layout_constraintStart_toEndOf="@+id/textView7"
+        app:layout_constraintStart_toEndOf="@+id/textView14"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
@@ -66,7 +72,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
         android:layout_marginTop="60dp"
-        android:text="Durasi :"
+        android:text="Durasi"
         android:textColor="@android:color/black"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -76,12 +82,12 @@
         android:id="@+id/tvDurasiWaktu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="35dp"
+        android:layout_marginStart="25dp"
         android:layout_marginTop="60dp"
         android:text="TextView"
         android:textColor="@android:color/black"
         android:textSize="18sp"
-        app:layout_constraintStart_toEndOf="@+id/textView8"
+        app:layout_constraintStart_toEndOf="@+id/textView15"
         app:layout_constraintTop_toBottomOf="@+id/tvPlatNomor" />
 
     <TextView
@@ -90,7 +96,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
         android:layout_marginTop="60dp"
-        android:text="Total :"
+        android:text="Total"
         android:textColor="@android:color/black"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -100,11 +106,51 @@
         android:id="@+id/tvTotal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
+        android:layout_marginStart="25dp"
         android:layout_marginTop="60dp"
         android:text="TextView"
         android:textColor="@android:color/black"
         android:textSize="18sp"
-        app:layout_constraintStart_toEndOf="@+id/textView10"
+        app:layout_constraintStart_toEndOf="@+id/textView16"
         app:layout_constraintTop_toBottomOf="@+id/tvDurasiWaktu" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="24dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTotal">
+
+        <Button
+            android:id="@+id/btnCekOut"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="@android:color/holo_blue_light"
+            android:text="check out"
+            android:textColor="@android:color/white" />
+
+        <Button
+            android:id="@+id/btnCekIn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="@android:color/holo_blue_light"
+            android:text="Check in"
+            android:textColor="@android:color/white" />
+
+        <Button
+            android:id="@+id/btnBack"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="@android:color/holo_blue_light"
+            android:text="Decline"
+            android:textColor="@android:color/white" />
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

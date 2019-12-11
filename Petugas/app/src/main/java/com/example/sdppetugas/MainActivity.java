@@ -241,8 +241,8 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if(item.getItemId()== R.id.optLogout){
             Intent i = new Intent(MainActivity.this, LoginActivity.class);
-            finish();
             startActivity(i);
+            finish();
         }
         return true;
     }

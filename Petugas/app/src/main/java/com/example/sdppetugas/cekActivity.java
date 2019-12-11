@@ -88,8 +88,8 @@ public class cekActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if(item.getItemId()==R.id.optLogout){
             Intent i = new Intent(this,LoginActivity.class);
-            finish();
             startActivity(i);
+            finish();
         }
         return true;
     }

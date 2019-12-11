@@ -86,26 +86,35 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
+
         <Button
             android:id="@+id/btnTolak"
-            android:layout_weight="1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:backgroundTint="@android:color/holo_blue_light"
             android:text="Tolak"
-            android:layout_margin="5dp"/>
+            android:textColor="@android:color/white" />
+
         <Button
             android:id="@+id/btnCheckin"
-            android:layout_weight="1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:backgroundTint="@android:color/holo_blue_light"
             android:text="Check In"
-            android:layout_margin="5dp"/>
+            android:textColor="@android:color/white" />
+
         <Button
             android:id="@+id/btnCheckout"
-            android:layout_weight="1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:backgroundTint="@android:color/holo_blue_light"
             android:text="Check Out"
-            android:layout_margin="5dp"/>
+            android:textColor="@android:color/white" />
     </LinearLayout>
 </RelativeLayout>
