@@ -1117,6 +1117,7 @@ drawable googleg_standard_color_18
 drawable ic_attach_money_black_24dp
 drawable ic_done_black_24dp
 drawable ic_home_black_24dp
+drawable ic_launche_logo_background
 drawable ic_launcher_background
 drawable ic_launcher_foreground
 drawable ic_mtrl_chip_checked_black
@@ -1442,6 +1443,9 @@ id text2
 id textSpacerNoButtons
 id textSpacerNoTitle
 id textStart
+id textView
+id textView2
+id textView3
 id textView7
 id text_input_password_toggle
 id textinput_counter
@@ -1609,6 +1613,9 @@ layout support_simple_spinner_dropdown_item
 menu bottom_navigation
 menu optionmenu
 menu search
+mipmap ic_launche_logo
+mipmap ic_launche_logo_foreground
+mipmap ic_launche_logo_round
 mipmap ic_launcher
 mipmap ic_launcher_round
 string abc_action_bar_home_description

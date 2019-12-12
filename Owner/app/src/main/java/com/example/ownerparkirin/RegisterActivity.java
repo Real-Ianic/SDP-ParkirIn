@@ -48,7 +48,7 @@ public class RegisterActivity extends AppCompatActivity {
 
         progressBar = new ProgressBar(this);
         database=FirebaseDatabase.getInstance();
-        reff = database.getReference().child("Owner");
+        //reff = database.getReference().child("Owner");
         mAuth = FirebaseAuth.getInstance();
 
 

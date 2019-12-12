@@ -9,8 +9,4 @@
         android:id="@+id/addlocationmenu"
         android:icon="@drawable/ic_add_location_black_24dp"
         android:title="Add Location" />
-    <item
-        android:id="@+id/editlocationmenu"
-        android:icon="@drawable/ic_edit_location_black_24dp"
-        android:title="Edit Location" />
 </menu>

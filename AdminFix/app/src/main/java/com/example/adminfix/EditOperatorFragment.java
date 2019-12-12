@@ -55,19 +55,19 @@ public class EditOperatorFragment extends Fragment {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_edit_operator, container, false);
     }
-
+/*
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
         //Getting Components
         etNama = view.findViewById(R.id.etEditOperatorName);
-        etNohp = view.findViewById(R.id.etEditOperatorNohp);
-        etPassword = view.findViewById(R.id.etEditOperatorPassword);
-        tvLokasi = view.findViewById(R.id.currentLokasi);
+        //etNohp = view.findViewById(R.id.etEditOperatorNohp);
+        //etPassword = view.findViewById(R.id.etEditOperatorPassword);
+        //tvLokasi = view.findViewById(R.id.currentLokasi);
 
-        spinnerEmail = view.findViewById(R.id.spinnerEditOperatorEmail);
-        spinnerLokasi = view.findViewById(R.id.spinnerEditOperatorEmail);
+        //spinnerEmail = view.findViewById(R.id.spinnerEditOperatorEmail);
+        //spinnerLokasi = view.findViewById(R.id.spinnerEditOperator);
 
         listEmail = new ArrayList<String>();
         listNamaLokasi = new ArrayList<String>();
@@ -81,12 +81,12 @@ public class EditOperatorFragment extends Fragment {
         adapterLokasi = new ArrayAdapter<String>(getContext(),android.R.layout.simple_spinner_item,listNamaLokasi);
 
         //Setting Adapter to Spinners
-        spinnerEmail.setAdapter(adapterEmail);
-        spinnerLokasi.setAdapter(adapterLokasi);
+        //spinnerEmail.setAdapter(adapterEmail);
+        //spinnerLokasi.setAdapter(adapterLokasi);
 
         parentActivity = (MainActivity)getActivity();
 
-        btnEdit = view.findViewById(R.id.btnEditOperator);
+        //btnEdit = view.findViewById(R.id.btnEditOperator);
 
         btnEdit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -111,6 +111,9 @@ public class EditOperatorFragment extends Fragment {
         adapterLokasi.notifyDataSetChanged();
     }
 
+
+
+ */
     public void loadEmail()
     {
         FirebaseDatabase db = FirebaseDatabase.getInstance();
