@@ -51,7 +51,9 @@ public class LoginActivity extends AppCompatActivity {
                 String email = edemail.getText().toString();
                 String password = edpass.getText().toString();
 
-
+                Intent i = new Intent(LoginActivity.this, MainActivity.class);
+                startActivity(i);
+                finish();
             }
         });
 
