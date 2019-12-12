@@ -1115,7 +1115,6 @@ drawable design_snackbar_background
 drawable googleg_disabled_color_18
 drawable googleg_standard_color_18
 drawable ic_attach_money_black_24dp
-drawable ic_check_circle_black_24dp
 drawable ic_done_black_24dp
 drawable ic_home_black_24dp
 drawable ic_launcher_background
@@ -1226,6 +1225,7 @@ id btn10k
 id btn50k
 id btnBuatpesanan
 id btnBuyDetail
+id btnFilter
 id btnHistori
 id btnLocation
 id btnPengaturan
@@ -1267,13 +1267,13 @@ id direct
 id disableHome
 id duraasi
 id durasi
-id editText
-id editText3
 id edit_query
 id end
 id end_padder
 id enterAlways
 id enterAlwaysCollapsed
+id etAlamatEdit
+id etFilter
 id etNominal
 id etPassLama
 id etPassbaru
@@ -1378,6 +1378,7 @@ id right
 id right_icon
 id right_side
 id rvHistory
+id rvHistoryCurr
 id saldoanda
 id saldoo
 id satellite
@@ -1475,6 +1476,7 @@ id txtHistoryStatus
 id txtHistoryTanggal
 id txtHistoryTempat
 id txtHistoryTotal
+id txtNamaEdit
 id txtPlatnomorAngka
 id txtPlatnomorBelakang
 id txtPlatnomorDepan
@@ -1662,6 +1664,7 @@ string common_signin_button_text_long
 string default_web_client_id
 string fab_transformation_scrim_behavior
 string fab_transformation_sheet_behavior
+string fcm_fallback_notification_channel_label
 string firebase_database_url
 string gcm_defaultSenderId
 string google_api_key

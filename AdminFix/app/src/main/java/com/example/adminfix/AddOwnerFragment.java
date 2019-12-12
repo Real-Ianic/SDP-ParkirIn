@@ -4,11 +4,16 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
 
 
 /**
@@ -30,6 +35,11 @@ public class AddOwnerFragment extends Fragment {
     private String mParam2;
 
     private OnFragmentInteractionListener mListener;
+
+    MainActivity parentActivity;
+
+    EditText edNama,edEmail,edPassword,edNohp;
+    Button btnAddOwner;
 
     public AddOwnerFragment() {
         // Required empty public constructor
@@ -67,6 +77,27 @@ public class AddOwnerFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_add_owner, container, false);
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        edNama = view.findViewById(R.id.edNamaOwner);
+        edEmail = view.findViewById(R.id.edEmailOwner);
+        edNohp = view.findViewById(R.id.edNoHPOwner);
+        edPassword = view.findViewById(R.id.edPasswordOwner);
+
+        btnAddOwner = view.findViewById(R.id.btnTambahOwner);
+
+        parentActivity = (MainActivity) getActivity();
+
+        btnAddOwner.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                addOwner();
+            }
+        });
     }
 
     // TODO: Rename method, update argument and hook method into UI event
@@ -109,5 +140,22 @@ public class AddOwnerFragment extends Fragment {
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);
+    }
+
+    public void addOwner()
+    {
+        String nama = edNama.getText().toString();
+        String email = edEmail.getText().toString();
+        String password = edEmail.getText().toString();
+        String nohp = edNohp.getText().toString();
+
+        OwnerClass owner = new OwnerClass();
+        owner.setName(nama);
+        owner.setPassword(password);
+        owner.setEmail(email);
+        owner.setNohp(nohp);
+
+        parentActivity.addOwner(owner);
+        Toast.makeText(parentActivity, "Owner Berhasil ditambahkan !", Toast.LENGTH_SHORT).show();
     }
 }

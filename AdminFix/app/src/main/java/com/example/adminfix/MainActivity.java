@@ -16,12 +16,21 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
     BottomNavigationView bottomNavigationView;
+
+    ArrayList<classtransaksi> listTransaksi;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -148,5 +157,53 @@ public class MainActivity extends AppCompatActivity {
     public void deleteOwner(String id)
     {
 
+    }
+
+    public List<classtransaksi> getTransactions()
+    {
+        listTransaksi.clear();
+
+
+        FirebaseDatabase db = FirebaseDatabase.getInstance();
+        DatabaseReference ref = db.getReference("Transaksi");
+
+        ref = db.getReference("Transaksi");
+        ref.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                HashMap<String, Object> tempLokasi = (HashMap<String, Object>)dataSnapshot.getValue();
+
+                for (String key : tempLokasi.keySet())
+                {
+                    HashMap<String,Object> transaksi = (HashMap<String,Object>) tempLokasi.get(key);
+                    classtransaksi trans = new classtransaksi();
+
+                    String hi = String.valueOf(transaksi.get("durasijam"));
+
+                    trans.setDurasijam(Integer.parseInt(hi));
+                    trans.setDurasiutktampil(transaksi.get("durasiutktampil").toString());
+
+                    trans.setEmailcust(transaksi.get("emailcust").toString());
+                    trans.setJenis(transaksi.get("jenis").toString());
+                    trans.setPlatnomor(transaksi.get("platnomor").toString());
+                    trans.setStatus(transaksi.get("status").toString());
+                    trans.setTempat(transaksi.get("tempat").toString());
+                    trans.setTipekendaraan(transaksi.get("tipekendaraan").toString());
+
+                    hi = String.valueOf(transaksi.get("total"));
+
+                    trans.setTotal(Integer.parseInt(hi));
+                    trans.setWaktutransaksi(transaksi.get("waktutransaksi").toString());
+
+                    listTransaksi.add(trans);
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                System.out.println("The read failed: " + databaseError.getCode());
+            }
+        });
+        return listTransaksi;
     }
 }

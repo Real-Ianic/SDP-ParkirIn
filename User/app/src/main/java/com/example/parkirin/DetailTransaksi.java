@@ -4,7 +4,9 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.res.Resources;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -20,6 +22,7 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.Locale;
 
 public class DetailTransaksi extends AppCompatActivity {
 
@@ -28,7 +31,7 @@ public class DetailTransaksi extends AppCompatActivity {
     private DatabaseReference reff;
     classtransaksi ct;
     Date currentTime = Calendar.getInstance().getTime();
-    DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy - HH:mm:ss");
+    DateFormat dateFormat = new SimpleDateFormat("EEEE, dd MMMM yyyy - HH:mm:ss");
     String strDate = dateFormat.format(currentTime);
     DatabaseReference reffuser;
     int saldobayar;
@@ -40,6 +43,13 @@ public class DetailTransaksi extends AppCompatActivity {
         setContentView(R.layout.activity_detail_transaksi);
         getSupportActionBar().setTitle("Detail Transaksi");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        Resources res = getApplicationContext().getResources();
+// Change locale settings in the app.
+        DisplayMetrics dm = res.getDisplayMetrics();
+        android.content.res.Configuration conf = res.getConfiguration();
+        conf.setLocale(new Locale("id")); // API 17+ only.
+// Use conf.locale = new Locale(...) if targeting lower versions
+        res.updateConfiguration(conf, dm);
         tvTempat=findViewById(R.id.txtDetailTempat);
         tvPlat=findViewById(R.id.txtDetailPlat);
         reff = FirebaseDatabase.getInstance().getReference();
@@ -92,7 +102,7 @@ public class DetailTransaksi extends AppCompatActivity {
         tvTempat.setText(tempat+"");
         tvPlat.setText(platnomor+"");
         tvKendaraan.setText(kendaraan+"");
-        tvJumlah.setText(harga/1000+".000");
+        tvJumlah.setText(harga+"");
     }
 
     public void onClick(View view) {

@@ -24,6 +24,8 @@ public class EditPassActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_pass);
+        getSupportActionBar().setTitle("Ganti Password");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         etOldpass = findViewById(R.id.etPassLama);
         etNewpass = findViewById(R.id.etPassbaru);
         etNewpassconf = findViewById(R.id.etPassbaruconf);

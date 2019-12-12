@@ -69,30 +69,17 @@ public class RegisterActivity extends AppCompatActivity {
                     String pass = edpassword.getText().toString();
                     final String hp = ednohp.getText().toString();
 
-                    progressBar.setVisibility(View.VISIBLE);
                     if(!(namatemp.isEmpty()||emailtemp.isEmpty()||pass.isEmpty()||hp.isEmpty())&&pass.equals(confpass)){
-                        mAuth.createUserWithEmailAndPassword(emailtemp,pass).addOnCompleteListener(RegisterActivity.this, new OnCompleteListener<AuthResult>() {
-                            @Override
-                            public void onComplete(@NonNull Task<AuthResult> task) {
-                                progressBar.setVisibility(View.GONE);
+                        FirebaseDatabase database = FirebaseDatabase.getInstance();
+                        DatabaseReference ownerRef = database.getReference("Owner");
 
-                                /*if(task.isSuccessful()){
-                                    member = new Member(namatemp,emailtemp,almt,hp,0);
-                                    FirebaseDatabase.getInstance().getReference("Member").child(FirebaseAuth.getInstance().getCurrentUser().getUid()).setValue(member).addOnCompleteListener(new OnCompleteListener<Void>() {
-                                        @Override
-                                        public void onComplete(@NonNull Task<Void> task) {
-                                            progressBar.setVisibility(View.GONE);
-                                            Toast.makeText(RegisterActivity.this, "Registrasi Berhasil", Toast.LENGTH_SHORT).show();
-                                            finish();
-                                        }
-                                    });
-                                }else{
-                                    Toast.makeText(RegisterActivity.this, task.getException().getMessage(), Toast.LENGTH_SHORT).show();
-                                }
+                        OwnerClass owner = new OwnerClass();
+                        owner.setName(namatemp);
+                        owner.setEmail(emailtemp);
+                        owner.setPassword(pass);
+                        owner.setNohp(hp);
 
-                                 */
-                            }
-                        });
+                        ownerRef.push().setValue(owner);
                     }
                 }
             }
