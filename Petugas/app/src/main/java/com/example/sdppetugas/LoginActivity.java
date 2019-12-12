@@ -25,13 +25,11 @@ public class LoginActivity extends AppCompatActivity {
     EditText etEmail,etPass;
     Button b;
     Query reff;
-    TextView tvtoregist;
     FirebaseAuth mAuth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        tvtoregist = findViewById(R.id.tvtoregist);
         etEmail = findViewById(R.id.etEmail);
         etPass = findViewById(R.id.etPassword);
         b = findViewById(R.id.btnLogin);
@@ -69,16 +67,6 @@ public class LoginActivity extends AppCompatActivity {
                         }
                     });
                 }
-            }
-        });
-
-
-        tvtoregist.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(LoginActivity.this,RegisterActivity.class);
-                startActivity(i);
-                finish();
             }
         });
 
