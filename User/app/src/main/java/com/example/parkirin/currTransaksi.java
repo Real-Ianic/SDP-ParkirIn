@@ -46,11 +46,11 @@ public class currTransaksi extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_history);
+        setContentView(R.layout.activity_curr_transaksi);
         getSupportActionBar().setTitle("Transaksi Saat Ini");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         email=getIntent().getStringExtra("email");
-        rvHistory = findViewById(R.id.rvHistory);
+        rvHistory = findViewById(R.id.rvHistoryCurr);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
         rvHistory.setLayoutManager(linearLayoutManager);
         linearLayoutManager.setStackFromEnd(true);

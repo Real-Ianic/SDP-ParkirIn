@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.parkirin">
 
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
@@ -16,9 +17,28 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".currTransaksi"
-            android:parentActivityName=".MainActivity"></activity>
+        android:theme="@style/AppTheme"
+        tools:ignore="GoogleAppIndexingWarning">
+        <service
+            android:name=".TokenService"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
+            </intent-filter>
+        </service>
+        <service
+            android:name=".FirebaseNotificationService"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
+
+        <activity
+            android:name=".currTransaksi"
+            android:parentActivityName=".MainActivity" />
         <activity android:name=".Topupberhasil" />
         <activity
             android:name=".tempatdetail"
@@ -32,11 +52,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".EditPassActivity" />
+        <activity android:name=".EditPassActivity" android:parentActivityName=".MainActivity"/>
         <activity
             android:name=".historyActivity"
             android:parentActivityName=".MainActivity" />
-        <activity android:name=".EditProfileActivity" />
+        <activity android:name=".EditProfileActivity" android:parentActivityName=".MainActivity"/>
         <activity android:name=".TransActivity" />
         <activity
             android:name=".DetailTransaksi"
@@ -50,7 +70,11 @@
             android:value="@string/map_key" />
 
         <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
     </application>
 
