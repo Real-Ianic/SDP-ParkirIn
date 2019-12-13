@@ -58,7 +58,8 @@ public class LoginActivity extends AppCompatActivity {
         btnlogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(login())
+
+                //if(login())
                 {
                     Intent in = new Intent(LoginActivity.this, MainActivity.class);
                     int tempInt = 0;
@@ -71,12 +72,12 @@ public class LoginActivity extends AppCompatActivity {
                             tempInt = i;
                         }
                     }
-                    in.putExtra("loggedOwner",listOwner.get(tempInt));
+                    //in.putExtra("loggedOwner",listOwner.get(tempInt));
                     startActivity(in);
                 }
-                else
+                //else
                 {
-                    Toast.makeText(LoginActivity.this, "Gagal Login !", Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(LoginActivity.this, "Gagal Login !", Toast.LENGTH_SHORT).show();
                 }
             }
         });

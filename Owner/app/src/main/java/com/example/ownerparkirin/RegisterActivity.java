@@ -47,6 +47,12 @@ public class RegisterActivity extends AppCompatActivity {
         edconfpassword = findViewById(R.id.ed_regis_confpass);
         ednohp = findViewById(R.id.ed_regis_nohp);
 
+        progressBar = new ProgressBar(this);
+        database=FirebaseDatabase.getInstance();
+        //reff = database.getReference().child("Owner");
+
+
+
         btnregist = findViewById(R.id.btnregister_register);
         btnregist.setOnClickListener(new View.OnClickListener() {
             @Override

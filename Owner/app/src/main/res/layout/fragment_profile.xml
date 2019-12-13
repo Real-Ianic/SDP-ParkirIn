@@ -13,6 +13,7 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="32dp"
         android:text="status\nkomisi"
+        android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView10" />
 
@@ -23,6 +24,7 @@
         android:layout_marginStart="92dp"
         android:layout_marginTop="40dp"
         android:text=":"
+        android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView9" />
 
@@ -33,6 +35,7 @@
         android:layout_marginStart="92dp"
         android:layout_marginTop="40dp"
         android:text=":"
+        android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView8" />
 
@@ -43,6 +46,7 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="44dp"
         android:text="email "
+        android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -53,6 +57,7 @@
         android:layout_marginStart="92dp"
         android:layout_marginTop="44dp"
         android:text=":"
+        android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -63,6 +68,7 @@
         android:layout_marginStart="92dp"
         android:layout_marginTop="40dp"
         android:text=":"
+        android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
@@ -73,6 +79,7 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="40dp"
         android:text="nama"
+        android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
@@ -83,6 +90,7 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="40dp"
         android:text="no hp"
+        android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
@@ -93,6 +101,7 @@
         android:layout_marginStart="24dp"
         android:layout_marginTop="44dp"
         android:text="tvemail"
+        android:textSize="18sp"
         app:layout_constraintStart_toEndOf="@+id/textView7"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -103,30 +112,46 @@
         android:layout_marginStart="24dp"
         android:layout_marginTop="28dp"
         android:text="tvkomisi"
+        android:textSize="18sp"
         app:layout_constraintStart_toEndOf="@+id/textView14"
         app:layout_constraintTop_toBottomOf="@+id/ednohp_profile_owner" />
 
     <EditText
         android:id="@+id/ednama_profile_owner"
         style="@android:style/Widget.DeviceDefault.Light.EditText"
-        android:layout_width="wrap_content"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="32dp"
         android:ems="10"
         android:inputType="textPersonName"
+        android:textSize="18sp"
         app:layout_constraintStart_toEndOf="@+id/textView8"
         app:layout_constraintTop_toBottomOf="@+id/tvemailprofile_owner" />
 
     <EditText
         android:id="@+id/ednohp_profile_owner"
-        android:layout_width="wrap_content"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginTop="16dp"
         android:ems="10"
         android:inputType="phone"
+        android:textSize="18sp"
         app:layout_constraintStart_toEndOf="@+id/textView9"
         app:layout_constraintTop_toBottomOf="@+id/ednama_profile_owner" />
+
+    <Button
+        android:id="@+id/btnsave"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:backgroundTint="@android:color/holo_blue_light"
+        android:text="save"
+        android:textColor="@android:color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvstatuskomisi_profile_owner" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

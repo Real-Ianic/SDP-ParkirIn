@@ -49,9 +49,6 @@ public class LocationFragment extends Fragment {
                         if (menuItem.getItemId() == R.id.addlocationmenu){
                             changeLocationFragment(new AddLocationFragment(), "");
                         }
-                        else if (menuItem.getItemId() == R.id.editlocationmenu){
-                            changeLocationFragment(new EditLocationFragment(), "");
-                        }
                         else if (menuItem.getItemId() == R.id.locationsmenu){
                             changeLocationFragment(new YourLocationsFragment(), "");
                         }

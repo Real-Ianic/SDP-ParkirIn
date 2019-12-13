@@ -16,8 +16,8 @@
         android:id="@+id/nav_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@android:color/holo_blue_light"
-        app:itemTextColor="#FFFFFF"
         android:layout_alignParentBottom="true"
+        android:background="#23B6EE"
+        app:itemTextColor="#FFFFFF"
         app:menu="@menu/bottom_navigation" />
 </RelativeLayout>
