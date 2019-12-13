@@ -45,18 +45,18 @@
     },
     {
       "client_info": {
-        "mobilesdk_app_id": "1:633338955694:android:4e62390f46d00076a72a3f",
+        "mobilesdk_app_id": "1:633338955694:android:277ea78252772edca72a3f",
         "android_client_info": {
           "package_name": "com.example.ownerparkirin"
         }
       },
       "oauth_client": [
         {
-          "client_id": "633338955694-5shqg1rkgkbhr3j59gro91uetf330s6f.apps.googleusercontent.com",
+          "client_id": "633338955694-ot6mb00vhnnfimppto6imqgm3eokt8ph.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.example.ownerparkirin",
-            "certificate_hash": "2ef41a477740dc3ec9babe88dd7914d17852ee1b"
+            "certificate_hash": "797cdf91182059d040d061b8c75a39ced0a2d78a"
           }
         },
         {

@@ -14,6 +14,7 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
@@ -46,13 +47,6 @@ public class RegisterActivity extends AppCompatActivity {
         edconfpassword = findViewById(R.id.ed_regis_confpass);
         ednohp = findViewById(R.id.ed_regis_nohp);
 
-        progressBar = new ProgressBar(this);
-        database=FirebaseDatabase.getInstance();
-        reff = database.getReference().child("Owner");
-        mAuth = FirebaseAuth.getInstance();
-
-
-
         btnregist = findViewById(R.id.btnregister_register);
         btnregist.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -64,12 +58,12 @@ public class RegisterActivity extends AppCompatActivity {
                 }
                 else {
                     Toast.makeText(RegisterActivity.this, "confpass == pass!", Toast.LENGTH_SHORT).show();
-                    final String namatemp = ednama.getText().toString();
-                    final String emailtemp= edemail.getText().toString();
+                    String namatemp = ednama.getText().toString();
+                    String emailtemp= edemail.getText().toString();
                     String pass = edpassword.getText().toString();
-                    final String hp = ednohp.getText().toString();
+                    String hp = ednohp.getText().toString();
 
-                    if(!(namatemp.isEmpty()||emailtemp.isEmpty()||pass.isEmpty()||hp.isEmpty())&&pass.equals(confpass)){
+                    if(!(namatemp.isEmpty()||emailtemp.isEmpty()||pass.isEmpty()||hp.isEmpty())){
                         FirebaseDatabase database = FirebaseDatabase.getInstance();
                         DatabaseReference ownerRef = database.getReference("Owner");
 
