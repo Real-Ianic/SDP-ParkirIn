@@ -12,6 +12,9 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.android.gms.tasks.TaskCompletionSource;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -32,6 +35,9 @@ public class MainActivity extends AppCompatActivity {
     List<String> listId = new ArrayList<>();
     BottomNavigationView bottomNavigationView;
     static OwnerClass currentOwner;
+
+    TaskCompletionSource<List<OwnerClass>> dbSource = new TaskCompletionSource<>();
+    Task dbTask = dbSource.getTask();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -102,12 +108,15 @@ public class MainActivity extends AppCompatActivity {
         lokasiRef.push().setValue(lokasi);
     }
 
-    public void editOwner(OwnerClass owner)
+    public void editOwner(final OwnerClass owner)
     {
-        FirebaseDatabase db = FirebaseDatabase.getInstance();
+        dbSource = new TaskCompletionSource<>();
+        dbTask = dbSource.getTask();
+
+        final FirebaseDatabase db = FirebaseDatabase.getInstance();
         DatabaseReference ref = db.getReference("Owner");
 
-        ref.addValueEventListener(new ValueEventListener() {
+        ref.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 HashMap<String, Object> templistOwner = (HashMap<String, Object>)dataSnapshot.getValue();
@@ -126,29 +135,39 @@ public class MainActivity extends AppCompatActivity {
                     owner.setPassword(tempPassword);
                     owner.setName(tempNama);
                     owner.setNohp(tempNohp);
+
                     listOwner.add(owner);
                     listId.add(key);
                 }
+                dbSource.setResult(listOwner);
             }
 
             @Override
             public void onCancelled(DatabaseError databaseError) {
                 System.out.println("The read failed: " + databaseError.getCode());
+                dbSource.setException(databaseError.toException());
             }
         });
 
-        String id = "";
-        for(int i=0;i<listOwner.size();i++)
-        {
-            if(listOwner.get(i).getEmail().equals(owner.getEmail()))
-            {
-                id = listId.get(i);
+        dbTask.addOnCompleteListener(new OnCompleteListener() {
+            @Override
+            public void onComplete(@NonNull Task task) {
+                String id = "";
+                for(int i=0;i<listOwner.size();i++)
+                {
+                    if(listOwner.get(i).getEmail().equals(owner.getEmail()))
+                    {
+                        id = listId.get(i);
+                    }
+                }
+
+                DatabaseReference reff;
+                reff = db.getReference("Owner/"+id);
+
+                reff.setValue(owner);
             }
-        }
+        });
 
-        ref = db.getReference("Owner/"+id);
-
-        ref.setValue(owner);
     }
 
     public void getLokasi()
