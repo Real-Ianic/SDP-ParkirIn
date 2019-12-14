@@ -19,6 +19,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.security.acl.Owner;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -27,8 +28,10 @@ public class MainActivity extends AppCompatActivity {
 
     List<LokasiClass> listLokasi = new ArrayList<>();
     List<classtransaksi> listTransaksi = new ArrayList<>();
+    List<OwnerClass> listOwner = new ArrayList<>();
+    List<String> listId = new ArrayList<>();
     BottomNavigationView bottomNavigationView;
-    OwnerClass currentOwner;
+    static OwnerClass currentOwner;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -99,9 +102,57 @@ public class MainActivity extends AppCompatActivity {
         lokasiRef.push().setValue(lokasi);
     }
 
-    public List<classtransaksi> getTransactions()
+    public void editOwner(OwnerClass owner)
     {
-        listTransaksi.clear();
+        FirebaseDatabase db = FirebaseDatabase.getInstance();
+        DatabaseReference ref = db.getReference("Owner");
+
+        ref.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                HashMap<String, Object> templistOwner = (HashMap<String, Object>)dataSnapshot.getValue();
+                listOwner.clear();
+                listId.clear();
+                for (String key : templistOwner.keySet())
+                {
+                    HashMap<String,Object> tempOwner = (HashMap<String,Object>)templistOwner.get(key);
+                    String tempEmail = String.valueOf(tempOwner.get("email"));
+                    String tempPassword = String.valueOf(tempOwner.get("password"));
+                    String tempNama = String.valueOf(tempOwner.get("name"));
+                    String tempNohp = String.valueOf(tempOwner.get("nohp"));
+
+                    OwnerClass owner = new OwnerClass();
+                    owner.setEmail(tempEmail);
+                    owner.setPassword(tempPassword);
+                    owner.setName(tempNama);
+                    owner.setNohp(tempNohp);
+                    listOwner.add(owner);
+                    listId.add(key);
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                System.out.println("The read failed: " + databaseError.getCode());
+            }
+        });
+
+        String id = "";
+        for(int i=0;i<listOwner.size();i++)
+        {
+            if(listOwner.get(i).getEmail().equals(owner.getEmail()))
+            {
+                id = listId.get(i);
+            }
+        }
+
+        ref = db.getReference("Owner/"+id);
+
+        ref.setValue(owner);
+    }
+
+    public void getLokasi()
+    {
         listLokasi.clear();
         FirebaseDatabase db = FirebaseDatabase.getInstance();
         DatabaseReference ref = db.getReference("Lokasi");
@@ -144,6 +195,14 @@ public class MainActivity extends AppCompatActivity {
                 i--;
             }
         }
+    }
+
+    public List<classtransaksi> getTransactions()
+    {
+        listTransaksi.clear();
+        getLokasi();
+        FirebaseDatabase db = FirebaseDatabase.getInstance();
+        DatabaseReference ref = db.getReference("Lokasi");
 
         ref = db.getReference("Transaksi");
         ref.addValueEventListener(new ValueEventListener() {

@@ -8,7 +8,6 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
-import android.view.TextureView;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -22,9 +21,11 @@ import android.widget.TextView;
 public class ProfileFragment extends Fragment {
 
 
-    TextView tvemail, tvstatuskomisi;
-    EditText ednama, ednohp;
+    TextView tvemail;
+    EditText ednama, ednohp,edpass;
     Button btnsave;
+
+    MainActivity parentActivity;
 
     String email, statuskomisi, nama;
     int nohp;
@@ -44,20 +45,36 @@ public class ProfileFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        btnsave = view.findViewById(R.id.btnsave);
+        //Getting Components
+        tvemail = view.findViewById(R.id.tvProfileEmail);
+        ednama = view.findViewById(R.id.edProfileNama);
+        ednohp = view.findViewById(R.id.edProfileNohp);
+        edpass = view.findViewById(R.id.edProfilePass);
+
+        btnsave = view.findViewById(R.id.btnProfileSave);
+
+        tvemail.setText(parentActivity.currentOwner.getEmail());
+
+        parentActivity = (MainActivity) getActivity();
+
         btnsave.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View view) {
 
-                //get the text
-                email = tvemail.getText().toString();
-                statuskomisi = tvstatuskomisi.getText().toString();
-                nohp = Integer.parseInt(ednohp.getText().toString());
-                nama = ednama.getText().toString();
+                String email = tvemail.getText().toString();
+                String nama = ednama.getText().toString();
+                String nohp = ednohp.getText().toString();
+                String pass = edpass.getText().toString();
 
+                OwnerClass tempOwner = new OwnerClass();
+                tempOwner.setEmail(email);
+                tempOwner.setName(nama);
+                tempOwner.setNohp(nohp);
+                tempOwner.setPassword(pass);
 
-
+                parentActivity.editOwner(tempOwner);
             }
         });
     }
+
 }

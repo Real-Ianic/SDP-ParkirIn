@@ -59,7 +59,7 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                //if(login())
+                if(login())
                 {
                     Intent in = new Intent(LoginActivity.this, MainActivity.class);
                     int tempInt = 0;
@@ -72,12 +72,12 @@ public class LoginActivity extends AppCompatActivity {
                             tempInt = i;
                         }
                     }
-                    //in.putExtra("loggedOwner",listOwner.get(tempInt));
+                    in.putExtra("loggedOwner",listOwner.get(tempInt));
                     startActivity(in);
                 }
-                //else
+                else
                 {
-                    //Toast.makeText(LoginActivity.this, "Gagal Login !", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LoginActivity.this, "Gagal Login !", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -98,7 +98,7 @@ public class LoginActivity extends AppCompatActivity {
         FirebaseDatabase db = FirebaseDatabase.getInstance();
         DatabaseReference ref = db.getReference("Owner");
 
-        ref.addValueEventListener(new ValueEventListener() {
+        ref.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 HashMap<String, Object> templistOwner = (HashMap<String, Object>)dataSnapshot.getValue();

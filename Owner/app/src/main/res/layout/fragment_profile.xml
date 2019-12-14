@@ -11,8 +11,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="32dp"
-        android:text="status\nkomisi"
+        android:layout_marginTop="40dp"
+        android:text="Pass"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView10" />
@@ -45,7 +45,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginTop="44dp"
-        android:text="email "
+        android:text="E-Mail"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -78,7 +78,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginTop="40dp"
-        android:text="nama"
+        android:text="Nama"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
@@ -89,13 +89,13 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginTop="40dp"
-        android:text="no hp"
+        android:text="No Hp"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
     <TextView
-        android:id="@+id/tvemailprofile_owner"
+        android:id="@+id/tvProfileEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -105,53 +105,58 @@
         app:layout_constraintStart_toEndOf="@+id/textView7"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/tvstatuskomisi_profile_owner"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="28dp"
-        android:text="tvkomisi"
-        android:textSize="18sp"
-        app:layout_constraintStart_toEndOf="@+id/textView14"
-        app:layout_constraintTop_toBottomOf="@+id/ednohp_profile_owner" />
-
     <EditText
-        android:id="@+id/ednama_profile_owner"
+        android:id="@+id/edProfileNama"
         style="@android:style/Widget.DeviceDefault.Light.EditText"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginTop="32dp"
         android:ems="10"
+        android:hint="Nama"
         android:inputType="textPersonName"
         android:textSize="18sp"
         app:layout_constraintStart_toEndOf="@+id/textView8"
-        app:layout_constraintTop_toBottomOf="@+id/tvemailprofile_owner" />
+        app:layout_constraintTop_toBottomOf="@+id/tvProfileEmail" />
 
     <EditText
-        android:id="@+id/ednohp_profile_owner"
+        android:id="@+id/edProfileNohp"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginTop="16dp"
         android:ems="10"
+        android:hint="Nomor HP"
         android:inputType="phone"
         android:textSize="18sp"
         app:layout_constraintStart_toEndOf="@+id/textView9"
-        app:layout_constraintTop_toBottomOf="@+id/ednama_profile_owner" />
+        app:layout_constraintTop_toBottomOf="@+id/edProfileNama" />
 
     <Button
-        android:id="@+id/btnsave"
+        android:id="@+id/btnProfileSave"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="68dp"
         android:backgroundTint="@android:color/holo_blue_light"
         android:text="save"
         android:textColor="@android:color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvstatuskomisi_profile_owner" />
+        app:layout_constraintTop_toBottomOf="@+id/edProfilePass" />
+
+    <EditText
+        android:id="@+id/edProfilePass"
+        android:layout_width="247dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint="Password"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/textView14"
+        app:layout_constraintTop_toBottomOf="@+id/edProfileNohp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
