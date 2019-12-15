@@ -13,4 +13,8 @@
         android:id="@+id/myprofilemenu"
         android:icon="@drawable/ic_person_black_24dp"
         android:title="My Profile" />
+    <item
+        android:id="@+id/reportmenu"
+        android:icon="@drawable/ic_library_books_black_24dp"
+        android:title="Report" />
 </menu>

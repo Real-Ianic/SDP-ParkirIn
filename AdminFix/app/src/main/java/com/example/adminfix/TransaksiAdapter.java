@@ -41,7 +41,7 @@ public class TransaksiAdapter extends RecyclerView.Adapter<TransaksiAdapter.View
         holder.tvTotal.setText("Total : Rp." + tempTrans.getTotal()+"");
         holder.tvWaktu.setText("Tanggal : " + tempTrans.getWaktutransaksi());
 
-        if(tempTrans.getStatus().equals("Diterima"))
+        if(tempTrans.getStatus().equals("Selesai"))
         {
             holder.tvStatus.setTextColor(Color.rgb(0,255,0));
         }
