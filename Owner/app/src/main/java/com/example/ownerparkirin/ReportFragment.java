@@ -120,7 +120,6 @@ public class ReportFragment extends Fragment {
             @Override
             public void onComplete(@NonNull Task task) {
                 //Prepping Data After Async Task Finished
-                System.out.println("MASUK GAN");
 
                 HashMap<String,Integer> listPenghasilan = new HashMap<String,Integer>();
 

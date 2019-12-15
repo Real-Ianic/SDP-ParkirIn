@@ -1,9 +1,7 @@
 package com.example.adminfix;
 
 import android.content.ContentResolver;
-import android.content.Context;
 import android.content.Intent;
-import android.location.Location;
 import android.net.Uri;
 import android.os.Bundle;
 
@@ -40,8 +38,6 @@ import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 import com.squareup.picasso.Picasso;
 
-import java.text.NumberFormat;
-import java.text.ParseException;
 import java.util.ArrayList;
 
 import static android.app.Activity.RESULT_OK;
@@ -154,7 +150,7 @@ public class EditLokasiFragment extends Fragment {
         simpan=view.findViewById(R.id.btnTambahLokasiEdit);
         alamat=view.findViewById(R.id.etAlamatLokasiEdit);
         slotmobil=view.findViewById(R.id.etSlotmobilEdit);
-        slotmotor=view.findViewById(R.id.etSlotmotorEdit);
+        slotmotor=view.findViewById(R.id.etEditOperatorNohp);
         pemilik=view.findViewById(R.id.etPemilikEdit);
         lat=view.findViewById(R.id.etLatitudeEdit);
         spinner=view.findViewById(R.id.spinnerEdit);

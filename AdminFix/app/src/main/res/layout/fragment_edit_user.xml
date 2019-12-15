@@ -48,7 +48,7 @@
             android:inputType="textCapWords" />
 
         <EditText
-            android:id="@+id/etSlotmotorEdit"
+            android:id="@+id/etEditOperatorNohp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/etEditOperatorName"
@@ -64,7 +64,7 @@
             android:id="@+id/editText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/etSlotmotorEdit"
+            android:layout_below="@+id/etEditOperatorNohp"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="22dp"
             android:layout_marginRight="20dp"

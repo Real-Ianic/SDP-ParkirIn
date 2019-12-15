@@ -48,7 +48,7 @@
             android:inputType="textCapWords" />
 
         <EditText
-            android:id="@+id/etSlotmotorEdit"
+            android:id="@+id/etEditOperatorNohp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
@@ -58,6 +58,13 @@
             android:hint="No HP"
             android:inputType="number" />
 
+        <Button
+            android:id="@+id/btnEditOperator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/etEditOperatorNohp"
+            android:layout_marginLeft="160dp"
+            android:text="Edit" />
 
 
     </RelativeLayout>

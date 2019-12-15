@@ -63,18 +63,15 @@ public class EditOperatorFragment extends Fragment {
         //Getting Components
         etNama = view.findViewById(R.id.etEditOperatorName);
         etNohp = view.findViewById(R.id.etEditOperatorNohp);
-        etPassword = view.findViewById(R.id.etEditOperatorPassword);
-        tvLokasi = view.findViewById(R.id.currentLokasi);
 
-        spinnerEmail = view.findViewById(R.id.spinnerEditOperatorEmail);
-        spinnerLokasi = view.findViewById(R.id.spinnerEditOperator);
 
         listEmail = new ArrayList<String>();
         listNamaLokasi = new ArrayList<String>();
         listIdLokasi = new ArrayList<String>();
         listIdOperator = new ArrayList<String>();
 
-        loadLokasi();
+        spinnerEmail = view.findViewById(R.id.spinnerEdit);
+
         loadEmail();
 
         adapterEmail = new ArrayAdapter<String>(getContext(),android.R.layout.simple_spinner_item,listEmail);
@@ -82,7 +79,6 @@ public class EditOperatorFragment extends Fragment {
 
         //Setting Adapter to Spinners
         spinnerEmail.setAdapter(adapterEmail);
-        spinnerLokasi.setAdapter(adapterLokasi);
 
         parentActivity = (MainActivity)getActivity();
 
@@ -143,6 +139,8 @@ public class EditOperatorFragment extends Fragment {
                     listEmail.add(temporOperator.getEmail());
 
                 }
+                adapterEmail = new ArrayAdapter<String>(getContext(),android.R.layout.simple_spinner_item,listEmail);
+                spinnerEmail.setAdapter(adapterEmail);
             }
 
             @Override
@@ -192,6 +190,8 @@ public class EditOperatorFragment extends Fragment {
                     listNamaLokasi.add(temporLokasi.getNama());
 
                 }
+                adapterLokasi = new ArrayAdapter<String>(getContext(),android.R.layout.simple_spinner_item,listNamaLokasi);
+                spinnerLokasi.setAdapter(adapterLokasi);
             }
 
             @Override
@@ -206,7 +206,7 @@ public class EditOperatorFragment extends Fragment {
         OperatorClass tempOperator = listOperator.get(spinnerEmail.getSelectedItemPosition());
         tempOperator.setNama(etNama.getText().toString());
         tempOperator.setNohp(etNohp.getText().toString());
-        tempOperator.setPassword(etPassword.getText().toString());
+        //tempOperator.setPassword(etPassword.getText().toString());
         parentActivity.editOperator(listIdOperator.get(spinnerEmail.getSelectedItemPosition()),tempOperator);
         clearLabels();
     }
@@ -214,9 +214,9 @@ public class EditOperatorFragment extends Fragment {
     public void refreshLabels()
     {
         OperatorClass tempOperator = listOperator.get(spinnerEmail.getSelectedItemPosition());
-        etNama.setText(tempOperator.getNama());
-        etNohp.setText(tempOperator.getNohp());
-        etPassword.setText(tempOperator.getPassword());
+        etNama.setText(tempOperator.getNama()+"");
+        etNohp.setText(tempOperator.getNohp()+"");
+        //etPassword.setText(tempOperator.getPassword()+"");
 
         int ctr = 0;
         for(String id : listIdLokasi)
@@ -229,14 +229,14 @@ public class EditOperatorFragment extends Fragment {
             ctr++;
         }
 
-        tvLokasi.setText(tempOperator.getIdLokasi());
+        //tvLokasi.setText(tempOperator.getIdLokasi());
     }
 
     public void clearLabels()
     {
         etNama.setText("");
         etNohp.setText("");
-        etPassword.setText("");
-        tvLokasi.setText("-");
+        //etPassword.setText("");
+        //tvLokasi.setText("-");
     }
 }
