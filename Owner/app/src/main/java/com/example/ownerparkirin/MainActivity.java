@@ -64,6 +64,9 @@ public class MainActivity extends AppCompatActivity {
                         else if (menuItem.getItemId() == R.id.myprofilemenu){
                             changeFragment(new ProfileFragment(), "");
                         }
+                        else if(menuItem.getItemId() == R.id.reportmenu){
+                            changeFragment(new ReportFragment(), "");
+                        }
                         return true;
                     }
                 }
