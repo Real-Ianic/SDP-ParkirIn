@@ -147,13 +147,13 @@ public class EditLokasiFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         nama=view.findViewById(R.id.etNamaLokasiEdit);
-        simpan=view.findViewById(R.id.btnTambahLokasiEdit);
+        simpan=view.findViewById(R.id.btnEditOwner);
         alamat=view.findViewById(R.id.etAlamatLokasiEdit);
         slotmobil=view.findViewById(R.id.etSlotmobilEdit);
-        slotmotor=view.findViewById(R.id.etEditOperatorNohp);
+        slotmotor=view.findViewById(R.id.etEditOwnerNohp);
         pemilik=view.findViewById(R.id.etPemilikEdit);
         lat=view.findViewById(R.id.etLatitudeEdit);
-        spinner=view.findViewById(R.id.spinnerEdit);
+        spinner=view.findViewById(R.id.spinnerEditOwner);
         progressBar=view.findViewById(R.id.progressBarEdit);
         lng=view.findViewById(R.id.etLongitudeEdit);
         btnimage=view.findViewById(R.id.btnGambarEdit);

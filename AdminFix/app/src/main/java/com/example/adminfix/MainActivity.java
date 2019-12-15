@@ -129,7 +129,10 @@ public class MainActivity extends AppCompatActivity {
 
     public void editUser(String id, Member user)
     {
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference userRef = database.getReference("Member/"+id);
 
+        userRef.setValue(user);
     }
 
     public void deleteUser(String id)

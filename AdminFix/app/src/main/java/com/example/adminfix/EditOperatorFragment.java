@@ -61,8 +61,8 @@ public class EditOperatorFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         //Getting Components
-        etNama = view.findViewById(R.id.etEditOperatorName);
-        etNohp = view.findViewById(R.id.etEditOperatorNohp);
+        etNama = view.findViewById(R.id.etEditOwnerNama);
+        etNohp = view.findViewById(R.id.etEditOwnerNohp);
 
 
         listEmail = new ArrayList<String>();
@@ -70,7 +70,7 @@ public class EditOperatorFragment extends Fragment {
         listIdLokasi = new ArrayList<String>();
         listIdOperator = new ArrayList<String>();
 
-        spinnerEmail = view.findViewById(R.id.spinnerEdit);
+        spinnerEmail = view.findViewById(R.id.spinnerEditOwner);
 
         loadEmail();
 

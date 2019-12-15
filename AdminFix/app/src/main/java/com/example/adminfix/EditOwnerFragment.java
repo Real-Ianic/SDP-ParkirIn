@@ -4,11 +4,27 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Spinner;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 
 
 /**
@@ -30,6 +46,18 @@ public class EditOwnerFragment extends Fragment {
     private String mParam2;
 
     private OnFragmentInteractionListener mListener;
+
+    Spinner spinnerOwner;
+    ArrayAdapter<String> adapterOwner;
+    List<String> namaOwner;
+    List<String> idOwner;
+
+    EditText edNama,edNohp;
+
+    Button btnEdit;
+
+
+    List<OwnerClass> listOwner = new ArrayList<>();
 
     public EditOwnerFragment() {
         // Required empty public constructor
@@ -67,6 +95,40 @@ public class EditOwnerFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_edit_owner, container, false);
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        namaOwner = new ArrayList<>();
+        idOwner = new ArrayList<>();
+
+        spinnerOwner = view.findViewById(R.id.spinnerEditOwner);
+        edNama = view.findViewById(R.id.etEditOwnerNama);
+        edNohp = view.findViewById(R.id.etEditOwnerNohp);
+
+        btnEdit = view.findViewById(R.id.btnEditOperator);
+        getOwner();
+
+        btnEdit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                editOwner();
+            }
+        });
+    }
+
+    public void editOwner()
+    {
+        int pos = spinnerOwner.getSelectedItemPosition();
+        String name = edNama.getText().toString();
+        String nohp = edNohp.getText().toString();
+        MainActivity parent = (MainActivity) getActivity();
+        OwnerClass hi = listOwner.get(pos);
+        hi.setName(name);
+        hi.setNohp(nohp);
+        parent.editOwner(idOwner.get(pos),hi);
     }
 
     // TODO: Rename method, update argument and hook method into UI event
@@ -109,5 +171,43 @@ public class EditOwnerFragment extends Fragment {
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);
+    }
+
+    public void getOwner()
+    {
+        listOwner.clear();
+        idOwner.clear();
+        namaOwner.clear();
+        FirebaseDatabase db = FirebaseDatabase.getInstance();
+        DatabaseReference ref = db.getReference("Owner");
+
+        ref.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                HashMap<String,Object> obj = (HashMap<String,Object>) dataSnapshot.getValue();
+
+                for(String key : obj.keySet())
+                {
+                    idOwner.add(key);
+                    HashMap<String,Object> owner = (HashMap<String,Object>)obj.get(key);
+                    OwnerClass tempOwner = new OwnerClass();
+                    tempOwner.setNohp(owner.get("Nohp").toString());
+                    tempOwner.setEmail(owner.get("email").toString());
+                    tempOwner.setPassword(owner.get("password").toString());
+                    tempOwner.setName(owner.get("name").toString());
+
+                    listOwner.add(tempOwner);
+                    namaOwner.add(tempOwner.getName());
+                }
+                adapterOwner = new ArrayAdapter<String>(getContext(),android.R.layout.simple_spinner_item,namaOwner);
+                spinnerOwner.setAdapter(adapterOwner);
+                adapterOwner.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
     }
 }

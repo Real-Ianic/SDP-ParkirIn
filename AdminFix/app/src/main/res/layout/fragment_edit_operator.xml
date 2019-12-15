@@ -23,7 +23,7 @@
             android:layout_height="wrap_content"
             android:layout_toRightOf="@+id/pilih"
             android:layout_below="@id/textView3a"
-            android:id="@+id/spinnerEdit"/>
+            android:id="@+id/spinnerEditOwner"/>
 
         <TextView
             android:id="@+id/textView3a"
@@ -36,10 +36,10 @@
             android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
         <EditText
-            android:id="@+id/etEditOperatorName"
+            android:id="@+id/etEditOwnerNama"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/spinnerEdit"
+            android:layout_below="@+id/spinnerEditOwner"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="24dp"
             android:layout_marginRight="20dp"
@@ -48,12 +48,12 @@
             android:inputType="textCapWords" />
 
         <EditText
-            android:id="@+id/etEditOperatorNohp"
+            android:id="@+id/etEditOwnerNohp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            android:layout_below="@+id/etEditOperatorName"
+            android:layout_below="@+id/etEditOwnerNama"
             android:backgroundTint="@android:color/holo_blue_light"
             android:hint="No HP"
             android:inputType="number" />
@@ -62,7 +62,7 @@
             android:id="@+id/btnEditOperator"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/etEditOperatorNohp"
+            android:layout_below="@+id/etEditOwnerNohp"
             android:layout_marginLeft="160dp"
             android:text="Edit" />
 

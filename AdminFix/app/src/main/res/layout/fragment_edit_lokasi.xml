@@ -22,7 +22,7 @@
             android:layout_height="wrap_content"
             android:layout_toRightOf="@+id/pilih"
             android:layout_below="@id/textView3a"
-            android:id="@+id/spinnerEdit"/>
+            android:id="@+id/spinnerEditOwner"/>
         <TextView
             android:id="@+id/textView3a"
             android:layout_width="wrap_content"
@@ -39,7 +39,7 @@
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
             android:hint="Nama"
-            android:layout_below="@+id/spinnerEdit"
+            android:layout_below="@+id/spinnerEditOwner"
             android:inputType="textCapWords"
             android:layout_marginRight="20dp"
             android:layout_marginLeft="20dp"/>
@@ -61,7 +61,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             style="@style/Widget.AppCompat.ProgressBar.Horizontal"
-            android:layout_below="@id/btnTambahLokasiEdit"/>
+            android:layout_below="@id/btnEditOwner"/>
 
         <EditText
             android:id="@+id/etLatitudeEdit"
@@ -95,7 +95,7 @@
             android:layout_below="@id/etLongitudeEdit"/>
 
         <EditText
-            android:id="@+id/etEditOperatorNohp"
+            android:id="@+id/etEditOwnerNohp"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:layout_width="match_parent"
@@ -115,7 +115,7 @@
             android:inputType="textCapWords"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            android:layout_below="@+id/etEditOperatorNohp"/>
+            android:layout_below="@+id/etEditOwnerNohp"/>
 
         <Button
             android:id="@+id/btnGambarEdit"
@@ -135,7 +135,7 @@
             android:layout_below="@id/btnGambarEdit"/>
 
         <Button
-            android:id="@+id/btnTambahLokasiEdit"
+            android:id="@+id/btnEditOwner"
             android:layout_width="fill_parent"
             android:layout_margin="20dp"
             android:layout_height="wrap_content"

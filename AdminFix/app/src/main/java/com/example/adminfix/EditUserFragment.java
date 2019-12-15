@@ -4,11 +4,28 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import android.renderscript.Sampler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Spinner;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 
 
 /**
@@ -30,6 +47,16 @@ public class EditUserFragment extends Fragment {
     private String mParam2;
 
     private OnFragmentInteractionListener mListener;
+
+    Spinner userSpinner;
+    ArrayAdapter<String> userAdapter;
+
+    EditText edNama,edNohp,edAlamat;
+    Button btnEditUser;
+
+    List<Member> listUser;
+    List<String> namaUser;
+    List<String> idUser;
 
     public EditUserFragment() {
         // Required empty public constructor
@@ -67,6 +94,86 @@ public class EditUserFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_edit_user, container, false);
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        //Prepping Variables
+        listUser = new ArrayList<>();
+        idUser = new ArrayList<>();
+        namaUser = new ArrayList<>();
+
+
+        //Getting Views
+        userSpinner = view.findViewById(R.id.spinnerEditOwner);
+        edNama = view.findViewById(R.id.etEditOwnerNama);
+        edAlamat = view.findViewById(R.id.editText);
+        edNohp = view.findViewById(R.id.etEditOwnerNohp);
+
+        btnEditUser = view.findViewById(R.id.btnEditOwner);
+
+        getUsers();
+
+        btnEditUser.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                editUser();
+            }
+        });
+    }
+
+    public void editUser()
+    {
+        String nama = edNama.getText().toString();
+        String alamat = edAlamat.getText().toString();
+        String nohp = edNohp.getText().toString();
+
+        Member temp = listUser.get(userSpinner.getSelectedItemPosition());
+        temp.setNama(nama);
+        temp.setAlamat(alamat);
+        temp.setNohp(nohp);
+
+        MainActivity parent = (MainActivity) getActivity();
+        parent.editUser(idUser.get(userSpinner.getSelectedItemPosition()),temp);
+    }
+
+    public void getUsers()
+    {
+        FirebaseDatabase db = FirebaseDatabase.getInstance();
+        DatabaseReference ref = db.getReference("Member");
+
+        ref.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                HashMap<String,Object> obj = (HashMap<String,Object>)dataSnapshot.getValue();
+                for (String key : obj.keySet())
+                {
+                    HashMap<String,Object> user = (HashMap<String,Object>)obj.get(key);
+                    Member temp = new Member();
+                    temp.setNama(user.get("nama").toString());
+                    temp.setNohp(user.get("nohp").toString());
+                    temp.setAlamat(user.get("alamat").toString());
+
+                    int hi = Integer.parseInt(user.get("saldo").toString());
+
+                    temp.setSaldo(hi);
+                    temp.setEmail(user.get("email").toString());
+
+                    listUser.add(temp);
+                    namaUser.add(temp.getNama());
+                    idUser.add(key);
+                }
+                userAdapter = new ArrayAdapter<String>(getContext(),android.R.layout.simple_spinner_item,namaUser);
+                userSpinner.setAdapter(userAdapter);
+                userAdapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
     }
 
     // TODO: Rename method, update argument and hook method into UI event
