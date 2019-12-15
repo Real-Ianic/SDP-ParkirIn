@@ -63,7 +63,7 @@ public class RegisterActivity extends AppCompatActivity {
                     Toast.makeText(RegisterActivity.this, "Confirm Password harus sama dengan password", Toast.LENGTH_SHORT).show();
                 }
                 else {
-                    Toast.makeText(RegisterActivity.this, "confpass == pass!", Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(RegisterActivity.this, "confpass == pass!", Toast.LENGTH_SHORT).show();
                     String namatemp = ednama.getText().toString();
                     String emailtemp= edemail.getText().toString();
                     String pass = edpassword.getText().toString();
@@ -80,6 +80,7 @@ public class RegisterActivity extends AppCompatActivity {
                         owner.setNohp(hp);
 
                         ownerRef.push().setValue(owner);
+                        Toast.makeText(RegisterActivity.this, "Berhasil Register!", Toast.LENGTH_SHORT).show();
                     }
                 }
             }
