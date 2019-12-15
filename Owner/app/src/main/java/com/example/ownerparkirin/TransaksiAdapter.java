@@ -1,5 +1,6 @@
 package com.example.ownerparkirin;
 
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -37,8 +38,21 @@ public class TransaksiAdapter extends RecyclerView.Adapter<TransaksiAdapter.View
         holder.tvStatus.setText("Status : " + tempTrans.getStatus());
         holder.tvTempat.setText("Lokasi : " + tempTrans.getTempat());
         holder.tvTipe.setText("Tipe Kendaraan : " + tempTrans.getTipekendaraan());
-        holder.tvTotal.setText("Total : " + tempTrans.getTotal()+"");
+        holder.tvTotal.setText("Total : Rp." + tempTrans.getTotal()+"");
         holder.tvWaktu.setText("Tanggal : " + tempTrans.getWaktutransaksi());
+
+        if(tempTrans.getStatus().equals("Diterima"))
+        {
+            holder.tvStatus.setTextColor(Color.rgb(0,255,0));
+        }
+        else if(tempTrans.getStatus().equals("Ditolak"))
+        {
+            holder.tvStatus.setTextColor(Color.rgb(255,0,0));
+        }
+        else
+        {
+            holder.tvStatus.setTextColor(Color.rgb(0,0,255));
+        }
     }
 
     @Override

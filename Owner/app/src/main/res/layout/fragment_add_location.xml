@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AddLokasiFragment">
+    tools:context=".AddLocationFragment">
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -91,18 +91,26 @@
             android:layout_below="@id/etSlotmobil"/>
 
 
+        <EditText
+            android:id="@+id/etPemilik"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@android:color/holo_blue_light"
+            android:hint="Pemilik"
+            android:inputType="textCapWords"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_below="@+id/etSlotmotor"/>
+
         <Button
             android:id="@+id/btnGambar"
             android:layout_width="fill_parent"
+            android:layout_margin="20dp"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/etSlotmotor"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="30dp"
-            android:layout_marginEnd="20dp"
-            android:layout_marginBottom="20dp"
             android:backgroundTint="@android:color/holo_blue_light"
             android:text="Input Gambar"
-            android:textColor="@android:color/white" />
+            android:textColor="@android:color/white"
+            android:layout_below="@+id/etPemilik" />
 
         <ImageView
             android:id="@+id/previewImage"

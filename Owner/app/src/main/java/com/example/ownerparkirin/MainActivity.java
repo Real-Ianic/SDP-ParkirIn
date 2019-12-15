@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -214,65 +216,5 @@ public class MainActivity extends AppCompatActivity {
                 i--;
             }
         }
-    }
-
-    public List<classtransaksi> getTransactions()
-    {
-        listTransaksi.clear();
-        getLokasi();
-        FirebaseDatabase db = FirebaseDatabase.getInstance();
-        DatabaseReference ref = db.getReference("Lokasi");
-
-        ref = db.getReference("Transaksi");
-        ref.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                HashMap<String, Object> tempLokasi = (HashMap<String, Object>)dataSnapshot.getValue();
-
-                for (String key : tempLokasi.keySet())
-                {
-                    HashMap<String,Object> transaksi = (HashMap<String,Object>) tempLokasi.get(key);
-                    classtransaksi trans = new classtransaksi();
-
-                    String hi = String.valueOf(transaksi.get("durasijam"));
-
-                    trans.setDurasijam(Integer.parseInt(hi));
-                    trans.setDurasiutktampil(transaksi.get("durasiutktampil").toString());
-
-                    trans.setEmailcust(transaksi.get("emailcust").toString());
-                    trans.setJenis(transaksi.get("jenis").toString());
-                    trans.setPlatnomor(transaksi.get("platnomor").toString());
-                    trans.setStatus(transaksi.get("status").toString());
-                    trans.setTempat(transaksi.get("tempat").toString());
-                    trans.setTipekendaraan(transaksi.get("tipekendaraan").toString());
-
-                    hi = String.valueOf(transaksi.get("total"));
-
-                    trans.setTotal(Integer.parseInt(hi));
-                    trans.setWaktutransaksi(transaksi.get("waktutransaksi").toString());
-
-                    boolean found = false;
-                    for(int i=0;i<listLokasi.size();i++)
-                    {
-                        if(trans.getTempat().equals(listLokasi.get(i).getNama()))
-                        {
-                            found = true;
-                            break;
-                        }
-                    }
-
-                    if(found)
-                    {
-                        listTransaksi.add(trans);
-                    }
-                }
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-                System.out.println("The read failed: " + databaseError.getCode());
-            }
-        });
-        return listTransaksi;
     }
 }

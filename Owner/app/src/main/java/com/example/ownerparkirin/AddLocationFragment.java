@@ -5,11 +5,6 @@ import android.content.ContentResolver;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
-
 import android.os.Handler;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
@@ -21,6 +16,10 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -38,10 +37,6 @@ import com.squareup.picasso.Picasso;
 
 import static android.app.Activity.RESULT_OK;
 
-
-/**
- * A simple {@link Fragment} subclass.
- */
 public class AddLocationFragment extends Fragment {
     EditText nama,alamat,pemilik,slotmotor,slotmobil,lat,lng;
     String sNama,sAlamat,sPemilik;
@@ -68,6 +63,7 @@ public class AddLocationFragment extends Fragment {
         alamat=view.findViewById(R.id.etAlamatLokasi);
         slotmobil=view.findViewById(R.id.etSlotmobil);
         slotmotor=view.findViewById(R.id.etSlotmotor);
+        pemilik=view.findViewById(R.id.etPemilik);
         lat=view.findViewById(R.id.etLatitude);
         progressBar=view.findViewById(R.id.progressBar);
         lng=view.findViewById(R.id.etLongitude);
@@ -90,6 +86,9 @@ public class AddLocationFragment extends Fragment {
                 }
                 if(TextUtils.isEmpty(slotmotor.getText().toString())){
                     slotmotor.setError("Slot Motor Harus Diisi");
+                }
+                if(TextUtils.isEmpty(pemilik.getText().toString())){
+                    pemilik.setError("Pemilik Lokasi Harus Diisi");
                 }
                 if(TextUtils.isEmpty(lat.getText().toString())){
                     lat.setError("Latitude Lokasi Harus Diisi");

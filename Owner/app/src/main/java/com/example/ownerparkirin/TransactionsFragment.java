@@ -15,7 +15,14 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 
@@ -55,7 +62,56 @@ public class TransactionsFragment extends Fragment {
 
         rvTrans.setAdapter(adapter);
         rvTrans.setLayoutManager(lm);
-        listTransaksi = (ArrayList<classtransaksi>)parentActivity.getTransactions();
-        adapter.notifyDataSetChanged();
+        getTransactions();
+    }
+
+    public void getTransactions()
+    {
+        FirebaseDatabase db = FirebaseDatabase.getInstance();
+        DatabaseReference ref = db.getReference("Transaksi");
+
+        ref.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                HashMap<String, Object> tempLokasi = (HashMap<String, Object>)dataSnapshot.getValue();
+                listTransaksi.clear();
+
+                for (String key : tempLokasi.keySet())
+                {
+                    System.out.println("Key : " + key);
+                    HashMap<String,Object> transaksi = (HashMap<String,Object>) tempLokasi.get(key);
+                    classtransaksi trans = new classtransaksi();
+
+                    String hi = String.valueOf(transaksi.get("durasijam"));
+
+                    trans.setDurasijam(Integer.parseInt(hi));
+                    trans.setDurasiutktampil(transaksi.get("durasiutktampil").toString());
+
+                    trans.setEmailcust(transaksi.get("emailcust").toString());
+                    trans.setJenis(transaksi.get("jenis").toString());
+                    trans.setPlatnomor(transaksi.get("platnomor").toString());
+                    trans.setStatus(transaksi.get("status").toString());
+                    trans.setTempat(transaksi.get("tempat").toString());
+                    trans.setTipekendaraan(transaksi.get("tipekendaraan").toString());
+
+                    hi = String.valueOf(transaksi.get("total"));
+
+                    trans.setTotal(Integer.parseInt(hi));
+                    trans.setWaktutransaksi(transaksi.get("waktutransaksi").toString());
+
+                    listTransaksi.add(trans);
+                }
+                adapter = new TransaksiAdapter(listTransaksi);
+                RecyclerView.LayoutManager lm = new LinearLayoutManager(getContext());
+                rvTrans.setAdapter(adapter);
+                rvTrans.setLayoutManager(lm);
+                adapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                System.out.println("The read failed: " + databaseError.getCode());
+            }
+        });
     }
 }
