@@ -2,11 +2,18 @@ package com.example.sdppetugas;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.Notification;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -176,6 +183,19 @@ public class MainActivity extends AppCompatActivity {
                 firebaseViewHolder.btnCheckout.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+                        //notifikasi
+                        NotificationCompat.Builder builder = new NotificationCompat.Builder(MainActivity.this)
+                                .setSmallIcon(R.drawable.parkirinlogo)
+                                .setContentTitle("test notif")
+                                .setContentText("notif masuk");
+                        Intent notificationIntent = new Intent(MainActivity.this,MainActivity.class);
+                        PendingIntent contentIntent =  PendingIntent.getActivity(MainActivity.this,0,notificationIntent,PendingIntent.FLAG_UPDATE_CURRENT);
+                        builder.setContentIntent(contentIntent);
+
+                        NotificationManager manager =  (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+                        manager.notify(0,builder.build());
+
+
                         drKendaraan = FirebaseDatabase.getInstance().getReference();
                         reff = FirebaseDatabase.getInstance().getReference();
                         ct1=new DataSetFire(ct.getTempat(),ct.getJenis(),ct.getPlatnomor(),ct.getTipekendaraan(),ct.getDurasijam(),ct.getTotal(),ct.getEmailcust(),ct.getWaktutransaksi(),ct.getDurasiutktampil(),"Selesai");
@@ -233,6 +253,7 @@ public class MainActivity extends AppCompatActivity {
         };
         rvHistory.setAdapter(adapter);
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
