@@ -1226,6 +1226,7 @@ id btn10k
 id btn50k
 id btnBuatpesanan
 id btnBuyDetail
+id btnCancelTransaksi
 id btnFilter
 id btnHistori
 id btnLocation
@@ -1606,6 +1607,7 @@ layout notification_template_media_custom
 layout notification_template_part_chronometer
 layout notification_template_part_time
 layout recyclerhistory
+layout recyclerhistory2
 layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material

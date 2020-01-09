@@ -2,13 +2,20 @@ package com.example.parkirin;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
@@ -23,6 +30,8 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.Collections;
 
+
+
 public class currTransaksi extends AppCompatActivity {
 
     private RecyclerView rvHistory;
@@ -31,6 +40,9 @@ public class currTransaksi extends AppCompatActivity {
     private DatabaseReference databaseReference;
     private FirebaseRecyclerAdapter<classtransaksi, FirebaseViewHolder> adapter;
     private String email;
+    private Button btnCancelTransaksi;
+
+    DataSetFire ct1;private DatabaseReference reff,drKendaraan;
 
     @Override
     protected void onStart() {
@@ -55,12 +67,13 @@ public class currTransaksi extends AppCompatActivity {
         rvHistory.setLayoutManager(linearLayoutManager);
         linearLayoutManager.setStackFromEnd(true);
         linearLayoutManager.setReverseLayout(true);
+        btnCancelTransaksi = findViewById(R.id.btnCancelTransaksi);
         Query query = FirebaseDatabase.getInstance().getReference("currTransaksi").orderByChild("emailcust").equalTo(FirebaseAuth.getInstance().getCurrentUser().getUid()+"");
         query.keepSynced(true);
         options = new FirebaseRecyclerOptions.Builder<classtransaksi>().setQuery(query,classtransaksi.class).build();
         adapter = new FirebaseRecyclerAdapter<classtransaksi, FirebaseViewHolder>(options) {
             @Override
-            protected void onBindViewHolder(@NonNull FirebaseViewHolder firebaseViewHolder, int i, @NonNull classtransaksi ct) {
+            protected void onBindViewHolder(@NonNull FirebaseViewHolder firebaseViewHolder, int i, @NonNull final classtransaksi ct) {
                 firebaseViewHolder.tvDurasi.setText("Durasi : "+ ct.getDurasiutktampil());
                 firebaseViewHolder.tvJenis.setText("Jenis : "+ct.getJenis());
                 firebaseViewHolder.tvKendaraan.setText("Jenis Kendaraan : "+ct.getTipekendaraan());
@@ -75,12 +88,35 @@ public class currTransaksi extends AppCompatActivity {
                     firebaseViewHolder.tvStatus.setTextColor(Color.RED);
                 }
                 firebaseViewHolder.tvStatus.setText(ct.getStatus()+"");
+                firebaseViewHolder.btnCancel.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        drKendaraan = FirebaseDatabase.getInstance().getReference();
+                        reff = FirebaseDatabase.getInstance().getReference();
+                        ct1=new DataSetFire(ct.getTempat(),ct.getJenis(),ct.getPlatnomor(),ct.getTipekendaraan(),ct.getDurasijam(),ct.getTotal(),ct.getEmailcust(),ct.getWaktutransaksi(),ct.getDurasiutktampil(),"Dibatalkan");
+                        reff.child("Transaksi").push().setValue(ct1);
+                        Query query2 = drKendaraan.child("currTransaksi").orderByChild("platnomor").equalTo(ct.getPlatnomor());
+                        query2.addListenerForSingleValueEvent(new ValueEventListener() {
+                            @Override
+                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                for(DataSnapshot d : dataSnapshot.getChildren()){
+                                    d.getRef().removeValue();
+                                }
+                            }
+
+                            @Override
+                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                            }
+                        });
+                    }
+                });
             }
 
             @NonNull
             @Override
             public FirebaseViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-                return new FirebaseViewHolder(LayoutInflater.from(currTransaksi.this).inflate(R.layout.recyclerhistory,parent,false));
+                return new FirebaseViewHolder(LayoutInflater.from(currTransaksi.this).inflate(R.layout.recyclerhistory2,parent,false));
             }
         };
         rvHistory.setAdapter(adapter);

@@ -1,6 +1,7 @@
 package com.example.parkirin;
 
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -8,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 public class FirebaseViewHolder extends RecyclerView.ViewHolder {
     TextView tvTempat,tvPlat,tvJenis,tvDurasi,tvTglWaktu,tvKendaraan,tvTotal,tvStatus;
+    Button btnCancel;
     public FirebaseViewHolder(@NonNull View itemView) {
         super(itemView);
         tvDurasi = itemView.findViewById(R.id.txtHistoryDurasi);
@@ -18,5 +20,6 @@ public class FirebaseViewHolder extends RecyclerView.ViewHolder {
         tvTglWaktu = itemView.findViewById(R.id.txtHistoryTanggal);
         tvTotal = itemView.findViewById(R.id.txtHistoryTotal);
         tvStatus = itemView.findViewById(R.id.txtHistoryStatus);
+        btnCancel = itemView.findViewById(R.id.btnCancelTransaksi);
     }
 }

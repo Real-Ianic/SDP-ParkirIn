@@ -22,11 +22,13 @@ import android.widget.SearchView;
 import android.widget.SimpleCursorAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
+import java.util.List;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.Fragment;
+import androidx.room.Room;
 
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
@@ -71,6 +73,10 @@ public class HomeFragment extends Fragment implements OnMapReadyCallback {
     ArrayAdapter<String> adapter;
     AutoCompleteTextView editText;
     private SimpleCursorAdapter mAdapter;
+
+    // DATABASE ROOM
+    public static MyAppDatabase myAppDatabase;
+
     public HomeFragment() {
         // Required empty public constructor
     }
@@ -123,6 +129,8 @@ public class HomeFragment extends Fragment implements OnMapReadyCallback {
         btnCurrentLocation = view.findViewById(R.id.btnLocation);
         btnPesan = view.findViewById(R.id.btnPesan);
         editText = view.findViewById(R.id.actv);
+
+        myAppDatabase = Room.databaseBuilder(getContext(),MyAppDatabase.class,"searchhistory").allowMainThreadQueries().build();
 
         reff= FirebaseDatabase.getInstance().getReference("Lokasi");
         btnCurrentLocation.setOnClickListener(new View.OnClickListener() {
@@ -249,6 +257,36 @@ public class HomeFragment extends Fragment implements OnMapReadyCallback {
                     }
                 };
                 query1.addListenerForSingleValueEvent(valueEventListener);
+
+                //Adding History To Room
+                String temp = editText.getText().toString();
+                SearchHistory halo = new SearchHistory(temp);
+
+                try {
+                    myAppDatabase.myDao().addSearchhistory(halo);
+                }
+                catch(Exception e) {
+                    System.out.println(e.toString());
+                    System.out.println("GAGAL MASUK ROOM");
+                }
+            }
+        });
+
+        editText.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                List<SearchHistory> listHistory = myAppDatabase.myDao().getHistory();
+                ArrayList<String> listHis = new ArrayList<String>();
+
+                for(int i=0;i<listHistory.size();i++)
+                {
+                    listHis.add(listHistory.get(i).judul);
+                }
+
+                adapter = new ArrayAdapter<String>(getContext(),android.R.layout.simple_list_item_1,listHis);
+                editText.setAdapter(adapter);
+                editText.showDropDown();
             }
         });
 

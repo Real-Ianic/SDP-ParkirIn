@@ -31,19 +31,23 @@ public class MainActivity extends AppCompatActivity {
     FirebaseUser firebaseUser;
     String email;
 
+    /*
     @Override
     protected void onStart() {
         super.onStart();
         fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this);
         fusedLocationProviderClient.getLastLocation();
     }
+    */
 
+    /*
     @Override
     protected void onResume() {
         super.onResume();
         fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this);
         fusedLocationProviderClient.getLastLocation();
     }
+     */
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
