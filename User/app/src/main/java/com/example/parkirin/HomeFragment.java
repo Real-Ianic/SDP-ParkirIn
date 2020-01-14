@@ -69,6 +69,8 @@ public class HomeFragment extends Fragment implements OnMapReadyCallback {
     lokasi l;
     String email,tempat,key;
     ArrayList<String> listLokasi = new ArrayList<String>();
+    ArrayList<lokasi> listerLokasi = new ArrayList<lokasi>();
+    ArrayList<String> listIdLokasi = new ArrayList<String>();
     Double lat,lng;
     ArrayAdapter<String> adapter;
     AutoCompleteTextView editText;
@@ -146,6 +148,9 @@ public class HomeFragment extends Fragment implements OnMapReadyCallback {
                 for(DataSnapshot data : dataSnapshot.getChildren()){
                     lokasi l = data.getValue(lokasi.class);
                     listLokasi.add(l.getNama());
+                    listerLokasi.add(l);
+                    listIdLokasi.add(data.getKey());
+                    System.out.println("KEY : " + data.getKey());
                     adapter = new ArrayAdapter<String>(getContext(),android.R.layout.simple_list_item_1,listLokasi);
                     editText.setAdapter(adapter);
                 }
@@ -337,6 +342,17 @@ public class HomeFragment extends Fragment implements OnMapReadyCallback {
                             i.putExtra("email",email);
                             i.putExtra("currlat",currentLocation.getLatitude()+"");
                             i.putExtra("currlng",currentLocation.getLongitude()+"");
+
+                            for(int x=0;x<listerLokasi.size();x++)
+                            {
+                                if(listerLokasi.get(x).getNama().equals(marker.getTitle()))
+                                {
+                                    i.putExtra("idLokasi",listIdLokasi.get(x));
+                                    System.out.println("BRUH : " + listIdLokasi.get(x));
+                                    break;
+                                }
+                            }
+
                             startActivity(i);
                         }else{
                             Toast.makeText(getContext(), "Lokasi Anda", Toast.LENGTH_SHORT).show();

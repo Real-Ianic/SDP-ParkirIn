@@ -88,6 +88,9 @@ public class MainActivity extends AppCompatActivity {
             startActivity(i);
             finish();
         }
+        else if(item.getItemId() == R.id.menuHarga){
+            changeFragment(new HargaFragment(), "");
+        }
         return true;
     }
 

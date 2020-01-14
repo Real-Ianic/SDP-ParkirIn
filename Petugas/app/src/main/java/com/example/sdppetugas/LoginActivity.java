@@ -17,6 +17,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
@@ -40,9 +41,10 @@ public class LoginActivity extends AppCompatActivity {
                 if(!etEmail.getText().toString().equals("") && !etPass.getText().toString().equals("")){
 
                     reff = FirebaseDatabase.getInstance().getReference().child("Petugas").orderByChild("email").equalTo(etEmail.getText().toString());
+
                     reff.addListenerForSingleValueEvent(new ValueEventListener() {
                         @Override
-                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        public void onDataChange(@NonNull final DataSnapshot dataSnapshot) {
                             if(dataSnapshot.exists()){
                                 mAuth.signInWithEmailAndPassword(etEmail.getText().toString(),etPass.getText().toString()).addOnCompleteListener(LoginActivity.this, new OnCompleteListener<AuthResult>() {
                                     @Override
@@ -50,6 +52,8 @@ public class LoginActivity extends AppCompatActivity {
                                         if(task.isSuccessful()){
                                             Intent i = new Intent(LoginActivity.this,MainActivity.class);
                                             i.putExtra("email",etEmail.getText().toString());
+
+
                                             startActivity(i);
                                             finish();
                                         }else{

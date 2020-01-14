@@ -24,6 +24,9 @@ public class pemesananActivity extends AppCompatActivity {
     EditText etdurasi,etplatnomordepan,etplatnomorangka,getEtplatnomorbelakang;
     String platnomor,jenis,kendaraan,tempat,durasi;
     String email;
+    String idLokasi;
+    int slotMobil;
+    int slotMotor;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,7 +45,10 @@ public class pemesananActivity extends AppCompatActivity {
         etplatnomordepan = findViewById(R.id.txtPlatnomorDepan);
         etplatnomorangka = findViewById(R.id.txtPlatnomorAngka);
         getEtplatnomorbelakang = findViewById(R.id.txtPlatnomorBelakang);
+        idLokasi = getIntent().getStringExtra("idLokasi");
         tempat = getIntent().getStringExtra("tempat");
+        slotMobil = Integer.parseInt(getIntent().getStringExtra("slotMobil"));
+        slotMotor = Integer.parseInt(getIntent().getStringExtra("slotMotor"));
         txttempat.setText(tempat);
         titip.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
@@ -106,17 +112,50 @@ public class pemesananActivity extends AppCompatActivity {
                 &&!etplatnomorangka.getText().toString().equals("")&&etplatnomordepan.getText().toString().length()<=2
                 &&etplatnomorangka.getText().toString().length()<=4&&getEtplatnomorbelakang.getText().toString().length()<=3&&bs==true
         &&!etdurasi.getText().toString().equals("0")&&!etdurasi.getText().toString().equals("1")){
-            platnomor = etplatnomordepan.getText().toString().toUpperCase()+" "+etplatnomorangka.getText().toString()+" "+getEtplatnomorbelakang.getText().toString().toUpperCase();
-            durasi = etdurasi.getText().toString();
-            Intent i = new Intent(this,DetailTransaksi.class);
-            i.putExtra("jenis",jenis);
-            i.putExtra("kendaraan",kendaraan);
-            i.putExtra("plat",platnomor);
-            i.putExtra("durasi",durasi);
-            i.putExtra("tempat",tempat);
-            i.putExtra("email",email);
-            startActivity(i);
-            finish();
+            if(kendaraan.equals("Roda 2"))
+            {
+                if(slotMotor - 1 >= 0)
+                {
+                    platnomor = etplatnomordepan.getText().toString().toUpperCase()+" "+etplatnomorangka.getText().toString()+" "+getEtplatnomorbelakang.getText().toString().toUpperCase();
+                    durasi = etdurasi.getText().toString();
+                    Intent i = new Intent(this,DetailTransaksi.class);
+                    i.putExtra("jenis",jenis);
+                    i.putExtra("kendaraan",kendaraan);
+                    i.putExtra("plat",platnomor);
+                    i.putExtra("durasi",durasi);
+                    i.putExtra("tempat",tempat);
+                    i.putExtra("email",email);
+                    i.putExtra("idLokasi",idLokasi);
+                    startActivity(i);
+                    finish();
+                }
+                else
+                {
+                    Toast.makeText(this, "Maaf, Kuota motor penuh", Toast.LENGTH_SHORT).show();
+                }
+            }
+            else
+            {
+                if(slotMobil - 1 >= 0)
+                {
+                    platnomor = etplatnomordepan.getText().toString().toUpperCase()+" "+etplatnomorangka.getText().toString()+" "+getEtplatnomorbelakang.getText().toString().toUpperCase();
+                    durasi = etdurasi.getText().toString();
+                    Intent i = new Intent(this,DetailTransaksi.class);
+                    i.putExtra("jenis",jenis);
+                    i.putExtra("kendaraan",kendaraan);
+                    i.putExtra("plat",platnomor);
+                    i.putExtra("durasi",durasi);
+                    i.putExtra("tempat",tempat);
+                    i.putExtra("email",email);
+                    i.putExtra("idLokasi",idLokasi);
+                    startActivity(i);
+                    finish();
+                }
+                else
+                {
+                    Toast.makeText(this, "Maaf, Kuota mobil penuh", Toast.LENGTH_SHORT).show();
+                }
+            }
         }else {
             Toast.makeText(this, "Semua field harus diisi dengan benar!", Toast.LENGTH_SHORT).show();
         }

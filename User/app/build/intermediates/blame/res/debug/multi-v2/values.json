@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\adria\\Documents\\Project SDP\\User\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
+            "outputFile": "C:\\Users\\adria\\Documents\\PROYEK SDP TERBARU BARU\\User\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
             "map": [
                 {
                     "source": "C:\\Users\\adria\\.gradle\\caches\\transforms-2\\files-2.1\\6d16290c97378708d50718ed6ea0b1c0\\constraintlayout-1.1.3\\res\\values\\values.xml",
@@ -42,23 +42,6 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\adria\\Documents\\Project SDP\\User\\app\\src\\main\\res\\values\\colors.xml",
-                    "from": {
-                        "startLines": "4,2,3",
-                        "startColumns": "4,4,4",
-                        "startOffsets": "157,57,105",
-                        "endColumns": "45,46,50",
-                        "endOffsets": "198,99,151"
-                    },
-                    "to": {
-                        "startLines": "192,193,194",
-                        "startColumns": "4,4,4",
-                        "startOffsets": "9973,10019,10066",
-                        "endColumns": "45,46,50",
-                        "endOffsets": "10014,10061,10112"
-                    }
-                },
-                {
                     "source": "C:\\Users\\adria\\.gradle\\caches\\transforms-2\\files-2.1\\54ab3033ac1c0ed86f67ec5de980edd5\\play-services-maps-17.0.0\\res\\values\\values.xml",
                     "from": {
                         "startLines": "4",
@@ -92,23 +75,6 @@
                         "startOffsets": "39825",
                         "endColumns": "81",
                         "endOffsets": "39902"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\adria\\Documents\\Project SDP\\User\\app\\build\\generated\\res\\google-services\\debug\\values\\values.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9",
-                        "startColumns": "4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,199,308,390,494,603,723,821",
-                        "endColumns": "143,108,81,103,108,119,97,74",
-                        "endOffsets": "194,303,385,489,598,718,816,891"
-                    },
-                    "to": {
-                        "startLines": "631,635,636,637,638,639,640,651",
-                        "startColumns": "4,4,4,4,4,4,4,4",
-                        "startOffsets": "39367,39907,40016,40098,40202,40311,40431,41676",
-                        "endColumns": "143,108,81,103,108,119,97,74",
-                        "endOffsets": "39506,40011,40093,40197,40306,40426,40524,41746"
                     }
                 },
                 {
@@ -150,6 +116,42 @@
                     }
                 },
                 {
+                    "source": "C:\\Users\\adria\\Documents\\PROYEK SDP TERBARU BARU\\User\\app\\src\\main\\res\\values\\colors.xml",
+                    "from": {
+                        "startLines": "4,2,3",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "157,57,105",
+                        "endColumns": "45,46,50",
+                        "endOffsets": "198,99,151"
+                    },
+                    "to": {
+                        "startLines": "192,193,194",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "9973,10019,10066",
+                        "endColumns": "45,46,50",
+                        "endOffsets": "10014,10061,10112"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\adria\\Documents\\PROYEK SDP TERBARU BARU\\User\\app\\src\\main\\res\\values\\styles.xml",
+                    "from": {
+                        "startLines": "3",
+                        "startColumns": "4",
+                        "startOffsets": "57",
+                        "endLines": "8",
+                        "endColumns": "12",
+                        "endOffsets": "376"
+                    },
+                    "to": {
+                        "startLines": "663",
+                        "startColumns": "4",
+                        "startOffsets": "42594",
+                        "endLines": "668",
+                        "endColumns": "12",
+                        "endOffsets": "42908"
+                    }
+                },
+                {
                     "source": "C:\\Users\\adria\\.gradle\\caches\\transforms-2\\files-2.1\\793a97fec7a6dab603ab3ae8209f13cc\\coordinatorlayout-1.0.0\\res\\values\\values.xml",
                     "from": {
                         "startLines": "2,102,3,13",
@@ -169,22 +171,20 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\adria\\Documents\\Project SDP\\User\\app\\src\\main\\res\\values\\map_api.xml",
+                    "source": "C:\\Users\\adria\\Documents\\PROYEK SDP TERBARU BARU\\User\\app\\src\\main\\res\\values\\strings.xml",
                     "from": {
-                        "startLines": "2",
+                        "startLines": "1",
                         "startColumns": "4",
-                        "startOffsets": "57",
-                        "endLines": "4",
-                        "endColumns": "13",
-                        "endOffsets": "165"
+                        "startOffsets": "17",
+                        "endColumns": "45",
+                        "endOffsets": "58"
                     },
                     "to": {
-                        "startLines": "642",
+                        "startLines": "608",
                         "startColumns": "4",
-                        "startOffsets": "40682",
-                        "endLines": "644",
-                        "endColumns": "13",
-                        "endOffsets": "40788"
+                        "startOffsets": "36516",
+                        "endColumns": "45",
+                        "endOffsets": "36557"
                     }
                 },
                 {
@@ -260,22 +260,20 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\adria\\Documents\\Project SDP\\User\\app\\src\\main\\res\\values\\styles.xml",
+                    "source": "C:\\Users\\adria\\Documents\\PROYEK SDP TERBARU BARU\\User\\app\\build\\generated\\res\\google-services\\debug\\values\\values.xml",
                     "from": {
-                        "startLines": "3",
-                        "startColumns": "4",
-                        "startOffsets": "57",
-                        "endLines": "8",
-                        "endColumns": "12",
-                        "endOffsets": "376"
+                        "startLines": "2,3,4,5,6,7,8,9",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,199,308,390,494,603,723,821",
+                        "endColumns": "143,108,81,103,108,119,97,74",
+                        "endOffsets": "194,303,385,489,598,718,816,891"
                     },
                     "to": {
-                        "startLines": "663",
-                        "startColumns": "4",
-                        "startOffsets": "42594",
-                        "endLines": "668",
-                        "endColumns": "12",
-                        "endOffsets": "42908"
+                        "startLines": "631,635,636,637,638,639,640,651",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "39367,39907,40016,40098,40202,40311,40431,41676",
+                        "endColumns": "143,108,81,103,108,119,97,74",
+                        "endOffsets": "39506,40011,40093,40197,40306,40426,40524,41746"
                     }
                 },
                 {
@@ -317,20 +315,22 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\adria\\Documents\\Project SDP\\User\\app\\src\\main\\res\\values\\strings.xml",
+                    "source": "C:\\Users\\adria\\Documents\\PROYEK SDP TERBARU BARU\\User\\app\\src\\main\\res\\values\\map_api.xml",
                     "from": {
-                        "startLines": "1",
+                        "startLines": "2",
                         "startColumns": "4",
-                        "startOffsets": "17",
-                        "endColumns": "45",
-                        "endOffsets": "58"
+                        "startOffsets": "57",
+                        "endLines": "4",
+                        "endColumns": "13",
+                        "endOffsets": "165"
                     },
                     "to": {
-                        "startLines": "608",
+                        "startLines": "642",
                         "startColumns": "4",
-                        "startOffsets": "36516",
-                        "endColumns": "45",
-                        "endOffsets": "36557"
+                        "startOffsets": "40682",
+                        "endLines": "644",
+                        "endColumns": "13",
+                        "endOffsets": "40788"
                     }
                 },
                 {

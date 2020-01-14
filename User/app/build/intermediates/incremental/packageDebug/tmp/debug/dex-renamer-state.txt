@@ -1,7 +1,7 @@
-#Fri Jan 10 00:12:46 ICT 2020
-base.0=C\:\\Users\\adria\\Documents\\Project SDP\\User\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\out\\classes.dex
+#Tue Jan 14 13:37:20 ICT 2020
+base.0=C\:\\Users\\adria\\Documents\\PROYEK SDP TERBARU BARU\\User\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\out\\classes.dex
 path.1=classes.dex
 renamed.1=classes2.dex
 path.0=classes.dex
 renamed.0=classes.dex
-base.1=C\:\\Users\\adria\\Documents\\Project SDP\\User\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\out\\classes.dex
+base.1=C\:\\Users\\adria\\Documents\\PROYEK SDP TERBARU BARU\\User\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\out\\classes.dex

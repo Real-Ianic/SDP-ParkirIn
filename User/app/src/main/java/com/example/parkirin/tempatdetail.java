@@ -40,6 +40,9 @@ public class tempatdetail extends AppCompatActivity {
     String key;
     String currlat,currlng;
     Location currLoc,desLoc;
+    String idLokasi;
+    String slotMotor;
+    String slotMobil;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -60,6 +63,7 @@ public class tempatdetail extends AppCompatActivity {
         currLoc.setLongitude(Double.parseDouble(currlng));
         currLoc.setLatitude(Double.parseDouble(currlat));
         email=getIntent().getStringExtra("email");
+        idLokasi = getIntent().getStringExtra("idLokasi");
         tvNama.setText(namatempat);
         DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference();
         Query query = rootRef.child("Lokasi").orderByChild("nama").equalTo(namatempat);
@@ -75,6 +79,8 @@ public class tempatdetail extends AppCompatActivity {
                             link=dataSnapshot.child("linkgambar").getValue(String.class);
                             tvAlamat.setText(dataSnapshot.child("alamat").getValue().toString());
                             tvSlotmobil.setText("Sisa Slot Mobil : "+dataSnapshot.child("slotmobil").getValue()+"");
+                            slotMobil = dataSnapshot.child("slotmobil").getValue()+"";
+                            slotMotor = dataSnapshot.child("slotmotor").getValue()+"";
                             tvSlotmotor.setText("Sisa Slot Motor : "+dataSnapshot.child("slotmotor").getValue()+"");
                             desLoc = new Location("Tujuan");
                             NumberFormat f = NumberFormat.getInstance();
@@ -110,7 +116,10 @@ public class tempatdetail extends AppCompatActivity {
             public void onClick(View v) {
                 Intent i = new Intent(tempatdetail.this,pemesananActivity.class);
                 i.putExtra("tempat",namatempat);
+                i.putExtra("idLokasi",idLokasi);
                 i.putExtra("email",email);
+                i.putExtra("slotMobil",slotMobil);
+                i.putExtra("slotMotor",slotMotor);
                 startActivity(i);
                 finish();
             }
