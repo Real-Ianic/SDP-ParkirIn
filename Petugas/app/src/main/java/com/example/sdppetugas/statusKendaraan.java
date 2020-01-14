@@ -28,6 +28,8 @@ public class statusKendaraan extends AppCompatActivity {
     Button btnBack,btnCekIn,btnCekOut;
     EditText etPlat;
     ArrayList<String> arrInfo;
+    String keyLokasi;
+    String tipeKendaraan;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -98,17 +100,63 @@ public class statusKendaraan extends AppCompatActivity {
     public void CekOutKendaraan(String plat){
         DatabaseReference drKendaraan = FirebaseDatabase.getInstance().getReference();
         Query query = drKendaraan.child("currTransaksi").orderByChild("platnomor").equalTo(plat);
+
         ValueEventListener valueEventListener = new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 for(final DataSnapshot ds : dataSnapshot.getChildren()){
                     key = ds.getKey();
+                    final String namaTempat = ds.child("tempat").getValue().toString();
                     reff = FirebaseDatabase.getInstance().getReference().child("currTransaksi").child(key);
                     reff.addValueEventListener(new ValueEventListener() {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                             reff.child("status").setValue("Selesai");
                             Toast.makeText(getApplicationContext(),"Selesai",Toast.LENGTH_SHORT).show();
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                        }
+                    });
+
+                    DatabaseReference reffLokasi = FirebaseDatabase.getInstance().getReference("Lokasi");
+                    reffLokasi.addListenerForSingleValueEvent(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                            for(DataSnapshot ds : dataSnapshot.getChildren())
+                            {
+                                String nameLokasi = ds.child("nama").getValue().toString();
+
+                                if(nameLokasi.equals(namaTempat))
+                                {
+                                    keyLokasi = ds.getKey();
+                                    tipeKendaraan = ds.child("tipekendaraan").getValue().toString();
+                                }
+                            }
+                            DatabaseReference reffLoc;
+                            if(tipeKendaraan.equals("Roda 2"))
+                            {
+                                reffLoc = FirebaseDatabase.getInstance().getReference("Lokasi/" + keyLokasi).child("slotmotor");
+                            }
+                            else
+                            {
+                                reffLoc = FirebaseDatabase.getInstance().getReference("Lokasi/" + keyLokasi).child("slotmobil");
+                            }
+                            final DatabaseReference reffTemp = reffLoc;
+                            reffLoc.addListenerForSingleValueEvent(new ValueEventListener() {
+                                @Override
+                                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                    int tempSlot = Integer.parseInt(ds.getValue().toString()) + 1;
+                                    reffTemp.setValue(tempSlot);
+                                }
+
+                                @Override
+                                public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                }
+                            });
                         }
 
                         @Override

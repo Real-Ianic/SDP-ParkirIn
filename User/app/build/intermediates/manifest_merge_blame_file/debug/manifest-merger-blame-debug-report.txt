@@ -76,355 +76,354 @@
 41-->C:\Users\adria\Documents\PROYEK SDP TERBARU BARU\User\app\src\main\AndroidManifest.xml:18:9-58
 42        android:supportsRtl="true"
 42-->C:\Users\adria\Documents\PROYEK SDP TERBARU BARU\User\app\src\main\AndroidManifest.xml:19:9-35
-43        android:testOnly="true"
-44        android:theme="@style/AppTheme" >
-44-->C:\Users\adria\Documents\PROYEK SDP TERBARU BARU\User\app\src\main\AndroidManifest.xml:20:9-40
-45        <service
-45-->C:\Users\adria\Documents\PROYEK SDP TERBARU BARU\User\app\src\main\AndroidManifest.xml:22:9-29:19
-46            android:name="com.example.parkirin.TokenService"
-46-->C:\Users\adria\Documents\PROYEK SDP TERBARU BARU\User\app\src\main\AndroidManifest.xml:23:13-41
-47            android:enabled="true"
-47-->C:\Users\adria\Documents\PROYEK SDP TERBARU BARU\User\app\src\main\AndroidManifest.xml:24:13-35
-48            android:exported="true" >
-48-->C:\Users\adria\Documents\PROYEK SDP TERBARU BARU\User\app\src\main\AndroidManifest.xml:25:13-36
-49            <intent-filter>
-49-->C:\Users\adria\Documents\PROYEK SDP TERBARU BARU\User\app\src\main\AndroidManifest.xml:26:13-28:29
-50                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
-50-->C:\Users\adria\Documents\PROYEK SDP TERBARU BARU\User\app\src\main\AndroidManifest.xml:27:17-79
-50-->C:\Users\adria\Documents\PROYEK SDP TERBARU BARU\User\app\src\main\AndroidManifest.xml:27:25-77
-51            </intent-filter>
-52        </service>
-53        <service
-53-->C:\Users\adria\Documents\PROYEK SDP TERBARU BARU\User\app\src\main\AndroidManifest.xml:30:9-37:19
-54            android:name="com.example.parkirin.FirebaseNotificationService"
-54-->C:\Users\adria\Documents\PROYEK SDP TERBARU BARU\User\app\src\main\AndroidManifest.xml:31:13-56
-55            android:enabled="true"
-55-->C:\Users\adria\Documents\PROYEK SDP TERBARU BARU\User\app\src\main\AndroidManifest.xml:32:13-35
-56            android:exported="true" >
-56-->C:\Users\adria\Documents\PROYEK SDP TERBARU BARU\User\app\src\main\AndroidManifest.xml:33:13-36
-57            <intent-filter>
-57-->C:\Users\adria\Documents\PROYEK SDP TERBARU BARU\User\app\src\main\AndroidManifest.xml:34:13-36:29
-58                <action android:name="com.google.firebase.MESSAGING_EVENT" />
-58-->C:\Users\adria\Documents\PROYEK SDP TERBARU BARU\User\app\src\main\AndroidManifest.xml:35:17-77
-58-->C:\Users\adria\Documents\PROYEK SDP TERBARU BARU\User\app\src\main\AndroidManifest.xml:35:25-75
-59            </intent-filter>
-60        </service>
-61
-62        <activity
-62-->C:\Users\adria\Documents\PROYEK SDP TERBARU BARU\User\app\src\main\AndroidManifest.xml:39:9-41:58
-63            android:name="com.example.parkirin.currTransaksi"
-63-->C:\Users\adria\Documents\PROYEK SDP TERBARU BARU\User\app\src\main\AndroidManifest.xml:40:13-42
-64            android:parentActivityName="com.example.parkirin.MainActivity" />
-64-->C:\Users\adria\Documents\PROYEK SDP TERBARU BARU\User\app\src\main\AndroidManifest.xml:41:13-55
-65        <activity android:name="com.example.parkirin.Topupberhasil" />
-65-->C:\Users\adria\Documents\PROYEK SDP TERBARU BARU\User\app\src\main\AndroidManifest.xml:42:9-51
-65-->C:\Users\adria\Documents\PROYEK SDP TERBARU BARU\User\app\src\main\AndroidManifest.xml:42:19-48
-66        <activity
-66-->C:\Users\adria\Documents\PROYEK SDP TERBARU BARU\User\app\src\main\AndroidManifest.xml:43:9-45:58
-67            android:name="com.example.parkirin.tempatdetail"
-67-->C:\Users\adria\Documents\PROYEK SDP TERBARU BARU\User\app\src\main\AndroidManifest.xml:44:13-41
-68            android:parentActivityName="com.example.parkirin.MainActivity" />
-68-->C:\Users\adria\Documents\PROYEK SDP TERBARU BARU\User\app\src\main\AndroidManifest.xml:45:13-55
-69        <activity android:name="com.example.parkirin.pembayaranberhasil" />
-69-->C:\Users\adria\Documents\PROYEK SDP TERBARU BARU\User\app\src\main\AndroidManifest.xml:46:9-56
-69-->C:\Users\adria\Documents\PROYEK SDP TERBARU BARU\User\app\src\main\AndroidManifest.xml:46:19-53
-70        <activity android:name="com.example.parkirin.RegisterActivity" />
-70-->C:\Users\adria\Documents\PROYEK SDP TERBARU BARU\User\app\src\main\AndroidManifest.xml:47:9-54
-70-->C:\Users\adria\Documents\PROYEK SDP TERBARU BARU\User\app\src\main\AndroidManifest.xml:47:19-51
-71        <activity android:name="com.example.parkirin.LoginActivity" >
-71-->C:\Users\adria\Documents\PROYEK SDP TERBARU BARU\User\app\src\main\AndroidManifest.xml:48:9-53:20
-71-->C:\Users\adria\Documents\PROYEK SDP TERBARU BARU\User\app\src\main\AndroidManifest.xml:48:19-48
-72            <intent-filter>
-72-->C:\Users\adria\Documents\PROYEK SDP TERBARU BARU\User\app\src\main\AndroidManifest.xml:49:13-52:29
-73                <action android:name="android.intent.action.MAIN" />
-73-->C:\Users\adria\Documents\PROYEK SDP TERBARU BARU\User\app\src\main\AndroidManifest.xml:50:17-69
-73-->C:\Users\adria\Documents\PROYEK SDP TERBARU BARU\User\app\src\main\AndroidManifest.xml:50:25-66
-74
-75                <category android:name="android.intent.category.LAUNCHER" />
-75-->C:\Users\adria\Documents\PROYEK SDP TERBARU BARU\User\app\src\main\AndroidManifest.xml:51:17-77
-75-->C:\Users\adria\Documents\PROYEK SDP TERBARU BARU\User\app\src\main\AndroidManifest.xml:51:27-74
-76            </intent-filter>
-77        </activity>
-78        <activity
-78-->C:\Users\adria\Documents\PROYEK SDP TERBARU BARU\User\app\src\main\AndroidManifest.xml:54:9-96
-79            android:name="com.example.parkirin.EditPassActivity"
-79-->C:\Users\adria\Documents\PROYEK SDP TERBARU BARU\User\app\src\main\AndroidManifest.xml:54:19-51
-80            android:parentActivityName="com.example.parkirin.MainActivity" />
-80-->C:\Users\adria\Documents\PROYEK SDP TERBARU BARU\User\app\src\main\AndroidManifest.xml:54:52-94
-81        <activity
-81-->C:\Users\adria\Documents\PROYEK SDP TERBARU BARU\User\app\src\main\AndroidManifest.xml:55:9-57:58
-82            android:name="com.example.parkirin.historyActivity"
-82-->C:\Users\adria\Documents\PROYEK SDP TERBARU BARU\User\app\src\main\AndroidManifest.xml:56:13-44
-83            android:parentActivityName="com.example.parkirin.MainActivity" />
-83-->C:\Users\adria\Documents\PROYEK SDP TERBARU BARU\User\app\src\main\AndroidManifest.xml:57:13-55
-84        <activity
-84-->C:\Users\adria\Documents\PROYEK SDP TERBARU BARU\User\app\src\main\AndroidManifest.xml:58:9-99
-85            android:name="com.example.parkirin.EditProfileActivity"
-85-->C:\Users\adria\Documents\PROYEK SDP TERBARU BARU\User\app\src\main\AndroidManifest.xml:58:19-54
-86            android:parentActivityName="com.example.parkirin.MainActivity" />
-86-->C:\Users\adria\Documents\PROYEK SDP TERBARU BARU\User\app\src\main\AndroidManifest.xml:58:55-97
-87        <activity android:name="com.example.parkirin.TransActivity" />
-87-->C:\Users\adria\Documents\PROYEK SDP TERBARU BARU\User\app\src\main\AndroidManifest.xml:59:9-51
-87-->C:\Users\adria\Documents\PROYEK SDP TERBARU BARU\User\app\src\main\AndroidManifest.xml:59:19-48
-88        <activity
-88-->C:\Users\adria\Documents\PROYEK SDP TERBARU BARU\User\app\src\main\AndroidManifest.xml:60:9-62:63
-89            android:name="com.example.parkirin.DetailTransaksi"
-89-->C:\Users\adria\Documents\PROYEK SDP TERBARU BARU\User\app\src\main\AndroidManifest.xml:61:13-44
-90            android:parentActivityName="com.example.parkirin.pemesananActivity" />
-90-->C:\Users\adria\Documents\PROYEK SDP TERBARU BARU\User\app\src\main\AndroidManifest.xml:62:13-60
-91        <activity
-91-->C:\Users\adria\Documents\PROYEK SDP TERBARU BARU\User\app\src\main\AndroidManifest.xml:63:9-65:58
-92            android:name="com.example.parkirin.pemesananActivity"
-92-->C:\Users\adria\Documents\PROYEK SDP TERBARU BARU\User\app\src\main\AndroidManifest.xml:64:13-46
-93            android:parentActivityName="com.example.parkirin.tempatdetail" />
-93-->C:\Users\adria\Documents\PROYEK SDP TERBARU BARU\User\app\src\main\AndroidManifest.xml:65:13-55
-94
-95        <meta-data
-95-->C:\Users\adria\Documents\PROYEK SDP TERBARU BARU\User\app\src\main\AndroidManifest.xml:67:9-69:47
-96            android:name="com.google.android.geo.API_KEY"
-96-->C:\Users\adria\Documents\PROYEK SDP TERBARU BARU\User\app\src\main\AndroidManifest.xml:68:13-58
-97            android:value="@string/map_key" />
-97-->C:\Users\adria\Documents\PROYEK SDP TERBARU BARU\User\app\src\main\AndroidManifest.xml:69:13-44
-98
-99        <activity android:name="com.example.parkirin.MainActivity" />
-99-->C:\Users\adria\Documents\PROYEK SDP TERBARU BARU\User\app\src\main\AndroidManifest.xml:71:9-50
-99-->C:\Users\adria\Documents\PROYEK SDP TERBARU BARU\User\app\src\main\AndroidManifest.xml:71:19-47
-100
-101        <service
-101-->[com.google.firebase:firebase-database:17.0.0] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\726489acc91fb34468cfe7fa5814e059\jetified-firebase-database-17.0.0\AndroidManifest.xml:29:9-33:19
-102            android:name="com.google.firebase.components.ComponentDiscoveryService"
-102-->[com.google.firebase:firebase-database:17.0.0] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\726489acc91fb34468cfe7fa5814e059\jetified-firebase-database-17.0.0\AndroidManifest.xml:29:18-89
-103            android:exported="false" >
-103-->[com.google.firebase:firebase-auth:19.1.0] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\e94d4c46262c04452ee9877596073b58\firebase-auth-19.1.0\AndroidManifest.xml:35:13-37
-104            <meta-data
-104-->[com.google.firebase:firebase-database:17.0.0] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\726489acc91fb34468cfe7fa5814e059\jetified-firebase-database-17.0.0\AndroidManifest.xml:30:13-32:85
-105                android:name="com.google.firebase.components:com.google.firebase.database.DatabaseRegistrar"
-105-->[com.google.firebase:firebase-database:17.0.0] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\726489acc91fb34468cfe7fa5814e059\jetified-firebase-database-17.0.0\AndroidManifest.xml:31:17-109
-106                android:value="com.google.firebase.components.ComponentRegistrar" />
-106-->[com.google.firebase:firebase-database:17.0.0] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\726489acc91fb34468cfe7fa5814e059\jetified-firebase-database-17.0.0\AndroidManifest.xml:32:17-82
-107            <meta-data
-107-->[com.google.firebase:firebase-auth:19.1.0] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\e94d4c46262c04452ee9877596073b58\firebase-auth-19.1.0\AndroidManifest.xml:36:13-38:85
-108                android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
-108-->[com.google.firebase:firebase-auth:19.1.0] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\e94d4c46262c04452ee9877596073b58\firebase-auth-19.1.0\AndroidManifest.xml:37:17-109
-109                android:value="com.google.firebase.components.ComponentRegistrar" />
-109-->[com.google.firebase:firebase-auth:19.1.0] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\e94d4c46262c04452ee9877596073b58\firebase-auth-19.1.0\AndroidManifest.xml:38:17-82
-110            <meta-data
-110-->[com.google.firebase:firebase-storage:17.0.0] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\35c6f368119397590ffc6b7ad6ec117c\jetified-firebase-storage-17.0.0\AndroidManifest.xml:31:13-33:85
-111                android:name="com.google.firebase.components:com.google.firebase.storage.StorageRegistrar"
-111-->[com.google.firebase:firebase-storage:17.0.0] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\35c6f368119397590ffc6b7ad6ec117c\jetified-firebase-storage-17.0.0\AndroidManifest.xml:32:17-107
-112                android:value="com.google.firebase.components.ComponentRegistrar" />
-112-->[com.google.firebase:firebase-storage:17.0.0] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\35c6f368119397590ffc6b7ad6ec117c\jetified-firebase-storage-17.0.0\AndroidManifest.xml:33:17-82
-113            <meta-data
-113-->[com.google.android.gms:play-services-measurement-api:16.4.0] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\b965fb2977ff964c75d4e45932f2e8e2\jetified-play-services-measurement-api-16.4.0\AndroidManifest.xml:30:13-32:85
-114                android:name="com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar"
-114-->[com.google.android.gms:play-services-measurement-api:16.4.0] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\b965fb2977ff964c75d4e45932f2e8e2\jetified-play-services-measurement-api-16.4.0\AndroidManifest.xml:31:17-139
-115                android:value="com.google.firebase.components.ComponentRegistrar" />
-115-->[com.google.android.gms:play-services-measurement-api:16.4.0] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\b965fb2977ff964c75d4e45932f2e8e2\jetified-play-services-measurement-api-16.4.0\AndroidManifest.xml:32:17-82
-116            <meta-data
-116-->[com.google.firebase:firebase-iid:17.0.4] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\d5e5cad2f3b93764916e74306476ad1e\jetified-firebase-iid-17.0.4\AndroidManifest.xml:32:13-34:85
-117                android:name="com.google.firebase.components:com.google.firebase.iid.Registrar"
-117-->[com.google.firebase:firebase-iid:17.0.4] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\d5e5cad2f3b93764916e74306476ad1e\jetified-firebase-iid-17.0.4\AndroidManifest.xml:33:17-96
-118                android:value="com.google.firebase.components.ComponentRegistrar" />
-118-->[com.google.firebase:firebase-iid:17.0.4] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\d5e5cad2f3b93764916e74306476ad1e\jetified-firebase-iid-17.0.4\AndroidManifest.xml:34:17-82
-119        </service>
-120        <!--
-121             FirebaseMessagingService performs security checks at runtime,
-122             no need for explicit permissions despite exported="true"
-123        -->
-124        <service
-124-->[com.google.firebase:firebase-messaging:17.3.4] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\d3d08f4e9beea56f161b5e39e6149dd3\jetified-firebase-messaging-17.3.4\AndroidManifest.xml:28:9-34:19
-125            android:name="com.google.firebase.messaging.FirebaseMessagingService"
-125-->[com.google.firebase:firebase-messaging:17.3.4] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\d3d08f4e9beea56f161b5e39e6149dd3\jetified-firebase-messaging-17.3.4\AndroidManifest.xml:29:13-82
-126            android:exported="true" >
-126-->[com.google.firebase:firebase-messaging:17.3.4] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\d3d08f4e9beea56f161b5e39e6149dd3\jetified-firebase-messaging-17.3.4\AndroidManifest.xml:30:13-36
-127            <intent-filter android:priority="-500" >
-127-->C:\Users\adria\Documents\PROYEK SDP TERBARU BARU\User\app\src\main\AndroidManifest.xml:34:13-36:29
-128                <action android:name="com.google.firebase.MESSAGING_EVENT" />
-128-->C:\Users\adria\Documents\PROYEK SDP TERBARU BARU\User\app\src\main\AndroidManifest.xml:35:17-77
-128-->C:\Users\adria\Documents\PROYEK SDP TERBARU BARU\User\app\src\main\AndroidManifest.xml:35:25-75
-129            </intent-filter>
-130        </service> <!-- Needs to be explicitly declared on P+ -->
-131        <uses-library
-131-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\54ab3033ac1c0ed86f67ec5de980edd5\play-services-maps-17.0.0\AndroidManifest.xml:33:9-35:40
-132            android:name="org.apache.http.legacy"
-132-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\54ab3033ac1c0ed86f67ec5de980edd5\play-services-maps-17.0.0\AndroidManifest.xml:34:13-50
-133            android:required="false" />
-133-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\54ab3033ac1c0ed86f67ec5de980edd5\play-services-maps-17.0.0\AndroidManifest.xml:35:13-37
-134
-135        <activity
-135-->[com.google.firebase:firebase-auth:19.1.0] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\e94d4c46262c04452ee9877596073b58\firebase-auth-19.1.0\AndroidManifest.xml:24:9-31:50
-136            android:name="com.google.firebase.auth.internal.FederatedSignInActivity"
-136-->[com.google.firebase:firebase-auth:19.1.0] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\e94d4c46262c04452ee9877596073b58\firebase-auth-19.1.0\AndroidManifest.xml:25:13-85
-137            android:excludeFromRecents="true"
-137-->[com.google.firebase:firebase-auth:19.1.0] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\e94d4c46262c04452ee9877596073b58\firebase-auth-19.1.0\AndroidManifest.xml:26:13-46
-138            android:exported="true"
-138-->[com.google.firebase:firebase-auth:19.1.0] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\e94d4c46262c04452ee9877596073b58\firebase-auth-19.1.0\AndroidManifest.xml:27:13-36
-139            android:launchMode="singleTask"
-139-->[com.google.firebase:firebase-auth:19.1.0] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\e94d4c46262c04452ee9877596073b58\firebase-auth-19.1.0\AndroidManifest.xml:28:13-44
-140            android:permission="com.google.firebase.auth.api.gms.permission.LAUNCH_FEDERATED_SIGN_IN"
-140-->[com.google.firebase:firebase-auth:19.1.0] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\e94d4c46262c04452ee9877596073b58\firebase-auth-19.1.0\AndroidManifest.xml:29:13-102
-141            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-141-->[com.google.firebase:firebase-auth:19.1.0] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\e94d4c46262c04452ee9877596073b58\firebase-auth-19.1.0\AndroidManifest.xml:30:13-72
-142
-143        <provider
-143-->[com.squareup.picasso:picasso:2.71828] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\3a5d1c9fa5ee51bb915376f8f0df58d6\jetified-picasso-2.71828\AndroidManifest.xml:8:9-11:40
-144            android:name="com.squareup.picasso.PicassoProvider"
-144-->[com.squareup.picasso:picasso:2.71828] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\3a5d1c9fa5ee51bb915376f8f0df58d6\jetified-picasso-2.71828\AndroidManifest.xml:9:13-64
-145            android:authorities="com.example.parkirin.com.squareup.picasso"
-145-->[com.squareup.picasso:picasso:2.71828] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\3a5d1c9fa5ee51bb915376f8f0df58d6\jetified-picasso-2.71828\AndroidManifest.xml:10:13-72
-146            android:exported="false" />
-146-->[com.squareup.picasso:picasso:2.71828] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\3a5d1c9fa5ee51bb915376f8f0df58d6\jetified-picasso-2.71828\AndroidManifest.xml:11:13-37
-147
-148        <activity android:name="com.paypal.android.sdk.payments.PaymentActivity" />
-148-->[com.paypal.sdk:paypal-android-sdk:2.15.3] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\27acbf9f6fd33d045f026668d8f12ea1\paypal-android-sdk-2.15.3\AndroidManifest.xml:13:9-84
-148-->[com.paypal.sdk:paypal-android-sdk:2.15.3] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\27acbf9f6fd33d045f026668d8f12ea1\paypal-android-sdk-2.15.3\AndroidManifest.xml:13:19-81
-149        <activity android:name="com.paypal.android.sdk.payments.PaymentMethodActivity" />
-149-->[com.paypal.sdk:paypal-android-sdk:2.15.3] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\27acbf9f6fd33d045f026668d8f12ea1\paypal-android-sdk-2.15.3\AndroidManifest.xml:14:9-90
-149-->[com.paypal.sdk:paypal-android-sdk:2.15.3] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\27acbf9f6fd33d045f026668d8f12ea1\paypal-android-sdk-2.15.3\AndroidManifest.xml:14:19-87
-150        <activity android:name="com.paypal.android.sdk.payments.PaymentConfirmActivity" />
-150-->[com.paypal.sdk:paypal-android-sdk:2.15.3] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\27acbf9f6fd33d045f026668d8f12ea1\paypal-android-sdk-2.15.3\AndroidManifest.xml:15:9-91
-150-->[com.paypal.sdk:paypal-android-sdk:2.15.3] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\27acbf9f6fd33d045f026668d8f12ea1\paypal-android-sdk-2.15.3\AndroidManifest.xml:15:19-88
-151        <activity android:name="com.paypal.android.sdk.payments.LoginActivity" />
-151-->[com.paypal.sdk:paypal-android-sdk:2.15.3] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\27acbf9f6fd33d045f026668d8f12ea1\paypal-android-sdk-2.15.3\AndroidManifest.xml:16:9-82
-151-->[com.paypal.sdk:paypal-android-sdk:2.15.3] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\27acbf9f6fd33d045f026668d8f12ea1\paypal-android-sdk-2.15.3\AndroidManifest.xml:16:19-79
-152        <activity android:name="com.paypal.android.sdk.payments.PayPalFuturePaymentActivity" />
-152-->[com.paypal.sdk:paypal-android-sdk:2.15.3] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\27acbf9f6fd33d045f026668d8f12ea1\paypal-android-sdk-2.15.3\AndroidManifest.xml:17:9-96
-152-->[com.paypal.sdk:paypal-android-sdk:2.15.3] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\27acbf9f6fd33d045f026668d8f12ea1\paypal-android-sdk-2.15.3\AndroidManifest.xml:17:19-93
-153        <activity android:name="com.paypal.android.sdk.payments.FuturePaymentConsentActivity" />
-153-->[com.paypal.sdk:paypal-android-sdk:2.15.3] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\27acbf9f6fd33d045f026668d8f12ea1\paypal-android-sdk-2.15.3\AndroidManifest.xml:18:9-97
-153-->[com.paypal.sdk:paypal-android-sdk:2.15.3] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\27acbf9f6fd33d045f026668d8f12ea1\paypal-android-sdk-2.15.3\AndroidManifest.xml:18:19-94
-154        <activity android:name="com.paypal.android.sdk.payments.FuturePaymentInfoActivity" />
-154-->[com.paypal.sdk:paypal-android-sdk:2.15.3] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\27acbf9f6fd33d045f026668d8f12ea1\paypal-android-sdk-2.15.3\AndroidManifest.xml:19:9-94
-154-->[com.paypal.sdk:paypal-android-sdk:2.15.3] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\27acbf9f6fd33d045f026668d8f12ea1\paypal-android-sdk-2.15.3\AndroidManifest.xml:19:19-91
-155        <activity android:name="com.paypal.android.sdk.payments.PayPalProfileSharingActivity" />
-155-->[com.paypal.sdk:paypal-android-sdk:2.15.3] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\27acbf9f6fd33d045f026668d8f12ea1\paypal-android-sdk-2.15.3\AndroidManifest.xml:20:9-97
-155-->[com.paypal.sdk:paypal-android-sdk:2.15.3] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\27acbf9f6fd33d045f026668d8f12ea1\paypal-android-sdk-2.15.3\AndroidManifest.xml:20:19-94
-156        <activity android:name="com.paypal.android.sdk.payments.ProfileSharingConsentActivity" />
-156-->[com.paypal.sdk:paypal-android-sdk:2.15.3] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\27acbf9f6fd33d045f026668d8f12ea1\paypal-android-sdk-2.15.3\AndroidManifest.xml:21:9-98
-156-->[com.paypal.sdk:paypal-android-sdk:2.15.3] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\27acbf9f6fd33d045f026668d8f12ea1\paypal-android-sdk-2.15.3\AndroidManifest.xml:21:19-95
-157
-158        <service
-158-->[com.paypal.sdk:paypal-android-sdk:2.15.3] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\27acbf9f6fd33d045f026668d8f12ea1\paypal-android-sdk-2.15.3\AndroidManifest.xml:23:9-25:40
-159            android:name="com.paypal.android.sdk.payments.PayPalService"
-159-->[com.paypal.sdk:paypal-android-sdk:2.15.3] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\27acbf9f6fd33d045f026668d8f12ea1\paypal-android-sdk-2.15.3\AndroidManifest.xml:24:13-73
-160            android:exported="false" />
-160-->[com.paypal.sdk:paypal-android-sdk:2.15.3] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\27acbf9f6fd33d045f026668d8f12ea1\paypal-android-sdk-2.15.3\AndroidManifest.xml:25:13-37
-161
-162        <receiver
-162-->[com.google.firebase:firebase-iid:17.0.4] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\d5e5cad2f3b93764916e74306476ad1e\jetified-firebase-iid-17.0.4\AndroidManifest.xml:37:9-44:20
-163            android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver"
-163-->[com.google.firebase:firebase-iid:17.0.4] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\d5e5cad2f3b93764916e74306476ad1e\jetified-firebase-iid-17.0.4\AndroidManifest.xml:38:13-78
-164            android:exported="true"
-164-->[com.google.firebase:firebase-iid:17.0.4] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\d5e5cad2f3b93764916e74306476ad1e\jetified-firebase-iid-17.0.4\AndroidManifest.xml:39:13-36
-165            android:permission="com.google.android.c2dm.permission.SEND" >
-165-->[com.google.firebase:firebase-iid:17.0.4] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\d5e5cad2f3b93764916e74306476ad1e\jetified-firebase-iid-17.0.4\AndroidManifest.xml:40:13-73
-166            <intent-filter>
-166-->[com.google.firebase:firebase-iid:17.0.4] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\d5e5cad2f3b93764916e74306476ad1e\jetified-firebase-iid-17.0.4\AndroidManifest.xml:41:13-43:29
-167                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
-167-->[com.google.firebase:firebase-iid:17.0.4] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\d5e5cad2f3b93764916e74306476ad1e\jetified-firebase-iid-17.0.4\AndroidManifest.xml:42:17-81
-167-->[com.google.firebase:firebase-iid:17.0.4] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\d5e5cad2f3b93764916e74306476ad1e\jetified-firebase-iid-17.0.4\AndroidManifest.xml:42:25-78
-168            </intent-filter>
-169        </receiver>
-170        <!--
-171             FirebaseInstanceIdService performs security checks at runtime,
-172             no need for explicit permissions despite exported="true"
-173        -->
-174        <service
-174-->[com.google.firebase:firebase-iid:17.0.4] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\d5e5cad2f3b93764916e74306476ad1e\jetified-firebase-iid-17.0.4\AndroidManifest.xml:50:9-56:19
-175            android:name="com.google.firebase.iid.FirebaseInstanceIdService"
-175-->[com.google.firebase:firebase-iid:17.0.4] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\d5e5cad2f3b93764916e74306476ad1e\jetified-firebase-iid-17.0.4\AndroidManifest.xml:51:13-77
-176            android:exported="true" >
-176-->[com.google.firebase:firebase-iid:17.0.4] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\d5e5cad2f3b93764916e74306476ad1e\jetified-firebase-iid-17.0.4\AndroidManifest.xml:52:13-36
-177            <intent-filter android:priority="-500" >
-177-->C:\Users\adria\Documents\PROYEK SDP TERBARU BARU\User\app\src\main\AndroidManifest.xml:26:13-28:29
-178                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
-178-->C:\Users\adria\Documents\PROYEK SDP TERBARU BARU\User\app\src\main\AndroidManifest.xml:27:17-79
-178-->C:\Users\adria\Documents\PROYEK SDP TERBARU BARU\User\app\src\main\AndroidManifest.xml:27:25-77
-179            </intent-filter>
-180        </service>
-181
-182        <activity
-182-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\26923404d8e377cf48027104175cd048\play-services-base-17.1.0\AndroidManifest.xml:23:9-26:75
-183            android:name="com.google.android.gms.common.api.GoogleApiActivity"
-183-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\26923404d8e377cf48027104175cd048\play-services-base-17.1.0\AndroidManifest.xml:24:13-79
-184            android:exported="false"
-184-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\26923404d8e377cf48027104175cd048\play-services-base-17.1.0\AndroidManifest.xml:25:13-37
-185            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-185-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\26923404d8e377cf48027104175cd048\play-services-base-17.1.0\AndroidManifest.xml:26:13-72
-186
-187        <provider
-187-->[com.google.firebase:firebase-common:19.0.0] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\b1384c5fdf3acad4baebcde528b744a2\firebase-common-19.0.0\AndroidManifest.xml:12:9-16:39
-188            android:name="com.google.firebase.provider.FirebaseInitProvider"
-188-->[com.google.firebase:firebase-common:19.0.0] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\b1384c5fdf3acad4baebcde528b744a2\firebase-common-19.0.0\AndroidManifest.xml:13:13-77
-189            android:authorities="com.example.parkirin.firebaseinitprovider"
-189-->[com.google.firebase:firebase-common:19.0.0] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\b1384c5fdf3acad4baebcde528b744a2\firebase-common-19.0.0\AndroidManifest.xml:14:13-72
-190            android:exported="false"
-190-->[com.google.firebase:firebase-common:19.0.0] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\b1384c5fdf3acad4baebcde528b744a2\firebase-common-19.0.0\AndroidManifest.xml:15:13-37
-191            android:initOrder="100" />
-191-->[com.google.firebase:firebase-common:19.0.0] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\b1384c5fdf3acad4baebcde528b744a2\firebase-common-19.0.0\AndroidManifest.xml:16:13-36
-192
-193        <receiver
-193-->[com.google.android.gms:play-services-measurement:16.4.0] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\c2c4fc58b7ea06d34e9acd0425a85af4\jetified-play-services-measurement-16.4.0\AndroidManifest.xml:29:9-33:20
-194            android:name="com.google.android.gms.measurement.AppMeasurementReceiver"
-194-->[com.google.android.gms:play-services-measurement:16.4.0] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\c2c4fc58b7ea06d34e9acd0425a85af4\jetified-play-services-measurement-16.4.0\AndroidManifest.xml:30:13-85
-195            android:enabled="true"
-195-->[com.google.android.gms:play-services-measurement:16.4.0] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\c2c4fc58b7ea06d34e9acd0425a85af4\jetified-play-services-measurement-16.4.0\AndroidManifest.xml:31:13-35
-196            android:exported="false" >
-196-->[com.google.android.gms:play-services-measurement:16.4.0] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\c2c4fc58b7ea06d34e9acd0425a85af4\jetified-play-services-measurement-16.4.0\AndroidManifest.xml:32:13-37
-197        </receiver>
-198        <receiver
-198-->[com.google.android.gms:play-services-measurement:16.4.0] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\c2c4fc58b7ea06d34e9acd0425a85af4\jetified-play-services-measurement-16.4.0\AndroidManifest.xml:34:9-42:20
-199            android:name="com.google.android.gms.measurement.AppMeasurementInstallReferrerReceiver"
-199-->[com.google.android.gms:play-services-measurement:16.4.0] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\c2c4fc58b7ea06d34e9acd0425a85af4\jetified-play-services-measurement-16.4.0\AndroidManifest.xml:35:13-100
-200            android:enabled="true"
-200-->[com.google.android.gms:play-services-measurement:16.4.0] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\c2c4fc58b7ea06d34e9acd0425a85af4\jetified-play-services-measurement-16.4.0\AndroidManifest.xml:36:13-35
-201            android:exported="true"
-201-->[com.google.android.gms:play-services-measurement:16.4.0] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\c2c4fc58b7ea06d34e9acd0425a85af4\jetified-play-services-measurement-16.4.0\AndroidManifest.xml:37:13-36
-202            android:permission="android.permission.INSTALL_PACKAGES" >
-202-->[com.google.android.gms:play-services-measurement:16.4.0] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\c2c4fc58b7ea06d34e9acd0425a85af4\jetified-play-services-measurement-16.4.0\AndroidManifest.xml:38:13-69
-203            <intent-filter>
-203-->[com.google.android.gms:play-services-measurement:16.4.0] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\c2c4fc58b7ea06d34e9acd0425a85af4\jetified-play-services-measurement-16.4.0\AndroidManifest.xml:39:13-41:29
-204                <action android:name="com.android.vending.INSTALL_REFERRER" />
-204-->[com.google.android.gms:play-services-measurement:16.4.0] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\c2c4fc58b7ea06d34e9acd0425a85af4\jetified-play-services-measurement-16.4.0\AndroidManifest.xml:40:17-79
-204-->[com.google.android.gms:play-services-measurement:16.4.0] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\c2c4fc58b7ea06d34e9acd0425a85af4\jetified-play-services-measurement-16.4.0\AndroidManifest.xml:40:25-76
-205            </intent-filter>
-206        </receiver>
-207
-208        <service
-208-->[com.google.android.gms:play-services-measurement:16.4.0] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\c2c4fc58b7ea06d34e9acd0425a85af4\jetified-play-services-measurement-16.4.0\AndroidManifest.xml:44:9-47:40
-209            android:name="com.google.android.gms.measurement.AppMeasurementService"
-209-->[com.google.android.gms:play-services-measurement:16.4.0] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\c2c4fc58b7ea06d34e9acd0425a85af4\jetified-play-services-measurement-16.4.0\AndroidManifest.xml:45:13-84
-210            android:enabled="true"
-210-->[com.google.android.gms:play-services-measurement:16.4.0] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\c2c4fc58b7ea06d34e9acd0425a85af4\jetified-play-services-measurement-16.4.0\AndroidManifest.xml:46:13-35
-211            android:exported="false" />
-211-->[com.google.android.gms:play-services-measurement:16.4.0] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\c2c4fc58b7ea06d34e9acd0425a85af4\jetified-play-services-measurement-16.4.0\AndroidManifest.xml:47:13-37
-212        <service
-212-->[com.google.android.gms:play-services-measurement:16.4.0] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\c2c4fc58b7ea06d34e9acd0425a85af4\jetified-play-services-measurement-16.4.0\AndroidManifest.xml:48:9-52:72
-213            android:name="com.google.android.gms.measurement.AppMeasurementJobService"
-213-->[com.google.android.gms:play-services-measurement:16.4.0] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\c2c4fc58b7ea06d34e9acd0425a85af4\jetified-play-services-measurement-16.4.0\AndroidManifest.xml:49:13-87
-214            android:enabled="true"
-214-->[com.google.android.gms:play-services-measurement:16.4.0] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\c2c4fc58b7ea06d34e9acd0425a85af4\jetified-play-services-measurement-16.4.0\AndroidManifest.xml:50:13-35
-215            android:exported="false"
-215-->[com.google.android.gms:play-services-measurement:16.4.0] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\c2c4fc58b7ea06d34e9acd0425a85af4\jetified-play-services-measurement-16.4.0\AndroidManifest.xml:51:13-37
-216            android:permission="android.permission.BIND_JOB_SERVICE" />
-216-->[com.google.android.gms:play-services-measurement:16.4.0] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\c2c4fc58b7ea06d34e9acd0425a85af4\jetified-play-services-measurement-16.4.0\AndroidManifest.xml:52:13-69
-217
-218        <meta-data
-218-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\f95540bfca508146ed1a27c50c6e2806\jetified-play-services-basement-17.0.0\AndroidManifest.xml:23:9-25:69
-219            android:name="com.google.android.gms.version"
-219-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\f95540bfca508146ed1a27c50c6e2806\jetified-play-services-basement-17.0.0\AndroidManifest.xml:24:13-58
-220            android:value="@integer/google_play_services_version" />
-220-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\f95540bfca508146ed1a27c50c6e2806\jetified-play-services-basement-17.0.0\AndroidManifest.xml:25:13-66
-221
-222        <activity
-222-->[io.card:android-sdk:5.5.0] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\c4b9a6e297823b18fa4b6526aa245b5b\jetified-android-sdk-5.5.0\AndroidManifest.xml:20:9-22:66
-223            android:name="io.card.payment.CardIOActivity"
-223-->[io.card:android-sdk:5.5.0] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\c4b9a6e297823b18fa4b6526aa245b5b\jetified-android-sdk-5.5.0\AndroidManifest.xml:21:13-58
-224            android:configChanges="keyboardHidden|orientation" />
-224-->[io.card:android-sdk:5.5.0] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\c4b9a6e297823b18fa4b6526aa245b5b\jetified-android-sdk-5.5.0\AndroidManifest.xml:22:13-63
-225        <activity android:name="io.card.payment.DataEntryActivity" />
-225-->[io.card:android-sdk:5.5.0] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\c4b9a6e297823b18fa4b6526aa245b5b\jetified-android-sdk-5.5.0\AndroidManifest.xml:23:9-70
-225-->[io.card:android-sdk:5.5.0] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\c4b9a6e297823b18fa4b6526aa245b5b\jetified-android-sdk-5.5.0\AndroidManifest.xml:23:19-67
-226    </application>
-227
-228</manifest>
+43        android:theme="@style/AppTheme" >
+43-->C:\Users\adria\Documents\PROYEK SDP TERBARU BARU\User\app\src\main\AndroidManifest.xml:20:9-40
+44        <service
+44-->C:\Users\adria\Documents\PROYEK SDP TERBARU BARU\User\app\src\main\AndroidManifest.xml:22:9-29:19
+45            android:name="com.example.parkirin.TokenService"
+45-->C:\Users\adria\Documents\PROYEK SDP TERBARU BARU\User\app\src\main\AndroidManifest.xml:23:13-41
+46            android:enabled="true"
+46-->C:\Users\adria\Documents\PROYEK SDP TERBARU BARU\User\app\src\main\AndroidManifest.xml:24:13-35
+47            android:exported="true" >
+47-->C:\Users\adria\Documents\PROYEK SDP TERBARU BARU\User\app\src\main\AndroidManifest.xml:25:13-36
+48            <intent-filter>
+48-->C:\Users\adria\Documents\PROYEK SDP TERBARU BARU\User\app\src\main\AndroidManifest.xml:26:13-28:29
+49                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+49-->C:\Users\adria\Documents\PROYEK SDP TERBARU BARU\User\app\src\main\AndroidManifest.xml:27:17-79
+49-->C:\Users\adria\Documents\PROYEK SDP TERBARU BARU\User\app\src\main\AndroidManifest.xml:27:25-77
+50            </intent-filter>
+51        </service>
+52        <service
+52-->C:\Users\adria\Documents\PROYEK SDP TERBARU BARU\User\app\src\main\AndroidManifest.xml:30:9-37:19
+53            android:name="com.example.parkirin.FirebaseNotificationService"
+53-->C:\Users\adria\Documents\PROYEK SDP TERBARU BARU\User\app\src\main\AndroidManifest.xml:31:13-56
+54            android:enabled="true"
+54-->C:\Users\adria\Documents\PROYEK SDP TERBARU BARU\User\app\src\main\AndroidManifest.xml:32:13-35
+55            android:exported="true" >
+55-->C:\Users\adria\Documents\PROYEK SDP TERBARU BARU\User\app\src\main\AndroidManifest.xml:33:13-36
+56            <intent-filter>
+56-->C:\Users\adria\Documents\PROYEK SDP TERBARU BARU\User\app\src\main\AndroidManifest.xml:34:13-36:29
+57                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+57-->C:\Users\adria\Documents\PROYEK SDP TERBARU BARU\User\app\src\main\AndroidManifest.xml:35:17-77
+57-->C:\Users\adria\Documents\PROYEK SDP TERBARU BARU\User\app\src\main\AndroidManifest.xml:35:25-75
+58            </intent-filter>
+59        </service>
+60
+61        <activity
+61-->C:\Users\adria\Documents\PROYEK SDP TERBARU BARU\User\app\src\main\AndroidManifest.xml:39:9-41:58
+62            android:name="com.example.parkirin.currTransaksi"
+62-->C:\Users\adria\Documents\PROYEK SDP TERBARU BARU\User\app\src\main\AndroidManifest.xml:40:13-42
+63            android:parentActivityName="com.example.parkirin.MainActivity" />
+63-->C:\Users\adria\Documents\PROYEK SDP TERBARU BARU\User\app\src\main\AndroidManifest.xml:41:13-55
+64        <activity android:name="com.example.parkirin.Topupberhasil" />
+64-->C:\Users\adria\Documents\PROYEK SDP TERBARU BARU\User\app\src\main\AndroidManifest.xml:42:9-51
+64-->C:\Users\adria\Documents\PROYEK SDP TERBARU BARU\User\app\src\main\AndroidManifest.xml:42:19-48
+65        <activity
+65-->C:\Users\adria\Documents\PROYEK SDP TERBARU BARU\User\app\src\main\AndroidManifest.xml:43:9-45:58
+66            android:name="com.example.parkirin.tempatdetail"
+66-->C:\Users\adria\Documents\PROYEK SDP TERBARU BARU\User\app\src\main\AndroidManifest.xml:44:13-41
+67            android:parentActivityName="com.example.parkirin.MainActivity" />
+67-->C:\Users\adria\Documents\PROYEK SDP TERBARU BARU\User\app\src\main\AndroidManifest.xml:45:13-55
+68        <activity android:name="com.example.parkirin.pembayaranberhasil" />
+68-->C:\Users\adria\Documents\PROYEK SDP TERBARU BARU\User\app\src\main\AndroidManifest.xml:46:9-56
+68-->C:\Users\adria\Documents\PROYEK SDP TERBARU BARU\User\app\src\main\AndroidManifest.xml:46:19-53
+69        <activity android:name="com.example.parkirin.RegisterActivity" />
+69-->C:\Users\adria\Documents\PROYEK SDP TERBARU BARU\User\app\src\main\AndroidManifest.xml:47:9-54
+69-->C:\Users\adria\Documents\PROYEK SDP TERBARU BARU\User\app\src\main\AndroidManifest.xml:47:19-51
+70        <activity android:name="com.example.parkirin.LoginActivity" >
+70-->C:\Users\adria\Documents\PROYEK SDP TERBARU BARU\User\app\src\main\AndroidManifest.xml:48:9-53:20
+70-->C:\Users\adria\Documents\PROYEK SDP TERBARU BARU\User\app\src\main\AndroidManifest.xml:48:19-48
+71            <intent-filter>
+71-->C:\Users\adria\Documents\PROYEK SDP TERBARU BARU\User\app\src\main\AndroidManifest.xml:49:13-52:29
+72                <action android:name="android.intent.action.MAIN" />
+72-->C:\Users\adria\Documents\PROYEK SDP TERBARU BARU\User\app\src\main\AndroidManifest.xml:50:17-69
+72-->C:\Users\adria\Documents\PROYEK SDP TERBARU BARU\User\app\src\main\AndroidManifest.xml:50:25-66
+73
+74                <category android:name="android.intent.category.LAUNCHER" />
+74-->C:\Users\adria\Documents\PROYEK SDP TERBARU BARU\User\app\src\main\AndroidManifest.xml:51:17-77
+74-->C:\Users\adria\Documents\PROYEK SDP TERBARU BARU\User\app\src\main\AndroidManifest.xml:51:27-74
+75            </intent-filter>
+76        </activity>
+77        <activity
+77-->C:\Users\adria\Documents\PROYEK SDP TERBARU BARU\User\app\src\main\AndroidManifest.xml:54:9-96
+78            android:name="com.example.parkirin.EditPassActivity"
+78-->C:\Users\adria\Documents\PROYEK SDP TERBARU BARU\User\app\src\main\AndroidManifest.xml:54:19-51
+79            android:parentActivityName="com.example.parkirin.MainActivity" />
+79-->C:\Users\adria\Documents\PROYEK SDP TERBARU BARU\User\app\src\main\AndroidManifest.xml:54:52-94
+80        <activity
+80-->C:\Users\adria\Documents\PROYEK SDP TERBARU BARU\User\app\src\main\AndroidManifest.xml:55:9-57:58
+81            android:name="com.example.parkirin.historyActivity"
+81-->C:\Users\adria\Documents\PROYEK SDP TERBARU BARU\User\app\src\main\AndroidManifest.xml:56:13-44
+82            android:parentActivityName="com.example.parkirin.MainActivity" />
+82-->C:\Users\adria\Documents\PROYEK SDP TERBARU BARU\User\app\src\main\AndroidManifest.xml:57:13-55
+83        <activity
+83-->C:\Users\adria\Documents\PROYEK SDP TERBARU BARU\User\app\src\main\AndroidManifest.xml:58:9-99
+84            android:name="com.example.parkirin.EditProfileActivity"
+84-->C:\Users\adria\Documents\PROYEK SDP TERBARU BARU\User\app\src\main\AndroidManifest.xml:58:19-54
+85            android:parentActivityName="com.example.parkirin.MainActivity" />
+85-->C:\Users\adria\Documents\PROYEK SDP TERBARU BARU\User\app\src\main\AndroidManifest.xml:58:55-97
+86        <activity android:name="com.example.parkirin.TransActivity" />
+86-->C:\Users\adria\Documents\PROYEK SDP TERBARU BARU\User\app\src\main\AndroidManifest.xml:59:9-51
+86-->C:\Users\adria\Documents\PROYEK SDP TERBARU BARU\User\app\src\main\AndroidManifest.xml:59:19-48
+87        <activity
+87-->C:\Users\adria\Documents\PROYEK SDP TERBARU BARU\User\app\src\main\AndroidManifest.xml:60:9-62:63
+88            android:name="com.example.parkirin.DetailTransaksi"
+88-->C:\Users\adria\Documents\PROYEK SDP TERBARU BARU\User\app\src\main\AndroidManifest.xml:61:13-44
+89            android:parentActivityName="com.example.parkirin.pemesananActivity" />
+89-->C:\Users\adria\Documents\PROYEK SDP TERBARU BARU\User\app\src\main\AndroidManifest.xml:62:13-60
+90        <activity
+90-->C:\Users\adria\Documents\PROYEK SDP TERBARU BARU\User\app\src\main\AndroidManifest.xml:63:9-65:58
+91            android:name="com.example.parkirin.pemesananActivity"
+91-->C:\Users\adria\Documents\PROYEK SDP TERBARU BARU\User\app\src\main\AndroidManifest.xml:64:13-46
+92            android:parentActivityName="com.example.parkirin.tempatdetail" />
+92-->C:\Users\adria\Documents\PROYEK SDP TERBARU BARU\User\app\src\main\AndroidManifest.xml:65:13-55
+93
+94        <meta-data
+94-->C:\Users\adria\Documents\PROYEK SDP TERBARU BARU\User\app\src\main\AndroidManifest.xml:67:9-69:47
+95            android:name="com.google.android.geo.API_KEY"
+95-->C:\Users\adria\Documents\PROYEK SDP TERBARU BARU\User\app\src\main\AndroidManifest.xml:68:13-58
+96            android:value="@string/map_key" />
+96-->C:\Users\adria\Documents\PROYEK SDP TERBARU BARU\User\app\src\main\AndroidManifest.xml:69:13-44
+97
+98        <activity android:name="com.example.parkirin.MainActivity" />
+98-->C:\Users\adria\Documents\PROYEK SDP TERBARU BARU\User\app\src\main\AndroidManifest.xml:71:9-50
+98-->C:\Users\adria\Documents\PROYEK SDP TERBARU BARU\User\app\src\main\AndroidManifest.xml:71:19-47
+99
+100        <service
+100-->[com.google.firebase:firebase-database:17.0.0] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\726489acc91fb34468cfe7fa5814e059\jetified-firebase-database-17.0.0\AndroidManifest.xml:29:9-33:19
+101            android:name="com.google.firebase.components.ComponentDiscoveryService"
+101-->[com.google.firebase:firebase-database:17.0.0] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\726489acc91fb34468cfe7fa5814e059\jetified-firebase-database-17.0.0\AndroidManifest.xml:29:18-89
+102            android:exported="false" >
+102-->[com.google.firebase:firebase-auth:19.1.0] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\e94d4c46262c04452ee9877596073b58\firebase-auth-19.1.0\AndroidManifest.xml:35:13-37
+103            <meta-data
+103-->[com.google.firebase:firebase-database:17.0.0] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\726489acc91fb34468cfe7fa5814e059\jetified-firebase-database-17.0.0\AndroidManifest.xml:30:13-32:85
+104                android:name="com.google.firebase.components:com.google.firebase.database.DatabaseRegistrar"
+104-->[com.google.firebase:firebase-database:17.0.0] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\726489acc91fb34468cfe7fa5814e059\jetified-firebase-database-17.0.0\AndroidManifest.xml:31:17-109
+105                android:value="com.google.firebase.components.ComponentRegistrar" />
+105-->[com.google.firebase:firebase-database:17.0.0] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\726489acc91fb34468cfe7fa5814e059\jetified-firebase-database-17.0.0\AndroidManifest.xml:32:17-82
+106            <meta-data
+106-->[com.google.firebase:firebase-auth:19.1.0] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\e94d4c46262c04452ee9877596073b58\firebase-auth-19.1.0\AndroidManifest.xml:36:13-38:85
+107                android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
+107-->[com.google.firebase:firebase-auth:19.1.0] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\e94d4c46262c04452ee9877596073b58\firebase-auth-19.1.0\AndroidManifest.xml:37:17-109
+108                android:value="com.google.firebase.components.ComponentRegistrar" />
+108-->[com.google.firebase:firebase-auth:19.1.0] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\e94d4c46262c04452ee9877596073b58\firebase-auth-19.1.0\AndroidManifest.xml:38:17-82
+109            <meta-data
+109-->[com.google.firebase:firebase-storage:17.0.0] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\35c6f368119397590ffc6b7ad6ec117c\jetified-firebase-storage-17.0.0\AndroidManifest.xml:31:13-33:85
+110                android:name="com.google.firebase.components:com.google.firebase.storage.StorageRegistrar"
+110-->[com.google.firebase:firebase-storage:17.0.0] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\35c6f368119397590ffc6b7ad6ec117c\jetified-firebase-storage-17.0.0\AndroidManifest.xml:32:17-107
+111                android:value="com.google.firebase.components.ComponentRegistrar" />
+111-->[com.google.firebase:firebase-storage:17.0.0] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\35c6f368119397590ffc6b7ad6ec117c\jetified-firebase-storage-17.0.0\AndroidManifest.xml:33:17-82
+112            <meta-data
+112-->[com.google.android.gms:play-services-measurement-api:16.4.0] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\b965fb2977ff964c75d4e45932f2e8e2\jetified-play-services-measurement-api-16.4.0\AndroidManifest.xml:30:13-32:85
+113                android:name="com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar"
+113-->[com.google.android.gms:play-services-measurement-api:16.4.0] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\b965fb2977ff964c75d4e45932f2e8e2\jetified-play-services-measurement-api-16.4.0\AndroidManifest.xml:31:17-139
+114                android:value="com.google.firebase.components.ComponentRegistrar" />
+114-->[com.google.android.gms:play-services-measurement-api:16.4.0] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\b965fb2977ff964c75d4e45932f2e8e2\jetified-play-services-measurement-api-16.4.0\AndroidManifest.xml:32:17-82
+115            <meta-data
+115-->[com.google.firebase:firebase-iid:17.0.4] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\d5e5cad2f3b93764916e74306476ad1e\jetified-firebase-iid-17.0.4\AndroidManifest.xml:32:13-34:85
+116                android:name="com.google.firebase.components:com.google.firebase.iid.Registrar"
+116-->[com.google.firebase:firebase-iid:17.0.4] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\d5e5cad2f3b93764916e74306476ad1e\jetified-firebase-iid-17.0.4\AndroidManifest.xml:33:17-96
+117                android:value="com.google.firebase.components.ComponentRegistrar" />
+117-->[com.google.firebase:firebase-iid:17.0.4] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\d5e5cad2f3b93764916e74306476ad1e\jetified-firebase-iid-17.0.4\AndroidManifest.xml:34:17-82
+118        </service>
+119        <!--
+120             FirebaseMessagingService performs security checks at runtime,
+121             no need for explicit permissions despite exported="true"
+122        -->
+123        <service
+123-->[com.google.firebase:firebase-messaging:17.3.4] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\d3d08f4e9beea56f161b5e39e6149dd3\jetified-firebase-messaging-17.3.4\AndroidManifest.xml:28:9-34:19
+124            android:name="com.google.firebase.messaging.FirebaseMessagingService"
+124-->[com.google.firebase:firebase-messaging:17.3.4] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\d3d08f4e9beea56f161b5e39e6149dd3\jetified-firebase-messaging-17.3.4\AndroidManifest.xml:29:13-82
+125            android:exported="true" >
+125-->[com.google.firebase:firebase-messaging:17.3.4] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\d3d08f4e9beea56f161b5e39e6149dd3\jetified-firebase-messaging-17.3.4\AndroidManifest.xml:30:13-36
+126            <intent-filter android:priority="-500" >
+126-->C:\Users\adria\Documents\PROYEK SDP TERBARU BARU\User\app\src\main\AndroidManifest.xml:34:13-36:29
+127                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+127-->C:\Users\adria\Documents\PROYEK SDP TERBARU BARU\User\app\src\main\AndroidManifest.xml:35:17-77
+127-->C:\Users\adria\Documents\PROYEK SDP TERBARU BARU\User\app\src\main\AndroidManifest.xml:35:25-75
+128            </intent-filter>
+129        </service> <!-- Needs to be explicitly declared on P+ -->
+130        <uses-library
+130-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\54ab3033ac1c0ed86f67ec5de980edd5\play-services-maps-17.0.0\AndroidManifest.xml:33:9-35:40
+131            android:name="org.apache.http.legacy"
+131-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\54ab3033ac1c0ed86f67ec5de980edd5\play-services-maps-17.0.0\AndroidManifest.xml:34:13-50
+132            android:required="false" />
+132-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\54ab3033ac1c0ed86f67ec5de980edd5\play-services-maps-17.0.0\AndroidManifest.xml:35:13-37
+133
+134        <activity
+134-->[com.google.firebase:firebase-auth:19.1.0] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\e94d4c46262c04452ee9877596073b58\firebase-auth-19.1.0\AndroidManifest.xml:24:9-31:50
+135            android:name="com.google.firebase.auth.internal.FederatedSignInActivity"
+135-->[com.google.firebase:firebase-auth:19.1.0] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\e94d4c46262c04452ee9877596073b58\firebase-auth-19.1.0\AndroidManifest.xml:25:13-85
+136            android:excludeFromRecents="true"
+136-->[com.google.firebase:firebase-auth:19.1.0] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\e94d4c46262c04452ee9877596073b58\firebase-auth-19.1.0\AndroidManifest.xml:26:13-46
+137            android:exported="true"
+137-->[com.google.firebase:firebase-auth:19.1.0] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\e94d4c46262c04452ee9877596073b58\firebase-auth-19.1.0\AndroidManifest.xml:27:13-36
+138            android:launchMode="singleTask"
+138-->[com.google.firebase:firebase-auth:19.1.0] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\e94d4c46262c04452ee9877596073b58\firebase-auth-19.1.0\AndroidManifest.xml:28:13-44
+139            android:permission="com.google.firebase.auth.api.gms.permission.LAUNCH_FEDERATED_SIGN_IN"
+139-->[com.google.firebase:firebase-auth:19.1.0] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\e94d4c46262c04452ee9877596073b58\firebase-auth-19.1.0\AndroidManifest.xml:29:13-102
+140            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+140-->[com.google.firebase:firebase-auth:19.1.0] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\e94d4c46262c04452ee9877596073b58\firebase-auth-19.1.0\AndroidManifest.xml:30:13-72
+141
+142        <provider
+142-->[com.squareup.picasso:picasso:2.71828] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\3a5d1c9fa5ee51bb915376f8f0df58d6\jetified-picasso-2.71828\AndroidManifest.xml:8:9-11:40
+143            android:name="com.squareup.picasso.PicassoProvider"
+143-->[com.squareup.picasso:picasso:2.71828] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\3a5d1c9fa5ee51bb915376f8f0df58d6\jetified-picasso-2.71828\AndroidManifest.xml:9:13-64
+144            android:authorities="com.example.parkirin.com.squareup.picasso"
+144-->[com.squareup.picasso:picasso:2.71828] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\3a5d1c9fa5ee51bb915376f8f0df58d6\jetified-picasso-2.71828\AndroidManifest.xml:10:13-72
+145            android:exported="false" />
+145-->[com.squareup.picasso:picasso:2.71828] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\3a5d1c9fa5ee51bb915376f8f0df58d6\jetified-picasso-2.71828\AndroidManifest.xml:11:13-37
+146
+147        <activity android:name="com.paypal.android.sdk.payments.PaymentActivity" />
+147-->[com.paypal.sdk:paypal-android-sdk:2.15.3] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\27acbf9f6fd33d045f026668d8f12ea1\paypal-android-sdk-2.15.3\AndroidManifest.xml:13:9-84
+147-->[com.paypal.sdk:paypal-android-sdk:2.15.3] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\27acbf9f6fd33d045f026668d8f12ea1\paypal-android-sdk-2.15.3\AndroidManifest.xml:13:19-81
+148        <activity android:name="com.paypal.android.sdk.payments.PaymentMethodActivity" />
+148-->[com.paypal.sdk:paypal-android-sdk:2.15.3] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\27acbf9f6fd33d045f026668d8f12ea1\paypal-android-sdk-2.15.3\AndroidManifest.xml:14:9-90
+148-->[com.paypal.sdk:paypal-android-sdk:2.15.3] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\27acbf9f6fd33d045f026668d8f12ea1\paypal-android-sdk-2.15.3\AndroidManifest.xml:14:19-87
+149        <activity android:name="com.paypal.android.sdk.payments.PaymentConfirmActivity" />
+149-->[com.paypal.sdk:paypal-android-sdk:2.15.3] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\27acbf9f6fd33d045f026668d8f12ea1\paypal-android-sdk-2.15.3\AndroidManifest.xml:15:9-91
+149-->[com.paypal.sdk:paypal-android-sdk:2.15.3] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\27acbf9f6fd33d045f026668d8f12ea1\paypal-android-sdk-2.15.3\AndroidManifest.xml:15:19-88
+150        <activity android:name="com.paypal.android.sdk.payments.LoginActivity" />
+150-->[com.paypal.sdk:paypal-android-sdk:2.15.3] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\27acbf9f6fd33d045f026668d8f12ea1\paypal-android-sdk-2.15.3\AndroidManifest.xml:16:9-82
+150-->[com.paypal.sdk:paypal-android-sdk:2.15.3] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\27acbf9f6fd33d045f026668d8f12ea1\paypal-android-sdk-2.15.3\AndroidManifest.xml:16:19-79
+151        <activity android:name="com.paypal.android.sdk.payments.PayPalFuturePaymentActivity" />
+151-->[com.paypal.sdk:paypal-android-sdk:2.15.3] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\27acbf9f6fd33d045f026668d8f12ea1\paypal-android-sdk-2.15.3\AndroidManifest.xml:17:9-96
+151-->[com.paypal.sdk:paypal-android-sdk:2.15.3] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\27acbf9f6fd33d045f026668d8f12ea1\paypal-android-sdk-2.15.3\AndroidManifest.xml:17:19-93
+152        <activity android:name="com.paypal.android.sdk.payments.FuturePaymentConsentActivity" />
+152-->[com.paypal.sdk:paypal-android-sdk:2.15.3] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\27acbf9f6fd33d045f026668d8f12ea1\paypal-android-sdk-2.15.3\AndroidManifest.xml:18:9-97
+152-->[com.paypal.sdk:paypal-android-sdk:2.15.3] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\27acbf9f6fd33d045f026668d8f12ea1\paypal-android-sdk-2.15.3\AndroidManifest.xml:18:19-94
+153        <activity android:name="com.paypal.android.sdk.payments.FuturePaymentInfoActivity" />
+153-->[com.paypal.sdk:paypal-android-sdk:2.15.3] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\27acbf9f6fd33d045f026668d8f12ea1\paypal-android-sdk-2.15.3\AndroidManifest.xml:19:9-94
+153-->[com.paypal.sdk:paypal-android-sdk:2.15.3] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\27acbf9f6fd33d045f026668d8f12ea1\paypal-android-sdk-2.15.3\AndroidManifest.xml:19:19-91
+154        <activity android:name="com.paypal.android.sdk.payments.PayPalProfileSharingActivity" />
+154-->[com.paypal.sdk:paypal-android-sdk:2.15.3] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\27acbf9f6fd33d045f026668d8f12ea1\paypal-android-sdk-2.15.3\AndroidManifest.xml:20:9-97
+154-->[com.paypal.sdk:paypal-android-sdk:2.15.3] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\27acbf9f6fd33d045f026668d8f12ea1\paypal-android-sdk-2.15.3\AndroidManifest.xml:20:19-94
+155        <activity android:name="com.paypal.android.sdk.payments.ProfileSharingConsentActivity" />
+155-->[com.paypal.sdk:paypal-android-sdk:2.15.3] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\27acbf9f6fd33d045f026668d8f12ea1\paypal-android-sdk-2.15.3\AndroidManifest.xml:21:9-98
+155-->[com.paypal.sdk:paypal-android-sdk:2.15.3] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\27acbf9f6fd33d045f026668d8f12ea1\paypal-android-sdk-2.15.3\AndroidManifest.xml:21:19-95
+156
+157        <service
+157-->[com.paypal.sdk:paypal-android-sdk:2.15.3] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\27acbf9f6fd33d045f026668d8f12ea1\paypal-android-sdk-2.15.3\AndroidManifest.xml:23:9-25:40
+158            android:name="com.paypal.android.sdk.payments.PayPalService"
+158-->[com.paypal.sdk:paypal-android-sdk:2.15.3] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\27acbf9f6fd33d045f026668d8f12ea1\paypal-android-sdk-2.15.3\AndroidManifest.xml:24:13-73
+159            android:exported="false" />
+159-->[com.paypal.sdk:paypal-android-sdk:2.15.3] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\27acbf9f6fd33d045f026668d8f12ea1\paypal-android-sdk-2.15.3\AndroidManifest.xml:25:13-37
+160
+161        <receiver
+161-->[com.google.firebase:firebase-iid:17.0.4] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\d5e5cad2f3b93764916e74306476ad1e\jetified-firebase-iid-17.0.4\AndroidManifest.xml:37:9-44:20
+162            android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver"
+162-->[com.google.firebase:firebase-iid:17.0.4] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\d5e5cad2f3b93764916e74306476ad1e\jetified-firebase-iid-17.0.4\AndroidManifest.xml:38:13-78
+163            android:exported="true"
+163-->[com.google.firebase:firebase-iid:17.0.4] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\d5e5cad2f3b93764916e74306476ad1e\jetified-firebase-iid-17.0.4\AndroidManifest.xml:39:13-36
+164            android:permission="com.google.android.c2dm.permission.SEND" >
+164-->[com.google.firebase:firebase-iid:17.0.4] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\d5e5cad2f3b93764916e74306476ad1e\jetified-firebase-iid-17.0.4\AndroidManifest.xml:40:13-73
+165            <intent-filter>
+165-->[com.google.firebase:firebase-iid:17.0.4] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\d5e5cad2f3b93764916e74306476ad1e\jetified-firebase-iid-17.0.4\AndroidManifest.xml:41:13-43:29
+166                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+166-->[com.google.firebase:firebase-iid:17.0.4] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\d5e5cad2f3b93764916e74306476ad1e\jetified-firebase-iid-17.0.4\AndroidManifest.xml:42:17-81
+166-->[com.google.firebase:firebase-iid:17.0.4] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\d5e5cad2f3b93764916e74306476ad1e\jetified-firebase-iid-17.0.4\AndroidManifest.xml:42:25-78
+167            </intent-filter>
+168        </receiver>
+169        <!--
+170             FirebaseInstanceIdService performs security checks at runtime,
+171             no need for explicit permissions despite exported="true"
+172        -->
+173        <service
+173-->[com.google.firebase:firebase-iid:17.0.4] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\d5e5cad2f3b93764916e74306476ad1e\jetified-firebase-iid-17.0.4\AndroidManifest.xml:50:9-56:19
+174            android:name="com.google.firebase.iid.FirebaseInstanceIdService"
+174-->[com.google.firebase:firebase-iid:17.0.4] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\d5e5cad2f3b93764916e74306476ad1e\jetified-firebase-iid-17.0.4\AndroidManifest.xml:51:13-77
+175            android:exported="true" >
+175-->[com.google.firebase:firebase-iid:17.0.4] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\d5e5cad2f3b93764916e74306476ad1e\jetified-firebase-iid-17.0.4\AndroidManifest.xml:52:13-36
+176            <intent-filter android:priority="-500" >
+176-->C:\Users\adria\Documents\PROYEK SDP TERBARU BARU\User\app\src\main\AndroidManifest.xml:26:13-28:29
+177                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+177-->C:\Users\adria\Documents\PROYEK SDP TERBARU BARU\User\app\src\main\AndroidManifest.xml:27:17-79
+177-->C:\Users\adria\Documents\PROYEK SDP TERBARU BARU\User\app\src\main\AndroidManifest.xml:27:25-77
+178            </intent-filter>
+179        </service>
+180
+181        <activity
+181-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\26923404d8e377cf48027104175cd048\play-services-base-17.1.0\AndroidManifest.xml:23:9-26:75
+182            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+182-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\26923404d8e377cf48027104175cd048\play-services-base-17.1.0\AndroidManifest.xml:24:13-79
+183            android:exported="false"
+183-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\26923404d8e377cf48027104175cd048\play-services-base-17.1.0\AndroidManifest.xml:25:13-37
+184            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+184-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\26923404d8e377cf48027104175cd048\play-services-base-17.1.0\AndroidManifest.xml:26:13-72
+185
+186        <provider
+186-->[com.google.firebase:firebase-common:19.0.0] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\b1384c5fdf3acad4baebcde528b744a2\firebase-common-19.0.0\AndroidManifest.xml:12:9-16:39
+187            android:name="com.google.firebase.provider.FirebaseInitProvider"
+187-->[com.google.firebase:firebase-common:19.0.0] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\b1384c5fdf3acad4baebcde528b744a2\firebase-common-19.0.0\AndroidManifest.xml:13:13-77
+188            android:authorities="com.example.parkirin.firebaseinitprovider"
+188-->[com.google.firebase:firebase-common:19.0.0] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\b1384c5fdf3acad4baebcde528b744a2\firebase-common-19.0.0\AndroidManifest.xml:14:13-72
+189            android:exported="false"
+189-->[com.google.firebase:firebase-common:19.0.0] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\b1384c5fdf3acad4baebcde528b744a2\firebase-common-19.0.0\AndroidManifest.xml:15:13-37
+190            android:initOrder="100" />
+190-->[com.google.firebase:firebase-common:19.0.0] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\b1384c5fdf3acad4baebcde528b744a2\firebase-common-19.0.0\AndroidManifest.xml:16:13-36
+191
+192        <receiver
+192-->[com.google.android.gms:play-services-measurement:16.4.0] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\c2c4fc58b7ea06d34e9acd0425a85af4\jetified-play-services-measurement-16.4.0\AndroidManifest.xml:29:9-33:20
+193            android:name="com.google.android.gms.measurement.AppMeasurementReceiver"
+193-->[com.google.android.gms:play-services-measurement:16.4.0] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\c2c4fc58b7ea06d34e9acd0425a85af4\jetified-play-services-measurement-16.4.0\AndroidManifest.xml:30:13-85
+194            android:enabled="true"
+194-->[com.google.android.gms:play-services-measurement:16.4.0] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\c2c4fc58b7ea06d34e9acd0425a85af4\jetified-play-services-measurement-16.4.0\AndroidManifest.xml:31:13-35
+195            android:exported="false" >
+195-->[com.google.android.gms:play-services-measurement:16.4.0] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\c2c4fc58b7ea06d34e9acd0425a85af4\jetified-play-services-measurement-16.4.0\AndroidManifest.xml:32:13-37
+196        </receiver>
+197        <receiver
+197-->[com.google.android.gms:play-services-measurement:16.4.0] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\c2c4fc58b7ea06d34e9acd0425a85af4\jetified-play-services-measurement-16.4.0\AndroidManifest.xml:34:9-42:20
+198            android:name="com.google.android.gms.measurement.AppMeasurementInstallReferrerReceiver"
+198-->[com.google.android.gms:play-services-measurement:16.4.0] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\c2c4fc58b7ea06d34e9acd0425a85af4\jetified-play-services-measurement-16.4.0\AndroidManifest.xml:35:13-100
+199            android:enabled="true"
+199-->[com.google.android.gms:play-services-measurement:16.4.0] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\c2c4fc58b7ea06d34e9acd0425a85af4\jetified-play-services-measurement-16.4.0\AndroidManifest.xml:36:13-35
+200            android:exported="true"
+200-->[com.google.android.gms:play-services-measurement:16.4.0] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\c2c4fc58b7ea06d34e9acd0425a85af4\jetified-play-services-measurement-16.4.0\AndroidManifest.xml:37:13-36
+201            android:permission="android.permission.INSTALL_PACKAGES" >
+201-->[com.google.android.gms:play-services-measurement:16.4.0] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\c2c4fc58b7ea06d34e9acd0425a85af4\jetified-play-services-measurement-16.4.0\AndroidManifest.xml:38:13-69
+202            <intent-filter>
+202-->[com.google.android.gms:play-services-measurement:16.4.0] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\c2c4fc58b7ea06d34e9acd0425a85af4\jetified-play-services-measurement-16.4.0\AndroidManifest.xml:39:13-41:29
+203                <action android:name="com.android.vending.INSTALL_REFERRER" />
+203-->[com.google.android.gms:play-services-measurement:16.4.0] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\c2c4fc58b7ea06d34e9acd0425a85af4\jetified-play-services-measurement-16.4.0\AndroidManifest.xml:40:17-79
+203-->[com.google.android.gms:play-services-measurement:16.4.0] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\c2c4fc58b7ea06d34e9acd0425a85af4\jetified-play-services-measurement-16.4.0\AndroidManifest.xml:40:25-76
+204            </intent-filter>
+205        </receiver>
+206
+207        <service
+207-->[com.google.android.gms:play-services-measurement:16.4.0] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\c2c4fc58b7ea06d34e9acd0425a85af4\jetified-play-services-measurement-16.4.0\AndroidManifest.xml:44:9-47:40
+208            android:name="com.google.android.gms.measurement.AppMeasurementService"
+208-->[com.google.android.gms:play-services-measurement:16.4.0] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\c2c4fc58b7ea06d34e9acd0425a85af4\jetified-play-services-measurement-16.4.0\AndroidManifest.xml:45:13-84
+209            android:enabled="true"
+209-->[com.google.android.gms:play-services-measurement:16.4.0] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\c2c4fc58b7ea06d34e9acd0425a85af4\jetified-play-services-measurement-16.4.0\AndroidManifest.xml:46:13-35
+210            android:exported="false" />
+210-->[com.google.android.gms:play-services-measurement:16.4.0] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\c2c4fc58b7ea06d34e9acd0425a85af4\jetified-play-services-measurement-16.4.0\AndroidManifest.xml:47:13-37
+211        <service
+211-->[com.google.android.gms:play-services-measurement:16.4.0] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\c2c4fc58b7ea06d34e9acd0425a85af4\jetified-play-services-measurement-16.4.0\AndroidManifest.xml:48:9-52:72
+212            android:name="com.google.android.gms.measurement.AppMeasurementJobService"
+212-->[com.google.android.gms:play-services-measurement:16.4.0] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\c2c4fc58b7ea06d34e9acd0425a85af4\jetified-play-services-measurement-16.4.0\AndroidManifest.xml:49:13-87
+213            android:enabled="true"
+213-->[com.google.android.gms:play-services-measurement:16.4.0] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\c2c4fc58b7ea06d34e9acd0425a85af4\jetified-play-services-measurement-16.4.0\AndroidManifest.xml:50:13-35
+214            android:exported="false"
+214-->[com.google.android.gms:play-services-measurement:16.4.0] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\c2c4fc58b7ea06d34e9acd0425a85af4\jetified-play-services-measurement-16.4.0\AndroidManifest.xml:51:13-37
+215            android:permission="android.permission.BIND_JOB_SERVICE" />
+215-->[com.google.android.gms:play-services-measurement:16.4.0] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\c2c4fc58b7ea06d34e9acd0425a85af4\jetified-play-services-measurement-16.4.0\AndroidManifest.xml:52:13-69
+216
+217        <meta-data
+217-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\f95540bfca508146ed1a27c50c6e2806\jetified-play-services-basement-17.0.0\AndroidManifest.xml:23:9-25:69
+218            android:name="com.google.android.gms.version"
+218-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\f95540bfca508146ed1a27c50c6e2806\jetified-play-services-basement-17.0.0\AndroidManifest.xml:24:13-58
+219            android:value="@integer/google_play_services_version" />
+219-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\f95540bfca508146ed1a27c50c6e2806\jetified-play-services-basement-17.0.0\AndroidManifest.xml:25:13-66
+220
+221        <activity
+221-->[io.card:android-sdk:5.5.0] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\c4b9a6e297823b18fa4b6526aa245b5b\jetified-android-sdk-5.5.0\AndroidManifest.xml:20:9-22:66
+222            android:name="io.card.payment.CardIOActivity"
+222-->[io.card:android-sdk:5.5.0] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\c4b9a6e297823b18fa4b6526aa245b5b\jetified-android-sdk-5.5.0\AndroidManifest.xml:21:13-58
+223            android:configChanges="keyboardHidden|orientation" />
+223-->[io.card:android-sdk:5.5.0] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\c4b9a6e297823b18fa4b6526aa245b5b\jetified-android-sdk-5.5.0\AndroidManifest.xml:22:13-63
+224        <activity android:name="io.card.payment.DataEntryActivity" />
+224-->[io.card:android-sdk:5.5.0] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\c4b9a6e297823b18fa4b6526aa245b5b\jetified-android-sdk-5.5.0\AndroidManifest.xml:23:9-70
+224-->[io.card:android-sdk:5.5.0] C:\Users\adria\.gradle\caches\transforms-2\files-2.1\c4b9a6e297823b18fa4b6526aa245b5b\jetified-android-sdk-5.5.0\AndroidManifest.xml:23:19-67
+225    </application>
+226
+227</manifest>
